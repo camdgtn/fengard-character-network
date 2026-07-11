@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fengard — rete delle compresenze (responsive)</title>
+<title>Fengard — Archivio delle Compresenze</title>
 <style>
 :root{--bg:#0b0e13;--panel:#121720;--panel2:#171e29;--line:#293442;--text:#edf2f7;--muted:#99a6b3;--accent:#efb25a}
 *{box-sizing:border-box}html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{overflow:hidden}
@@ -64,7 +64,169 @@
   #mobileModeNote{max-width:calc(100vw - 130px)}
 }
 
-</style></head><body><div id="app"><header><div class="titleblock"><h1>Fengard — rete delle compresenze</h1><div class="subtitle">La timeline integra l’archivio del forum e le giocate locali revisionate. Interfaccia responsive.</div></div><div class="controls">
+</style>
+<style id="fengard-fantasy-theme">
+:root{
+  --bg:#21180f;
+  --panel:#e2cf95;
+  --panel2:#d4bb75;
+  --line:#6b4a22;
+  --text:#24180d;
+  --muted:#6c5634;
+  --accent:#9d2118;
+  --parchment:#ead9a8;
+  --parchment-dark:#c8a85f;
+  --ink:#24180d;
+  --wood:#493019;
+  --gold:#b68a2e;
+}
+*{scrollbar-color:#8a652b #d5bd7d}
+html,body{
+  background:
+    radial-gradient(circle at 18% 8%,rgba(255,245,196,.22),transparent 25%),
+    repeating-linear-gradient(0deg,rgba(74,49,18,.035) 0 1px,transparent 1px 4px),
+    #cdb555;
+  color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:999;
+  box-shadow:inset 0 0 70px rgba(75,43,12,.18);
+  mix-blend-mode:multiply;
+}
+header{
+  position:relative;
+  background:
+    linear-gradient(rgba(255,255,255,.18),rgba(86,55,17,.08)),
+    repeating-linear-gradient(90deg,rgba(97,65,24,.025) 0 2px,transparent 2px 6px),
+    #e5d29a;
+  border-bottom:4px double #6d4a22;
+  box-shadow:0 3px 0 #b98f42,0 7px 15px rgba(39,23,8,.24);
+  color:var(--ink);
+}
+header:after{
+  content:"";position:absolute;left:0;right:0;bottom:-8px;height:4px;
+  background:repeating-linear-gradient(90deg,#8c642b 0 8px,#d2b266 8px 16px);
+  opacity:.8;
+}
+.titleblock h1,h1{
+  font-family:"Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;
+  font-weight:700;
+  letter-spacing:.025em;
+  color:#2b190b;
+  text-shadow:0 1px 0 #fff0bd,1px 2px 0 rgba(103,66,22,.25);
+}
+.titleblock h1:before{content:"✦ ";color:#8f1f17;font-size:.85em}
+.subtitle,.control label,#stats,.checkline label{color:#6b5330}
+.control label{font-family:Verdana,Arial,sans-serif;font-weight:700;letter-spacing:.06em}
+input,select,button{
+  color:#25180c;
+  background:linear-gradient(#f2e2b5,#d6bc78);
+  border:1px solid #5c3c1c;
+  border-radius:2px;
+  box-shadow:inset 1px 1px 0 rgba(255,249,220,.9),inset -1px -1px 0 rgba(87,54,20,.38),1px 1px 0 rgba(255,239,186,.6);
+  font-family:Georgia,"Times New Roman",serif;
+}
+input::placeholder{color:#76613e}
+input:focus,select:focus,button:focus{outline:2px solid rgba(157,33,24,.35);outline-offset:1px}
+button{font-weight:700;text-shadow:0 1px 0 rgba(255,246,213,.75)}
+button:hover{
+  border-color:#8e251a;
+  background:linear-gradient(#f5e9c5,#cfa95f);
+  color:#761b14;
+}
+button:active{box-shadow:inset 1px 2px 4px rgba(67,39,12,.35)}
+input[type=checkbox]{accent-color:#8f2118}
+input[type=range]{accent-color:#8f2118;background:transparent;box-shadow:none}
+main{background:#21180f}
+#networkWrap{
+  background:
+    radial-gradient(circle at 50% 45%,rgba(166,123,45,.08),transparent 50%),
+    repeating-linear-gradient(45deg,rgba(255,226,151,.015) 0 1px,transparent 1px 5px),
+    #21180f;
+  border-right:3px ridge #7b5729;
+}
+canvas{filter:sepia(.08) saturate(.92)}
+#tooltip,#legend{
+  color:#2a1a0c;
+  background:
+    linear-gradient(rgba(255,255,255,.22),rgba(115,75,25,.07)),
+    #e5d29a;
+  border:2px ridge #755226;
+  border-radius:2px;
+  box-shadow:4px 5px 0 rgba(31,18,8,.25);
+  font-family:Georgia,"Times New Roman",serif;
+}
+#legend{color:#66502f}
+.zoomBox button{min-width:34px}
+aside{
+  color:#27190c;
+  border-left:4px double #69471f;
+  background:
+    radial-gradient(circle at 18% 0,rgba(255,248,206,.3),transparent 32%),
+    repeating-linear-gradient(0deg,rgba(96,65,25,.025) 0 1px,transparent 1px 4px),
+    #dfca8d;
+  box-shadow:inset 8px 0 18px rgba(77,47,16,.12);
+}
+aside h2{
+  font-family:"Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;
+  color:#401e0d;
+  border-bottom:3px double #8b642c;
+  padding-bottom:7px;
+  text-shadow:0 1px 0 #f7e9bc;
+}
+aside h3{
+  color:#7b2318;
+  font-family:Verdana,Arial,sans-serif;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+.metric{
+  background:linear-gradient(145deg,#eadba9,#cfb36d);
+  border:2px ridge #795624;
+  border-radius:2px;
+  box-shadow:2px 2px 0 rgba(70,43,15,.14);
+}
+.metric b{color:#5e2611;font-family:"Palatino Linotype",Georgia,serif}
+.metric span,.badge,.gameMeta,.note{color:#695333}
+.partnerButton:hover .partnerName,.game:hover .gameTitle{color:#9d2118}
+.bar{background:#9e8959;border:1px inset #785728;border-radius:0;height:6px}
+.bar i{background:linear-gradient(90deg,#791a14,#b54326,#c28e31)}
+.game{
+  border-top:1px solid #9f8042;
+  color:#2b1b0d;
+}
+.gameTitle{font-family:Georgia,"Times New Roman",serif}
+.confidence{border-color:#8a6931;background:#eadcae;color:#684b26;border-radius:2px}
+#detailsPanel .inlineButtons{border-top:1px solid rgba(106,72,28,.25);padding-top:10px}
+.mobileOnly{font-family:Georgia,"Times New Roman",serif}
+#mobileModeNote{color:#6b4e29}
+#mobileNetworkMode,#mobileFiltersToggle,#sheetHandle{
+  background:linear-gradient(#ead8a5,#cfae66);
+  border-color:#60401e;
+}
+@media(max-width:900px){
+  aside{box-shadow:-8px 0 25px rgba(35,19,7,.38),inset 7px 0 14px rgba(84,51,18,.12)}
+}
+@media(max-width:760px){
+  header{border-bottom-width:3px}
+  .titleblock h1{font-size:15px}
+  #detailsPanel{
+    border-top:4px double #704b20;
+    border-left:0;
+    background:
+      repeating-linear-gradient(0deg,rgba(96,65,25,.025) 0 1px,transparent 1px 4px),
+      #dfca8d;
+  }
+  #sheetHandle:before{background:#765327}
+  #mobileFilterPanel{
+    background:#dbc482;
+    border:2px ridge #775224;
+    box-shadow:3px 4px 0 rgba(42,24,8,.24);
+  }
+}
+</style>
+</head><body><div id="app"><header><div class="titleblock"><h1>Fengard — Archivio delle Compresenze</h1><div class="subtitle">La timeline integra l’archivio del forum e le giocate locali revisionate. Interfaccia responsive.</div></div><div class="controls">
 <div class="control searchControl"><label>Personaggio</label><input id="search" list="charactersList" placeholder="Cerca…"><datalist id="charactersList"></datalist></div><button id="mobileFiltersButton" class="mobileOnly mobileHeaderButton" aria-expanded="false">Filtri</button><button id="mobileDetailsButton" class="mobileOnly mobileHeaderButton">Dettagli</button>
 <div class="control filterControl"><label>Sezione</label><select id="forumFilter"><option value="">Tutte</option></select></div>
 <div class="control filterControl"><label>Dal</label><select id="yearStart"></select></div><div class="control filterControl"><label>Al</label><select id="yearEnd"></select></div>
@@ -96,13 +258,13 @@ function updateDisplaySets(){
   }
   updateMobileModeNote();
 }
-const palette=['#e6a157','#63b3ed','#8bd17c','#d17be0','#ef6f6c','#6fd1c5','#d8c36a','#9a86f3','#f28eae','#77a6a1','#c68b59','#8dc6ff','#b4d273','#e18aaf','#a9a9e8','#ffb870','#6ab7a8','#c0a3ff','#80c7e8','#d8a6c7','#b7c76f','#db8e72'];
+const palette=['#c79a32','#6f8f45','#a85132','#7f4d68','#4e7782','#b56d32','#7770a4','#8b7b3f','#3f7664','#a03d37','#58709a','#7d5b38','#9a8847','#6c8251','#875776','#4b8178','#ad7448','#5e6f43','#8d4a34','#6f668f','#a88c3e','#57776d'];
 function spacingFactor(){return +document.getElementById('spacing').value}function world(n){const s=spacingFactor();return{x:n.x*s,y:n.y*s}}function screen(n){const p=world(n);return{x:(p.x-view.cx)*view.zoom+canvas.clientWidth/2,y:(p.y-view.cy)*view.zoom+canvas.clientHeight/2}}
 function resize(){const dpr=Math.max(1,devicePixelRatio||1),r=wrap.getBoundingClientRect();canvas.width=Math.floor(r.width*dpr);canvas.height=Math.floor(r.height*dpr);canvas.style.width=r.width+'px';canvas.style.height=r.height+'px';ctx.setTransform(dpr,0,0,dpr,0,0);updateDisplaySets();draw()}let resizeTimer=null;addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{resize();fitView()},120)});
 function activeGame(g){const a=+yearStart.value,b=+yearEnd.value,f=forumFilter.value;if(g.actualYear===null)return includeUnknown.checked&&(!f||g.forum===f);return g.actualYear>=a&&g.actualYear<=b&&(!f||g.forum===f)}
 function applyFilters(refit=false){filteredGameCounts=new Uint16Array(nodes.length);for(const g of games){const on=activeGame(g);gameActive[g.id]=on?1:0;if(on)for(const id of g.participants)filteredGameCounts[id]++}const me=+edgeThreshold.value,mn=+nodeThreshold.value,degree=new Uint16Array(nodes.length);filteredEdgesAll=[];for(const e of edges){let w=0;for(const id of e.gameIds)if(gameActive[id])w++;if(w>=me&&filteredGameCounts[e.source]>=mn&&filteredGameCounts[e.target]>=mn){filteredEdgesAll.push({source:e.source,target:e.target,weight:w});degree[e.source]++;degree[e.target]++}}filteredNodesAll=nodes.filter(n=>filteredGameCounts[n.id]>=mn&&degree[n.id]>0);updateDisplaySets();stats.textContent=`${filteredNodesAll.length.toLocaleString('it-IT')} personaggi · ${filteredEdgesAll.length.toLocaleString('it-IT')} legami · ${gameActive.reduce((a,b)=>a+b,0).toLocaleString('it-IT')} giocate`;if(selected)updateSidebar();if(refit)fitView();else draw()}
 function fitView(){const items=visibleNodes.length?visibleNodes:nodes;if(!items.length)return;const ps=items.map(world),xs=ps.map(p=>p.x),ys=ps.map(p=>p.y);const minx=Math.min(...xs),maxx=Math.max(...xs),miny=Math.min(...ys),maxy=Math.max(...ys);view.cx=(minx+maxx)/2;view.cy=(miny+maxy)/2;const pad=isMobileMode()?46:100;view.zoom=Math.max(.015,Math.min((canvas.clientWidth-pad)/Math.max(1,maxx-minx),(canvas.clientHeight-pad)/Math.max(1,maxy-miny)));view.fitZoom=view.zoom;draw()}
-function radius(n){return Math.min(13,2.2+.85*Math.sqrt(filteredGameCounts[n.id]||0))}function draw(){const w=canvas.clientWidth,h=canvas.clientHeight;ctx.clearRect(0,0,w,h);ctx.fillStyle='#0b0e13';ctx.fillRect(0,0,w,h);const nbr=new Set;if(selected){nbr.add(selected.id);for(const e of filteredEdgesAll){if(e.source===selected.id)nbr.add(e.target);if(e.target===selected.id)nbr.add(e.source)}}ctx.lineCap='round';for(const e of visibleEdges){const a=screen(nodes[e.source]),b=screen(nodes[e.target]),related=!selected||e.source===selected.id||e.target===selected.id;ctx.globalAlpha=selected?(related?.72:.025):Math.min(.33,.05+.045*Math.log2(1+e.weight));ctx.strokeStyle=related&&selected?'#efb25a':'#8493a4';ctx.lineWidth=.35+Math.log2(1+e.weight)*.65;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}ctx.globalAlpha=1;const labelCount=view.zoom>view.fitZoom*5?visibleNodes.length:view.zoom>view.fitZoom*2?140:35;const labels=new Set([...visibleNodes].sort((a,b)=>filteredGameCounts[b.id]-filteredGameCounts[a.id]).slice(0,labelCount).map(n=>n.id));for(const n of visibleNodes){const p=screen(n),r=radius(n),dim=selected&&!nbr.has(n.id);if(p.x<-25||p.x>w+25||p.y<-25||p.y>h+25)continue;ctx.globalAlpha=dim?.12:1;ctx.fillStyle=palette[n.community%palette.length];ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.fill();if(n===selected||n===hovered){ctx.strokeStyle='#fff3d6';ctx.lineWidth=n===selected?3:2;ctx.stroke()}if(n===selected||n===hovered||labels.has(n.id)){ctx.globalAlpha=dim?.14:.95;ctx.font=`${n===selected?'600 ':''}${view.zoom>view.fitZoom*4?12:10}px system-ui`;ctx.textAlign='center';ctx.textBaseline='bottom';ctx.fillStyle='#f4f6f8';ctx.fillText(n.name,p.x,p.y-r-3)}}ctx.globalAlpha=1}
+function radius(n){return Math.min(13,2.2+.85*Math.sqrt(filteredGameCounts[n.id]||0))}function draw(){const w=canvas.clientWidth,h=canvas.clientHeight;ctx.clearRect(0,0,w,h);ctx.fillStyle='#21180f';ctx.fillRect(0,0,w,h);const nbr=new Set;if(selected){nbr.add(selected.id);for(const e of filteredEdgesAll){if(e.source===selected.id)nbr.add(e.target);if(e.target===selected.id)nbr.add(e.source)}}ctx.lineCap='round';for(const e of visibleEdges){const a=screen(nodes[e.source]),b=screen(nodes[e.target]),related=!selected||e.source===selected.id||e.target===selected.id;ctx.globalAlpha=selected?(related?.72:.025):Math.min(.33,.05+.045*Math.log2(1+e.weight));ctx.strokeStyle=related&&selected?'#b52318':'#9a8455';ctx.lineWidth=.35+Math.log2(1+e.weight)*.65;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}ctx.globalAlpha=1;const labelCount=view.zoom>view.fitZoom*5?visibleNodes.length:view.zoom>view.fitZoom*2?140:35;const labels=new Set([...visibleNodes].sort((a,b)=>filteredGameCounts[b.id]-filteredGameCounts[a.id]).slice(0,labelCount).map(n=>n.id));for(const n of visibleNodes){const p=screen(n),r=radius(n),dim=selected&&!nbr.has(n.id);if(p.x<-25||p.x>w+25||p.y<-25||p.y>h+25)continue;ctx.globalAlpha=dim?.12:1;ctx.fillStyle=palette[n.community%palette.length];ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.fill();if(n===selected||n===hovered){ctx.strokeStyle='#f2d58a';ctx.lineWidth=n===selected?3:2;ctx.stroke()}if(n===selected||n===hovered||labels.has(n.id)){ctx.globalAlpha=dim?.14:.95;ctx.font=`${n===selected?'700 ':''}${view.zoom>view.fitZoom*4?13:11}px Georgia, 'Times New Roman', serif`;ctx.textAlign='center';ctx.textBaseline='bottom';ctx.fillStyle='#f3dfaa';ctx.fillText(n.name,p.x,p.y-r-3)}}ctx.globalAlpha=1}
 function pick(x,y){let best=null,d0=Infinity;for(const n of visibleNodes){const p=screen(n),d=Math.hypot(x-p.x,y-p.y);if(d<radius(n)+5&&d<d0){best=n;d0=d}}return best}canvas.onmousemove=e=>{const r=canvas.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;if(dragging){const dx=x-lastMouse.x,dy=y-lastMouse.y;if(Math.abs(dx)+Math.abs(dy)>1)moved=true;view.cx-=dx/view.zoom;view.cy-=dy/view.zoom;lastMouse={x,y};draw();return}const n=pick(x,y);if(n!==hovered){hovered=n;draw()}if(n){tooltip.style.display='block';tooltip.style.left=Math.min(x+13,r.width-250)+'px';tooltip.style.top=Math.min(y+13,r.height-75)+'px';tooltip.innerHTML=`<b>${esc(n.name)}</b><br>${filteredGameCounts[n.id]} giocate nel filtro`;canvas.style.cursor='pointer'}else{tooltip.style.display='none';canvas.style.cursor='grab'}};canvas.onmouseleave=()=>{hovered=null;dragging=false;tooltip.style.display='none';draw()};canvas.onmousedown=e=>{const r=canvas.getBoundingClientRect();lastMouse={x:e.clientX-r.left,y:e.clientY-r.top};dragging=true;moved=false;canvas.classList.add('dragging')};addEventListener('mouseup',()=>{dragging=false;canvas.classList.remove('dragging')});canvas.onclick=e=>{if(moved)return;const r=canvas.getBoundingClientRect(),n=pick(e.clientX-r.left,e.clientY-r.top);if(n)selectNode(n)};
 function zoomAt(factor,mx=canvas.clientWidth/2,my=canvas.clientHeight/2){const wx=view.cx+(mx-canvas.clientWidth/2)/view.zoom,wy=view.cy+(my-canvas.clientHeight/2)/view.zoom;const nz=Math.max(view.fitZoom*.15,Math.min(view.fitZoom*80,view.zoom*factor));view.cx=wx-(mx-canvas.clientWidth/2)/nz;view.cy=wy-(my-canvas.clientHeight/2)/nz;view.zoom=nz;draw()}canvas.addEventListener('wheel',e=>{e.preventDefault();const r=canvas.getBoundingClientRect();zoomAt(e.deltaY<0?1.18:.84,e.clientX-r.left,e.clientY-r.top)},{passive:false});
 let touchState=null;
