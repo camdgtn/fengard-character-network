@@ -1,26 +1,151 @@
-<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<style>body{max-width:920px;margin:40px auto;padding:0 22px;font:16px/1.58 Georgia,serif;color:#20242a}header{border-bottom:1px solid #bbb;margin-bottom:24px}article{padding:12px 0;border-bottom:1px solid #ddd}h1{font:600 28px/1.2 system-ui,sans-serif}h2{font:600 15px/1.3 system-ui,sans-serif;margin:0 0 5px}p{margin:0}.time{font-weight:400;color:#666}.meta,.kind{font:12px/1.5 system-ui,sans-serif;color:#666}.kind{margin-left:8px;padding:2px 5px;border:1px solid #bbb;border-radius:3px}</style></head><body><header><h1>Mothgaur, ritrovo al bosco</h1><p class='meta'>Fonte: 2006/Mothgaur, ritrovo al bosco.doc · data: 2006-01-19</p></header><article><h2><span class="time">23:12</span> Mothgaur</h2><p>Non mi parlate più, antichi? [un mormorio, mentre la mano libera, priva di guanto, sfiora una corteccia, passando. Pare restia ad abbandonarla, ed il braccio si protende all&#x27;indietro, man mano che l&#x27;impuro avanza. Ma i passi non cessano, e l&#x27;arto è costretto a ricadere al fianco] Anche voi avete dimenticato? O solo anche voi adesso volete dirmi che questo non è più il mio posto, dopo che ho tradito la vostra guardiana ed ho smarrito il vostro diletto? [una smorfia, corrucciata, a storcer le effemminate labbra, che fin troppo raddolciscono i ratti del viso del meticcio, non adombrato dai capelli, che sono legati in una bassa coda]</p></article>
-<article><h2><span class="time">23:16</span> Vahn</h2><p>[sentiero] proviene dalla città. Una lisa, stinta macchia di viola che scivola tra i tronchi del bosco, in silenzio. Buio e freddo tutt&#x27;intorno. Ed il vento che gioca svogliato con i lembi più bassi del mantello del bardo. Lui ha gli occhi fissi sul terreno, come a precedere il passo che sta per fare.</p></article>
-<article><h2><span class="time">23:18</span> Mothgaur</h2><p>sbuca infine nella radura. Pare esitare, il passo rallenta sensibilmente, prima di sfondare l&#x27;immaginaria linea di divisione fra il riparo degli antichi e lo spiazzo, scoperto, tagliato, indifeso. Ma il ladro non si ferma, e ora che i rami non più gli coprono la visuale può sollevare gli occhi. Interrogare, ora in silenzio, le stelle</p></article>
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mothgaur, ritrovo al bosco · Archivio Fengard</title>
+<style>
+:root {
+  --parchment: #d1b64f;
+  --parchment-light: #eadb97;
+  --parchment-pale: #f3e8b9;
+  --ink: #191207;
+  --wine: #7f0e0e;
+  --wine-dark: #560707;
+  --blue: #063bcc;
+  --rule: rgba(74, 48, 13, .34);
+}
+* { box-sizing: border-box; }
+html { min-height: 100%; background: #d8c16b; }
+body {
+  margin: 0;
+  min-height: 100%;
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  background:
+    radial-gradient(circle at 16% 8%, rgba(255,255,255,.38), transparent 31rem),
+    linear-gradient(90deg, rgba(90,55,12,.10), transparent 10%, transparent 90%, rgba(90,55,12,.10)),
+    #d8c16b;
+}
+a { color: #5b130c; }
+.archive-bar {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: .55rem clamp(.8rem, 3vw, 1.6rem);
+  color: #f8edc2;
+  background: linear-gradient(#6e1710, #4c0907);
+  border-bottom: 3px ridge #c3a758;
+  box-shadow: 0 2px 10px rgba(0,0,0,.3);
+  font: 700 .82rem/1.2 Arial, sans-serif;
+}
+.archive-bar a { color: #fff5cb; text-decoration: none; }
+.archive-bar a:hover { text-decoration: underline; }
+.page-wrap { width: min(1180px, calc(100% - 24px)); margin: 18px auto 50px; }
+.source-card {
+  border: 3px ridge #8e6924;
+  background: linear-gradient(rgba(255,255,255,.05), rgba(255,255,255,.01)), var(--parchment);
+  box-shadow: 0 12px 35px rgba(57,31,0,.25), inset 0 0 42px rgba(255,247,191,.25);
+}
+.source-header {
+  padding: 1rem 1.25rem .85rem;
+  border-bottom: 3px double rgba(82,48,4,.56);
+  background: linear-gradient(180deg, rgba(250,231,154,.85), rgba(208,182,79,.82));
+}
+.source-header h1 { margin: 0; font-size: clamp(1.45rem, 4vw, 2.25rem); line-height: 1.05; }
+.source-meta { margin-top: .5rem; color: #553c16; font: .78rem/1.45 Arial, sans-serif; }
+.source-body { padding: clamp(.65rem, 2.5vw, 1.45rem); overflow-wrap: anywhere; }
+.doc-line, .legacy-content p, .fallback-content article {
+  margin: 0 0 .42rem;
+  line-height: 1.28;
+}
+.doc-line.turn-line { margin-bottom: .48rem; }
+.doc-line.spacer { min-height: .55rem; margin: 0; }
+.doc-line.fate-line {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 1.2rem auto;
+  padding: .25rem .52rem .32rem;
+  color: #fff !important;
+  background: var(--wine);
+  border: 1px solid #f0d386;
+  box-shadow: 0 0 0 2px var(--wine), 0 3px 9px rgba(55,0,0,.18);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.08;
+}
+.doc-line.dice-line { color: var(--blue); font-weight: 600; }
+.dice-run { color: var(--blue) !important; }
+.action-run { color: #980e08 !important; }
+.inline-icon {
+  display: inline-block;
+  width: auto;
+  max-width: 42px;
+  max-height: 30px;
+  margin: 0 .18rem;
+  vertical-align: -.35em;
+  image-rendering: auto;
+}
+.doc-line img.inline-icon[src$='.gif'] { image-rendering: auto; }
+.legacy-content { max-width: 100%; }
+.legacy-content img { max-width: 100%; height: auto; }
+.legacy-content, .legacy-content > * { max-width: 100% !important; }
+.legacy-content table { width: auto !important; max-width: 100% !important; }
+.missing-icon { display:inline-block; min-width:1.1em; color:#5b130c; font-weight:700; text-align:center; vertical-align:baseline; }
+.legacy-content table { max-width: 100%; border-collapse: collapse; }
+.legacy-content td, .legacy-content th { padding: .2rem; }
+.fallback-content article { padding: .4rem 0 .65rem; border-bottom: 1px solid var(--rule); }
+.fallback-content h2 { margin: 0 0 .2rem; font: 700 1rem/1.3 Arial, sans-serif; }
+.fallback-content .time { font-weight: 400; color: #5a421c; }
+.render-note {
+  margin: 1.1rem 0 0;
+  padding: .6rem .75rem;
+  color: #5a421c;
+  border-top: 1px solid var(--rule);
+  font: .72rem/1.4 Arial, sans-serif;
+}
+@media (max-width: 680px) {
+  .archive-bar { position: static; align-items: flex-start; flex-direction: column; gap: .3rem; }
+  .page-wrap { width: min(100% - 10px, 1180px); margin-top: 5px; }
+  .source-card { border-width: 2px; }
+  .source-header { padding: .75rem .8rem; }
+  .source-body { padding: .62rem; font-size: .98rem; }
+  .doc-line.fate-line { width: 100%; font-size: .96rem; }
+  .inline-icon { max-height: 25px; max-width: 34px; }
+}
+</style>
+</head>
+<body>
+<nav class="archive-bar"><a href="../index.html">← Torna alla rete</a><span>Archivio locale · 2006-01-19</span></nav>
+<main class="page-wrap">
+<article class="source-card" data-render-mode="legacy-doc-transcription">
+<header class="source-header"><h1>Mothgaur, ritrovo al bosco</h1><div class="source-meta">2006-01-19 · fonte storica: 2006/Mothgaur, ritrovo al bosco.doc</div></header>
+<div class="source-body"><div class="fallback-content"><article><h2><span class="time">23:12</span> Mothgaur</h2><p>Non mi parlate più, antichi? [un mormorio, mentre la mano libera, priva di guanto, sfiora una corteccia, passando. Pare restia ad abbandonarla, ed il braccio si protende all'indietro, man mano che l'impuro avanza. Ma i passi non cessano, e l'arto è costretto a ricadere al fianco] Anche voi avete dimenticato? O solo anche voi adesso volete dirmi che questo non è più il mio posto, dopo che ho tradito la vostra guardiana ed ho smarrito il vostro diletto? [una smorfia, corrucciata, a storcer le effemminate labbra, che fin troppo raddolciscono i ratti del viso del meticcio, non adombrato dai capelli, che sono legati in una bassa coda]</p></article>
+<article><h2><span class="time">23:16</span> Vahn</h2><p>[sentiero] proviene dalla città. Una lisa, stinta macchia di viola che scivola tra i tronchi del bosco, in silenzio. Buio e freddo tutt'intorno. Ed il vento che gioca svogliato con i lembi più bassi del mantello del bardo. Lui ha gli occhi fissi sul terreno, come a precedere il passo che sta per fare.</p></article>
+<article><h2><span class="time">23:18</span> Mothgaur</h2><p>sbuca infine nella radura. Pare esitare, il passo rallenta sensibilmente, prima di sfondare l'immaginaria linea di divisione fra il riparo degli antichi e lo spiazzo, scoperto, tagliato, indifeso. Ma il ladro non si ferma, e ora che i rami non più gli coprono la visuale può sollevare gli occhi. Interrogare, ora in silenzio, le stelle</p></article>
 <article><h2><span class="time">23:21</span> Vahn</h2><p>[sentiero] è solo. Mentre cammina, a volte, tira un calcetto ad un sasso, che rotola e scompare nel sottobosco. Si passa una mano tra i capelli mentre va, sospirando appena ed orientandosi con sguardi placidi, quasi meccanici. Più avanza, più il sentiero che sta percorrendo si slarga, e gli alberi al suo fianco si fanno radi. Nel silenzio che lo circonda, a volte, si sente una foglia morta che cade.</p></article>
-<article><h2><span class="time">23:25</span> Mothgaur</h2><p>si ferma, finalmente, a pochi apssi dal torrente. Il capo sollevato, le braccia abbandonate lungo i fianchi, scostando il mantello a mostrare la cotta d&#x27;arme priva di simboli. Una figura piuttosto misera, da vedersi, che pare essere finita lì per errore, per caso. E che non dice nulla, non fa nulla. Semplicemente scruta il cielo. Senza apparentemente ottenerne risposta</p></article>
-<article><h2><span class="time">23:28</span> Vahn</h2><p>[limitare radura] segue d&#x27;istinto il vicino gorgoglio del corso d&#x27;acqua che scivola tra i tronchi, rigettandosi nella radura. Una mano, fine e pallida, stringe al collo quella che sembra una sciarpa di lana blu oltremare. Lo sguardo si solleva dal terreno, scrutando in avanti e subito assottigliandosi contro il vento freddo ed umido. Finendo di calpestare foglie morte, il bardo infine sbuca nello spiazzo aperto, rallentando appena il passo. Un velo di nebbia, questa notte, s&#x27;è adagiato sopra il bosco. Il grigiore informe si mescola e si rimescola davanti agli occhi dei due ignari ritrovati.</p></article>
-<article><h2><span class="time">23:31</span> Mothgaur</h2><p>[radura] emette un basso sospiro, o forse sbuffo, difficile a dirsi. Sulviso che i due tipi di sangue rendono perennemente abbronzato si dipinge una nuova smorfia, rassegnata. Così abbandonano gli occhi i loro muti interlocutori, per tornare alla terra. Quasi un moto di stupore, a rendersi conto d&#x27;esser stato avovlto da sottile nebbia, gentile amica che rende il bosco indistinto, come nostalgico. Pare aver deciso di tornare indietro, al punto da volgersi, nuovamente, verso gli alberi da cui poco prima era sbucato. Ma i passi s&#x27;arrestano. Di botto. E le labbra si stringono, fino ad inlividarsi</p></article>
-<article><h2><span class="time">23:34</span> Vahn</h2><p>[abituato agli umori silenziosi del bosco, l&#x27;elfo prosegue quieto, immergendosi nella nebbia come un ricordo. Il fiume lo guida, e lui segue la sua sponda. Poi, nel bianco, una sagoma indistinta affiora e scompare nuovamente. Come uno spettro.]...a..ahh! [un grido sommesso, e l&#x27;elfo sobbalza appena, sgranando gli occhi e frugando nel buio e nella nebbia, spaurito.]...chi...chi va là? [con tono appiattito dalla paura, mentre una mano guantata scivola sotto i lembi del manto, afferrando qualcosa.]</p></article>
-<article><h2><span class="time">23:38</span> Mothgaur</h2><p>lascia cadere il pensiero che lo aveva trattenuto neanche fosse una vecchia pezza, quando sente il grido sommesso. Uno scatto, a volgersi nella direzione da cui lo stesso è giunto. Il tizzone ormai spento che tiene nella mano resa rossa dal gelo trema, quasi impercettibile. Eppure non risponde nessuna voce. L&#x27;unica cambiamento è il volgersi anche del resto del corpo alla volta di Vahn. Incredulità, a dipingersi sul viso dell&#x27;impuro. Incredulità e timore</p></article>
+<article><h2><span class="time">23:25</span> Mothgaur</h2><p>si ferma, finalmente, a pochi apssi dal torrente. Il capo sollevato, le braccia abbandonate lungo i fianchi, scostando il mantello a mostrare la cotta d'arme priva di simboli. Una figura piuttosto misera, da vedersi, che pare essere finita lì per errore, per caso. E che non dice nulla, non fa nulla. Semplicemente scruta il cielo. Senza apparentemente ottenerne risposta</p></article>
+<article><h2><span class="time">23:28</span> Vahn</h2><p>[limitare radura] segue d'istinto il vicino gorgoglio del corso d'acqua che scivola tra i tronchi, rigettandosi nella radura. Una mano, fine e pallida, stringe al collo quella che sembra una sciarpa di lana blu oltremare. Lo sguardo si solleva dal terreno, scrutando in avanti e subito assottigliandosi contro il vento freddo ed umido. Finendo di calpestare foglie morte, il bardo infine sbuca nello spiazzo aperto, rallentando appena il passo. Un velo di nebbia, questa notte, s'è adagiato sopra il bosco. Il grigiore informe si mescola e si rimescola davanti agli occhi dei due ignari ritrovati.</p></article>
+<article><h2><span class="time">23:31</span> Mothgaur</h2><p>[radura] emette un basso sospiro, o forse sbuffo, difficile a dirsi. Sulviso che i due tipi di sangue rendono perennemente abbronzato si dipinge una nuova smorfia, rassegnata. Così abbandonano gli occhi i loro muti interlocutori, per tornare alla terra. Quasi un moto di stupore, a rendersi conto d'esser stato avovlto da sottile nebbia, gentile amica che rende il bosco indistinto, come nostalgico. Pare aver deciso di tornare indietro, al punto da volgersi, nuovamente, verso gli alberi da cui poco prima era sbucato. Ma i passi s'arrestano. Di botto. E le labbra si stringono, fino ad inlividarsi</p></article>
+<article><h2><span class="time">23:34</span> Vahn</h2><p>[abituato agli umori silenziosi del bosco, l'elfo prosegue quieto, immergendosi nella nebbia come un ricordo. Il fiume lo guida, e lui segue la sua sponda. Poi, nel bianco, una sagoma indistinta affiora e scompare nuovamente. Come uno spettro.]...a..ahh! [un grido sommesso, e l'elfo sobbalza appena, sgranando gli occhi e frugando nel buio e nella nebbia, spaurito.]...chi...chi va là? [con tono appiattito dalla paura, mentre una mano guantata scivola sotto i lembi del manto, afferrando qualcosa.]</p></article>
+<article><h2><span class="time">23:38</span> Mothgaur</h2><p>lascia cadere il pensiero che lo aveva trattenuto neanche fosse una vecchia pezza, quando sente il grido sommesso. Uno scatto, a volgersi nella direzione da cui lo stesso è giunto. Il tizzone ormai spento che tiene nella mano resa rossa dal gelo trema, quasi impercettibile. Eppure non risponde nessuna voce. L'unica cambiamento è il volgersi anche del resto del corpo alla volta di Vahn. Incredulità, a dipingersi sul viso dell'impuro. Incredulità e timore</p></article>
 <article><h2><span class="time">23:42</span> Vahn</h2><p>[Cerca di controllare il respiro, mentre muove piccoli passettini sul posto, girando lentamente su di sè e guardandosi attorno, a scatti. Sfodera la spada trasparente e sottile, che sguscia fuori con sibilo freddo e una lunga, profonda vibrazione. Un la perfetto, per un orecchio abituato.]...chi...chi va là, ho detto..! [ripete, deglutendo a vuoto.]</p></article>
 <article><h2><span class="time">23:45</span> Mothgaur</h2><p>[rimane fermo, lì dove si trova, di fianco al torrente, rivolto verso la voce di Vahn. forse sente attraverso le tenebre e la nebbia il suono della lama, o forse semplicemente comprende che la oce che va ponendo domande è reale] Un [non si muove per prendere la scimitarra, che pigra dorme nel fodero al suo fianco, sotto al manto. La voce è incerta, per acquisire vigore dopo una breve pausa, a completare la frase] viandante</p></article>
 <article><h2><span class="time">23:48</span> Vahn</h2><p>[chiude gli occhi e sospira di sollievo. I muscoli e i nervi si rilassano appena. La punta della lama si abbassa e tocca il terreno.]...perdonatemi...[dice al nulla, mentre si guarda attorno per individuare la direzione della voce]...ma da questa nebbia potrebbe uscire qualsiasi cosa...[dice con tono rincuorato, mentre prende a camminare verso Moth, tenendo la sapda di fianco, con una mano.]...state fermo, altrimenti ci giriamo attorno. [aggiunge, in un consiglio spassionato, con un mezzo sorriso sulle labbra. Rallenta il passo guando vede una figura prender forma nella nebbia davanti a lui. Assottiglia lo sguardo.]</p></article>
-<article><h2><span class="time">23:53</span> Mothgaur</h2><p>[rimane fermo, come gli è stato consigliato. solo un sussurro, sfugge alle sue labbra] Qualunque cosa...chiunque [nient&#x27;altro. Attende, gli occhi che seguon tutt&#x27;ora la direzione della voce. Poi, improvvisa, la voce, alta abbastanza da raggiungere il abrdo con chiarezza] No. Aspettate. Forse...non..[ha inizaito con sicurezza, che presto vien meno, nel parlare] Perchè avvicinarsi, poi? [un passo, portato all&#x27;indietro. Breve. Ma un accenno, ad allontanarsi]</p></article>
+<article><h2><span class="time">23:53</span> Mothgaur</h2><p>[rimane fermo, come gli è stato consigliato. solo un sussurro, sfugge alle sue labbra] Qualunque cosa...chiunque [nient'altro. Attende, gli occhi che seguon tutt'ora la direzione della voce. Poi, improvvisa, la voce, alta abbastanza da raggiungere il abrdo con chiarezza] No. Aspettate. Forse...non..[ha inizaito con sicurezza, che presto vien meno, nel parlare] Perchè avvicinarsi, poi? [un passo, portato all'indietro. Breve. Ma un accenno, ad allontanarsi]</p></article>
 <article><h2><span class="time">23:56</span> Vahn</h2><p>[rallenta il passo, alle domande di lui. Sospira, mentre rinfodera la spada.]...beh...se siete uno straniero...con questa nebbia non andrete lontano, nel bosco. [pratico, commenta, cercando di non perdere di vista la sagoma nella nebbia]...posso indicarvi la strada più breve per la città, magari...[aggiunge, con tono più cortese e sommesso. La sua voce è tersa e limpida, giovanile.]</p></article>
 <article><h2><span class="time">23:59</span> Mothgaur</h2><p>Gli dei avran cura di me, non datevi pena mio signore [debolmente torna a replicare, senza però indietreggiare oltre. Pare combattuto, e tale è la sua voce, risalente il desiderio di rivedere ed il terrore di farlo, in picchi di toni grevi che vengon subito seguiti da vocali troppo acute] Troppo disturbo, per uno come me. Non vorrei rubarvi agli impegni che vi han condotto qui [ambo le braccia, quella colla torcia spenta e quella libera, si solleano, come a richieder distanza]</p></article>
-<article><h2><span class="time">00:03</span> Vahn</h2><p>[ride allegramente, continuando ad avanzare senza fretta verso quella sagoma, che ormai è a meno di dieci metri]...impegni? [sorpreso e ilare]...La vostra è la cortesia prudente che si rivolge a un brigante. [commenta, leggero, allargando le braccia]...non temete, sono in pace...e...[sospira]...non affiderei il vostro destino agli dei. Hanno smesso di vegliare queste lande da tempo, ormai...[con tono sommesso, un po&#x27; scettico e lievemente realista. Si passa una mano tra i lunghi capelli dai riflessi di luna, sospirando ancora.]</p></article>
-<article><h2><span class="time">00:05</span> Mothgaur</h2><p>Se dite così potrebbero arrabbiarsi [l&#x27;unica frase che sfugge alle labbra, rassegnata. Sconfitto, s&#x27;abbandona ad una delle due pulsioni. La più semplice. La più dolorosa. E rimane fermo. Attendendo di essere visto, di essere raggiunto. La schiena dritta, rigida, la muscolatura di tutto il corpo contratta per la tensione]</p></article>
-<article><h2><span class="time">00:11</span> Vahn</h2><p>[avanza ancora, ignaro dello scherzo del fato. Scuote il capo]...arrabbiarsi? [ride sommessamente]...beh, almeno si potrebbe dire che esis...[la frase non termina, poichè il velo di nebbia che c&#x27;era tra i due s&#x27;è fatto troppo sottile per mistificare la vista. Il bardo rallenta il passo, smorzandolo fino ad una basita immobilità. Il sorriso sfuma in un&#x27;espressione assorta, quasi rapita. Sul fondo dei due grandi occhi verdi si mescola un dubbio sordido, addormentato da tempo. L&#x27;elfo scruta quel volto come se fosse un fantasma per davvero, le labbra semischiuse. Deglutisce a vuoto, senza riuscir, in un primo momento, a dire nulla.]</p></article>
-<article><h2><span class="time">00:14</span> Mothgaur</h2><p>[radura] Che esistano [termina la frase al posto del bardo, con tono sommesso, anzichè divertito come era stato il suo. Par meno sopreso dell&#x27;altro, quando gli occhi finalmente vedono. Ma non per questo le fonti della vista riescono a restar distaccate, assumendo invece sguardo che pare volteggiare fra il dolente e l&#x27;attonito] Mi....dispiace...Vahn. [non sopporta oltre la vista del viso di lui, e ne studia, quasi per contrasto, la &quot;sciarpa&quot;, il amnto, il modo di vestire. Ora a sua volta si muove, avanzando verso l&#x27;interlocutore]</p></article>
-<article><h2><span class="time">00:19</span> Vahn</h2><p>[radura][si prende il tempo di perdersi in quella visione, mentre dietro gli occhi verdi del giovane scorrono a nastro mille e più possibilità, soppesate e poi scartate in serie. Una mano, tremante, sale sul profilo delle proprie labbra. Il capo appena si scuote. Rimane immobile vedendolo avanzare verso di sè]...T...Tebryn...? [trova il coraggio di mormorare, tra l&#x27;incredulo e lo speranzoso.]...ma tu....tu sei morto. [aggiunge, coma a piazzare uno scoglio contro il naufragio.]...tu sei morto Tebryn. Non puoi essere qui...[ripete, cercando convinzione nel proprio tono. Ma al contempo gli occhi si fan lucidi, ed un accenno di scettico e nervoso sorriso si delinea sul profilo delle labbra.]</p></article>
-<article><h2><span class="time">00:23</span> Mothgaur</h2><p>[radura] [rallenta, udendo quelle parole, neanche fossero state corde tese contro le sue gambe, lame fatte di nebbia e colpa che gli affondavano nel ventre] Non..pensavo di trovarvi. Ammetto...di aver...sbagliato [pare seguire un ragionamento suo, anzichè quello che sarebbe logico, e aggrappandosi ad esso trova la froza per tornare ad avanzare, e fermarsi quindi di fronte al bardo, tanto vicino che basterebbe allungare un braccio per toccarlo. Ed è ciò che il ladro fa. allunga un braccio, quello dalla mano libera, porgendo la palma, resa rossa dal freddo, verso l&#x27;interlocutore] Mi dispiace di avervi mentito Vahn. Davvero, con tutto il cuore. Mi..dispiace [come un nastro rotto ripete quella frase, con tono sempre più sommesso, sempre più vissuto]</p></article>
-<article><h2><span class="time">00:27</span> Vahn</h2><p>[radura][deglutisce, accusando l&#x27;avanzata dell&#x27;altro come una condanna. Gli occhi sgranati sul volto dell&#x27;impuro. Quello sguardo liquido che si riflette su di un ricordo riemerso dall&#x27;oltretomba.]...men...mentito? [in un soffio, sembra non capire. Corruga la fronte, guarda la mano di lui. Allunga la propria, lentamente, appena tremante. Posa il proprio palmo su quello di lui, infine, trasalendo appena]...voi...voi siete qui? [mormora, incredulo]...non...non siete un fantasma che si maschera e mi strazia? [gli domanda come una supplica. Sorride, finalmente, stringendogli lentamente il polso. Lo guarda in volto. Ormai gli occhi non trattengono più le lacrime.]</p></article>
-<article><h2><span class="time">00:33</span> Mothgaur</h2><p>[radura] [si lascia toccare da lui, costringendosi a restare fermo, le dita distese, rigide. La pelle dell&#x27;impuro è fredda, a causa dell&#x27;assenza di guanti, arrossata. Ma sotto vi è un corpo decisamente tangibile. Le labbra sorridono, come però la voce non riesce a fare] Non penso che nessun fantasma potrebbe mai farlo, Vahn. Così come non avrei mai voluto straziarvi io [la voce si spezza, e il mezzosangue tace per qualche istante, così da poter poi riprendere a pralre conservando un poco di dignità] Vi...devo spiegare tante cose, se ancora le vorrete sentire [come specchio, a sua volta ora stringe le dita attorno al polso del bardo. Ma non sa trattenersi, e anche l&#x27;altra mano si libera, lasciando cadere la fiaccola spenta, così da potersi sollevare al viso di lui. Dita incerte, che quasi non osano sfiorarlo, ma che infine lo fanno, rapide, colpevoli, cercando di cancellare una lacrima, rubandola] Perdonatemi</p></article>
-<article><h2><span class="time">00:39</span> Vahn</h2><p>[Il volto del bardo avvampa, e il suo sguardo vacuo e sperso si aggrappa morbosamente al corpo dell&#x27;altro.]...vi...vi perdon..ohhh....[l&#x27;ultima parola strozzata, prima che i nervi del bardo cedano alla troppa emozione. Gli occhi si alzano al cielo, la testa barcolla appena, e la presa sul polso di lui si allenta. Tutto l&#x27;esile corpo del giovane diventa una voluta di tessuto viola che crolla tra le braccia dell&#x27;altro. Tutto si fa buio per il bardo, strattonato lontano dal mondo sensibile. Tutto scivola via, tranne forse l&#x27;ombra di un sorriso.]</p></article>
-<article><h2><span class="time">00:44</span> Mothgaur</h2><p>istintivamente le braccia che già erano protese a lui cercano di richiudersi contro a quel corpo che cade. Stupore, paura, a dipingersi sul volto del meticcio prima che capisca cosa è accaduto. Allora null&#x27;altro che espressione accigliata, nuovamente colpevole. Non forte nel fisico, indugia vari secondi, prima di sapersi risolvere. Ma infine sulla ragione ha la meglio l&#x27;istinto, e per quanto il ladro appaia timoroso di toccar il corpo dello svenuto, passa sotto alle gambe ed alle braccia di questi gli avambracci, per poi cercare, con notevole impiccio, di far passare parte del peso anche contro il busto. così, tenendo in braccio il bardo, a strana parodia di quello che potrebbe essere un cavaliere, lo porta con sè, con passetti esitanti, nuovamente verso le fila degli alberi. così scompaiono le due figure, presto null&#x27;altro che un indistinto fruscio, sempre più lontano</p></article></body></html>
+<article><h2><span class="time">00:03</span> Vahn</h2><p>[ride allegramente, continuando ad avanzare senza fretta verso quella sagoma, che ormai è a meno di dieci metri]...impegni? [sorpreso e ilare]...La vostra è la cortesia prudente che si rivolge a un brigante. [commenta, leggero, allargando le braccia]...non temete, sono in pace...e...[sospira]...non affiderei il vostro destino agli dei. Hanno smesso di vegliare queste lande da tempo, ormai...[con tono sommesso, un po' scettico e lievemente realista. Si passa una mano tra i lunghi capelli dai riflessi di luna, sospirando ancora.]</p></article>
+<article><h2><span class="time">00:05</span> Mothgaur</h2><p>Se dite così potrebbero arrabbiarsi [l'unica frase che sfugge alle labbra, rassegnata. Sconfitto, s'abbandona ad una delle due pulsioni. La più semplice. La più dolorosa. E rimane fermo. Attendendo di essere visto, di essere raggiunto. La schiena dritta, rigida, la muscolatura di tutto il corpo contratta per la tensione]</p></article>
+<article><h2><span class="time">00:11</span> Vahn</h2><p>[avanza ancora, ignaro dello scherzo del fato. Scuote il capo]...arrabbiarsi? [ride sommessamente]...beh, almeno si potrebbe dire che esis...[la frase non termina, poichè il velo di nebbia che c'era tra i due s'è fatto troppo sottile per mistificare la vista. Il bardo rallenta il passo, smorzandolo fino ad una basita immobilità. Il sorriso sfuma in un'espressione assorta, quasi rapita. Sul fondo dei due grandi occhi verdi si mescola un dubbio sordido, addormentato da tempo. L'elfo scruta quel volto come se fosse un fantasma per davvero, le labbra semischiuse. Deglutisce a vuoto, senza riuscir, in un primo momento, a dire nulla.]</p></article>
+<article><h2><span class="time">00:14</span> Mothgaur</h2><p>[radura] Che esistano [termina la frase al posto del bardo, con tono sommesso, anzichè divertito come era stato il suo. Par meno sopreso dell'altro, quando gli occhi finalmente vedono. Ma non per questo le fonti della vista riescono a restar distaccate, assumendo invece sguardo che pare volteggiare fra il dolente e l'attonito] Mi....dispiace...Vahn. [non sopporta oltre la vista del viso di lui, e ne studia, quasi per contrasto, la "sciarpa", il amnto, il modo di vestire. Ora a sua volta si muove, avanzando verso l'interlocutore]</p></article>
+<article><h2><span class="time">00:19</span> Vahn</h2><p>[radura][si prende il tempo di perdersi in quella visione, mentre dietro gli occhi verdi del giovane scorrono a nastro mille e più possibilità, soppesate e poi scartate in serie. Una mano, tremante, sale sul profilo delle proprie labbra. Il capo appena si scuote. Rimane immobile vedendolo avanzare verso di sè]...T...Tebryn...? [trova il coraggio di mormorare, tra l'incredulo e lo speranzoso.]...ma tu....tu sei morto. [aggiunge, coma a piazzare uno scoglio contro il naufragio.]...tu sei morto Tebryn. Non puoi essere qui...[ripete, cercando convinzione nel proprio tono. Ma al contempo gli occhi si fan lucidi, ed un accenno di scettico e nervoso sorriso si delinea sul profilo delle labbra.]</p></article>
+<article><h2><span class="time">00:23</span> Mothgaur</h2><p>[radura] [rallenta, udendo quelle parole, neanche fossero state corde tese contro le sue gambe, lame fatte di nebbia e colpa che gli affondavano nel ventre] Non..pensavo di trovarvi. Ammetto...di aver...sbagliato [pare seguire un ragionamento suo, anzichè quello che sarebbe logico, e aggrappandosi ad esso trova la froza per tornare ad avanzare, e fermarsi quindi di fronte al bardo, tanto vicino che basterebbe allungare un braccio per toccarlo. Ed è ciò che il ladro fa. allunga un braccio, quello dalla mano libera, porgendo la palma, resa rossa dal freddo, verso l'interlocutore] Mi dispiace di avervi mentito Vahn. Davvero, con tutto il cuore. Mi..dispiace [come un nastro rotto ripete quella frase, con tono sempre più sommesso, sempre più vissuto]</p></article>
+<article><h2><span class="time">00:27</span> Vahn</h2><p>[radura][deglutisce, accusando l'avanzata dell'altro come una condanna. Gli occhi sgranati sul volto dell'impuro. Quello sguardo liquido che si riflette su di un ricordo riemerso dall'oltretomba.]...men...mentito? [in un soffio, sembra non capire. Corruga la fronte, guarda la mano di lui. Allunga la propria, lentamente, appena tremante. Posa il proprio palmo su quello di lui, infine, trasalendo appena]...voi...voi siete qui? [mormora, incredulo]...non...non siete un fantasma che si maschera e mi strazia? [gli domanda come una supplica. Sorride, finalmente, stringendogli lentamente il polso. Lo guarda in volto. Ormai gli occhi non trattengono più le lacrime.]</p></article>
+<article><h2><span class="time">00:33</span> Mothgaur</h2><p>[radura] [si lascia toccare da lui, costringendosi a restare fermo, le dita distese, rigide. La pelle dell'impuro è fredda, a causa dell'assenza di guanti, arrossata. Ma sotto vi è un corpo decisamente tangibile. Le labbra sorridono, come però la voce non riesce a fare] Non penso che nessun fantasma potrebbe mai farlo, Vahn. Così come non avrei mai voluto straziarvi io [la voce si spezza, e il mezzosangue tace per qualche istante, così da poter poi riprendere a pralre conservando un poco di dignità] Vi...devo spiegare tante cose, se ancora le vorrete sentire [come specchio, a sua volta ora stringe le dita attorno al polso del bardo. Ma non sa trattenersi, e anche l'altra mano si libera, lasciando cadere la fiaccola spenta, così da potersi sollevare al viso di lui. Dita incerte, che quasi non osano sfiorarlo, ma che infine lo fanno, rapide, colpevoli, cercando di cancellare una lacrima, rubandola] Perdonatemi</p></article>
+<article><h2><span class="time">00:39</span> Vahn</h2><p>[Il volto del bardo avvampa, e il suo sguardo vacuo e sperso si aggrappa morbosamente al corpo dell'altro.]...vi...vi perdon..ohhh....[l'ultima parola strozzata, prima che i nervi del bardo cedano alla troppa emozione. Gli occhi si alzano al cielo, la testa barcolla appena, e la presa sul polso di lui si allenta. Tutto l'esile corpo del giovane diventa una voluta di tessuto viola che crolla tra le braccia dell'altro. Tutto si fa buio per il bardo, strattonato lontano dal mondo sensibile. Tutto scivola via, tranne forse l'ombra di un sorriso.]</p></article>
+<article><h2><span class="time">00:44</span> Mothgaur</h2><p>istintivamente le braccia che già erano protese a lui cercano di richiudersi contro a quel corpo che cade. Stupore, paura, a dipingersi sul volto del meticcio prima che capisca cosa è accaduto. Allora null'altro che espressione accigliata, nuovamente colpevole. Non forte nel fisico, indugia vari secondi, prima di sapersi risolvere. Ma infine sulla ragione ha la meglio l'istinto, e per quanto il ladro appaia timoroso di toccar il corpo dello svenuto, passa sotto alle gambe ed alle braccia di questi gli avambracci, per poi cercare, con notevole impiccio, di far passare parte del peso anche contro il busto. così, tenendo in braccio il bardo, a strana parodia di quello che potrebbe essere un cavaliere, lo porta con sè, con passetti esitanti, nuovamente verso le fila degli alberi. così scompaiono le due figure, presto null'altro che un indistinto fruscio, sempre più lontano</p></article></div><div class="render-note">Resa editoriale ricostruita dalla trascrizione disponibile; la formattazione originale non era recuperabile integralmente.</div></div>
+</article>
+</main>
+</body></html>

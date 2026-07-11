@@ -1,36 +1,161 @@
-<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<style>body{max-width:920px;margin:40px auto;padding:0 22px;font:16px/1.58 Georgia,serif;color:#20242a}header{border-bottom:1px solid #bbb;margin-bottom:24px}article{padding:12px 0;border-bottom:1px solid #ddd}h1{font:600 28px/1.2 system-ui,sans-serif}h2{font:600 15px/1.3 system-ui,sans-serif;margin:0 0 5px}p{margin:0}.time{font-weight:400;color:#666}.meta,.kind{font:12px/1.5 system-ui,sans-serif;color:#666}.kind{margin-left:8px;padding:2px 5px;border:1px solid #bbb;border-radius:3px}</style></head><body><header><h1>Mirael, Alerik piazzale. Sparlando di Isabelle</h1><p class='meta'>Fonte: 2005/Mirael, Alerik piazzale. Sparlando di Isabelle.doc · data: 2005-12-24</p></header><article><h2><span class="time">13:07</span> Mirael</h2><p>[ Piazzale ]Già [ taglia il discorso. Sposta lo sguardo sul cielo, si rabbroncia un istante. Seria, pensierosa ] Ci sono segni che rimangono indelebili. Ma...[alzando le spalle] Non è il caso di rattristarci ancora. Allora, Al...Cosa pensi di fare, ora?</p></article>
-<article><h2><span class="time">13:09</span> Alerik</h2><p>[piazzale] Non lo so...&lt;dice qualche attimo pensieroso. Solo ora si guarda brevemente attorno senza però soffermare lo sguardo su qualcuno in particolare&gt; Te l&#x27;ho detto..proverò ad andare avanti..nonostante tutto...&lt;sospira&gt; Anche perchè non voglio far pesare questa cosa a Mel...</p></article>
-<article><h2><span class="time">13:09</span> Vahn</h2><p>è coperto dal solito mantello color lavanda, ben tagliato lungo i fianchi stretti. Attorno al collo una bella sciarpa blu scuro, dalla quale fa capolino il viso pallido e affilato. L&#x27;elfo imbocca il piazzale costeggiando i palazzi sulla sinistra e dirigendosi verso una seconda via, più stretta.</p></article>
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mirael, Alerik piazzale. Sparlando di Isabelle · Archivio Fengard</title>
+<style>
+:root {
+  --parchment: #d1b64f;
+  --parchment-light: #eadb97;
+  --parchment-pale: #f3e8b9;
+  --ink: #191207;
+  --wine: #7f0e0e;
+  --wine-dark: #560707;
+  --blue: #063bcc;
+  --rule: rgba(74, 48, 13, .34);
+}
+* { box-sizing: border-box; }
+html { min-height: 100%; background: #d8c16b; }
+body {
+  margin: 0;
+  min-height: 100%;
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  background:
+    radial-gradient(circle at 16% 8%, rgba(255,255,255,.38), transparent 31rem),
+    linear-gradient(90deg, rgba(90,55,12,.10), transparent 10%, transparent 90%, rgba(90,55,12,.10)),
+    #d8c16b;
+}
+a { color: #5b130c; }
+.archive-bar {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: .55rem clamp(.8rem, 3vw, 1.6rem);
+  color: #f8edc2;
+  background: linear-gradient(#6e1710, #4c0907);
+  border-bottom: 3px ridge #c3a758;
+  box-shadow: 0 2px 10px rgba(0,0,0,.3);
+  font: 700 .82rem/1.2 Arial, sans-serif;
+}
+.archive-bar a { color: #fff5cb; text-decoration: none; }
+.archive-bar a:hover { text-decoration: underline; }
+.page-wrap { width: min(1180px, calc(100% - 24px)); margin: 18px auto 50px; }
+.source-card {
+  border: 3px ridge #8e6924;
+  background: linear-gradient(rgba(255,255,255,.05), rgba(255,255,255,.01)), var(--parchment);
+  box-shadow: 0 12px 35px rgba(57,31,0,.25), inset 0 0 42px rgba(255,247,191,.25);
+}
+.source-header {
+  padding: 1rem 1.25rem .85rem;
+  border-bottom: 3px double rgba(82,48,4,.56);
+  background: linear-gradient(180deg, rgba(250,231,154,.85), rgba(208,182,79,.82));
+}
+.source-header h1 { margin: 0; font-size: clamp(1.45rem, 4vw, 2.25rem); line-height: 1.05; }
+.source-meta { margin-top: .5rem; color: #553c16; font: .78rem/1.45 Arial, sans-serif; }
+.source-body { padding: clamp(.65rem, 2.5vw, 1.45rem); overflow-wrap: anywhere; }
+.doc-line, .legacy-content p, .fallback-content article {
+  margin: 0 0 .42rem;
+  line-height: 1.28;
+}
+.doc-line.turn-line { margin-bottom: .48rem; }
+.doc-line.spacer { min-height: .55rem; margin: 0; }
+.doc-line.fate-line {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 1.2rem auto;
+  padding: .25rem .52rem .32rem;
+  color: #fff !important;
+  background: var(--wine);
+  border: 1px solid #f0d386;
+  box-shadow: 0 0 0 2px var(--wine), 0 3px 9px rgba(55,0,0,.18);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.08;
+}
+.doc-line.dice-line { color: var(--blue); font-weight: 600; }
+.dice-run { color: var(--blue) !important; }
+.action-run { color: #980e08 !important; }
+.inline-icon {
+  display: inline-block;
+  width: auto;
+  max-width: 42px;
+  max-height: 30px;
+  margin: 0 .18rem;
+  vertical-align: -.35em;
+  image-rendering: auto;
+}
+.doc-line img.inline-icon[src$='.gif'] { image-rendering: auto; }
+.legacy-content { max-width: 100%; }
+.legacy-content img { max-width: 100%; height: auto; }
+.legacy-content, .legacy-content > * { max-width: 100% !important; }
+.legacy-content table { width: auto !important; max-width: 100% !important; }
+.missing-icon { display:inline-block; min-width:1.1em; color:#5b130c; font-weight:700; text-align:center; vertical-align:baseline; }
+.legacy-content table { max-width: 100%; border-collapse: collapse; }
+.legacy-content td, .legacy-content th { padding: .2rem; }
+.fallback-content article { padding: .4rem 0 .65rem; border-bottom: 1px solid var(--rule); }
+.fallback-content h2 { margin: 0 0 .2rem; font: 700 1rem/1.3 Arial, sans-serif; }
+.fallback-content .time { font-weight: 400; color: #5a421c; }
+.render-note {
+  margin: 1.1rem 0 0;
+  padding: .6rem .75rem;
+  color: #5a421c;
+  border-top: 1px solid var(--rule);
+  font: .72rem/1.4 Arial, sans-serif;
+}
+@media (max-width: 680px) {
+  .archive-bar { position: static; align-items: flex-start; flex-direction: column; gap: .3rem; }
+  .page-wrap { width: min(100% - 10px, 1180px); margin-top: 5px; }
+  .source-card { border-width: 2px; }
+  .source-header { padding: .75rem .8rem; }
+  .source-body { padding: .62rem; font-size: .98rem; }
+  .doc-line.fate-line { width: 100%; font-size: .96rem; }
+  .inline-icon { max-height: 25px; max-width: 34px; }
+}
+</style>
+</head>
+<body>
+<nav class="archive-bar"><a href="../index.html">← Torna alla rete</a><span>Archivio locale · 2005-12-24</span></nav>
+<main class="page-wrap">
+<article class="source-card" data-render-mode="legacy-doc-transcription">
+<header class="source-header"><h1>Mirael, Alerik piazzale. Sparlando di Isabelle</h1><div class="source-meta">2005-12-24 · fonte storica: 2005/Mirael, Alerik piazzale. Sparlando di Isabelle.doc</div></header>
+<div class="source-body"><div class="fallback-content"><article><h2><span class="time">13:07</span> Mirael</h2><p>[ Piazzale ]Già [ taglia il discorso. Sposta lo sguardo sul cielo, si rabbroncia un istante. Seria, pensierosa ] Ci sono segni che rimangono indelebili. Ma...[alzando le spalle] Non è il caso di rattristarci ancora. Allora, Al...Cosa pensi di fare, ora?</p></article>
+<article><h2><span class="time">13:09</span> Alerik</h2><p>[piazzale] Non lo so...&lt;dice qualche attimo pensieroso. Solo ora si guarda brevemente attorno senza però soffermare lo sguardo su qualcuno in particolare&gt; Te l'ho detto..proverò ad andare avanti..nonostante tutto...&lt;sospira&gt; Anche perchè non voglio far pesare questa cosa a Mel...</p></article>
+<article><h2><span class="time">13:09</span> Vahn</h2><p>è coperto dal solito mantello color lavanda, ben tagliato lungo i fianchi stretti. Attorno al collo una bella sciarpa blu scuro, dalla quale fa capolino il viso pallido e affilato. L'elfo imbocca il piazzale costeggiando i palazzi sulla sinistra e dirigendosi verso una seconda via, più stretta.</p></article>
 <article><h2><span class="time">13:10</span> Mirael</h2><p>[ Piazzale ] Un giorno ti sveglierai..e...Boh [ scosta lo sguardo, riconosce Vahn ] Guarda, qualcun che porterà allegria in questa grigia giornata....[sospira] Magari offro un panino anche a lui..</p></article>
-<article><h2><span class="time">13:12</span> Alerik</h2><p>[piazzale] Mi sveglierò? Che volevi dire? &lt;insiste sull&#x27;argomento per non farlo cadere...si impensierisce visibilmente e segue lo sguardo di lei col proprio&gt;</p></article>
-<article><h2><span class="time">13:13</span> Vahn</h2><p>[piazzale]......Isabelle, Isabelle...che arte che ha! [canticchia]...lei ti trasforma tutto quel che le va! [il tono della piccola marcetta è allegro e strafottente. Il bardo è più o meno all&#x27;altezza dei due, anche se ancora non li vede.] 13.13 Mirael [ Piazzale ] [ Inclina il capo] Ti sveglierai e scoprirai che il Cielo è ancora Blu...[[ Accellera il passo, scosta la stoffa che copre il panierino che tiene al braccio, prendendo un panino, caldo ] Cantore...[Tendendoglielo] Buondì</p></article>
+<article><h2><span class="time">13:12</span> Alerik</h2><p>[piazzale] Mi sveglierò? Che volevi dire? &lt;insiste sull'argomento per non farlo cadere...si impensierisce visibilmente e segue lo sguardo di lei col proprio&gt;</p></article>
+<article><h2><span class="time">13:13</span> Vahn</h2><p>[piazzale]......Isabelle, Isabelle...che arte che ha! [canticchia]...lei ti trasforma tutto quel che le va! [il tono della piccola marcetta è allegro e strafottente. Il bardo è più o meno all'altezza dei due, anche se ancora non li vede.] 13.13 Mirael [ Piazzale ] [ Inclina il capo] Ti sveglierai e scoprirai che il Cielo è ancora Blu...[[ Accellera il passo, scosta la stoffa che copre il panierino che tiene al braccio, prendendo un panino, caldo ] Cantore...[Tendendoglielo] Buondì</p></article>
 <article><h2><span class="time">13:14</span> Alerik</h2><p>[piazzale] Uhm...&lt;si muove anche lui..osserva Vahn con un sorriso senza dire nulla&gt;</p></article>
-<article><h2><span class="time">13:16</span> Vahn</h2><p>[piazzale]...un&#x27;arpa, una spada o un bel canarino? Lei te ne fa un arredo da comodino! [poi sobbalza alla comparsa di Mirael, fissando il panino che gli tende con aria basita e spaventata]...ah! Cielo, Mirael...! [un sospiro, si calma. Sorride]...Che colpo...pensavo fossi la sorella del fabbro. [lo sguardo vivace, prende il panino]...hmmm...che profumo....fatto tu? [domanda osservando la prelibatezza]</p></article>
-<article><h2><span class="time">13:17</span> Vahn</h2><p>[piazzale]...oh, buondì Al..! [lo saluta allegramente, un&#x27;aria furba negli occhi, come il ragazzino che ha appena fatto una marachella.]</p></article>
-<article><h2><span class="time">13:18</span> Mirael</h2><p>[ Piazzale ] [ Inclina il capo, candidamente ] No...li ho comprati da Pierre, il Fornaio...E&#x27; buono, e caldo....[esita] Assomiglio a Isabelle? Io sono più bella...[arricciando il nasino] e più di compagnia,..vero, Ale?</p></article>
+<article><h2><span class="time">13:16</span> Vahn</h2><p>[piazzale]...un'arpa, una spada o un bel canarino? Lei te ne fa un arredo da comodino! [poi sobbalza alla comparsa di Mirael, fissando il panino che gli tende con aria basita e spaventata]...ah! Cielo, Mirael...! [un sospiro, si calma. Sorride]...Che colpo...pensavo fossi la sorella del fabbro. [lo sguardo vivace, prende il panino]...hmmm...che profumo....fatto tu? [domanda osservando la prelibatezza]</p></article>
+<article><h2><span class="time">13:17</span> Vahn</h2><p>[piazzale]...oh, buondì Al..! [lo saluta allegramente, un'aria furba negli occhi, come il ragazzino che ha appena fatto una marachella.]</p></article>
+<article><h2><span class="time">13:18</span> Mirael</h2><p>[ Piazzale ] [ Inclina il capo, candidamente ] No...li ho comprati da Pierre, il Fornaio...E' buono, e caldo....[esita] Assomiglio a Isabelle? Io sono più bella...[arricciando il nasino] e più di compagnia,..vero, Ale?</p></article>
 <article><h2><span class="time">13:19</span> Vahn</h2><p>[piazzale][annusice alle parole di lei, più volte]...decisamente, Miri. [afferma convinto]...quando ti offre il thè, sembra di intrattenersi con una colonna di ghiaccio. [ride, frivolo e sfacciato. Da un morso al panino e mugugna piacevolmente un complimento incapibile.]</p></article>
 <article><h2><span class="time">13:20</span> Alerik</h2><p>[piazzale] Buongiorno a te Vahn...&lt;lo guarda. Pare piu sereno oggi il ragazzo rispetto al giorno precedente. Poi sposta lo sguardo su Miri&gt; Non conosco Isabelle...ma sono sicuro di si...specialmente quando sei di buon umore..&lt;ammicca e poi ritorna con gli occhi verso Vahn&gt;</p></article>
 <article><h2><span class="time">13:21</span> Mirael</h2><p>[ Piazzale ] [ Inclina il capo, alzando le spalle] Perà è molto brava...proprio una Donna come si deve...Mica come me..[ addosso, ha un mantello rosso, chiuso. gonna nera, stivaletti di pelle]</p></article>
 <article><h2><span class="time">13:23</span> Vahn</h2><p>[piazzale]...brava? [domanda incredulo, dopo aver inghiottito il boccone]...se intendi dire che è brava a farl la statua di ghiaccio, concordo. [acido, da un altro morso, poi sorride ad Alerik]...come va? [amichevolmente, con sguardo ridente]</p></article>
 <article><h2><span class="time">13:23</span> Vahn</h2><p>si riempie la sciarpa di briciole.</p></article>
-<article><h2><span class="time">13:25</span> Alerik</h2><p>[piazzale] &lt;ridacchia alla risposta che Vahn dà alla locandiera. Lo guarda tranquillo&gt; Abbastanza bene, grazie..&lt;gli replica..pacato, ancora lo guarda&gt; Credo di aver finalmente capito che intendevi dire ieri...e l&#x27;altro giorno...</p></article>
-<article><h2><span class="time">13:25</span> Mirael</h2><p>[ Piazzale ] Ma è quello che serve in Società, Vahn...Una statua di ghiaccio, bella. L&#x27;apparenza conta, non l&#x27;Essenza. [ candidamente. Guarda i due, fa un passo indietro ]</p></article>
-<article><h2><span class="time">13:25</span> Shaenlyr</h2><p>[stradina sud] S&#x27;affaccia furtiva sul piazzale sporgendo appena il capo da dietro l&#x27;angolo, tenendosi accostata al muro; il cappuccio è ancora ben calcato sulla fronte e ne adombra il volto confondendone i lineamenti. Osserva da quella posizione i movimenti che avvengono nella piazza, zitta e ferma, per veder ma non esser vista</p></article>
-<article><h2><span class="time">13:27</span> Vahn</h2><p>[piazzale][continua poi a sparlare con Mirael, agitando una mano]...quando ti guarda con quegli occhi...[simula un brivido]...non sai se voglia servirti altro thè, oppure se voglia sgozzarti. [fa spallucce, mordendo il panino]...e per la società che c&#x27;è qui a Ghileas ti assicuro che le statue nell&#x27;anticamera degli Altatorre bastano e avanzano. [come una comare, poi annuisce ad Alerik, dandogli una leggera pacca sulla spalla]...sono contento, Al...in realtà ti confesso che avevo una paura tremenda che tu reagissi alle mie provocazioni. [ride]</p></article>
+<article><h2><span class="time">13:25</span> Alerik</h2><p>[piazzale] &lt;ridacchia alla risposta che Vahn dà alla locandiera. Lo guarda tranquillo&gt; Abbastanza bene, grazie..&lt;gli replica..pacato, ancora lo guarda&gt; Credo di aver finalmente capito che intendevi dire ieri...e l'altro giorno...</p></article>
+<article><h2><span class="time">13:25</span> Mirael</h2><p>[ Piazzale ] Ma è quello che serve in Società, Vahn...Una statua di ghiaccio, bella. L'apparenza conta, non l'Essenza. [ candidamente. Guarda i due, fa un passo indietro ]</p></article>
+<article><h2><span class="time">13:25</span> Shaenlyr</h2><p>[stradina sud] S'affaccia furtiva sul piazzale sporgendo appena il capo da dietro l'angolo, tenendosi accostata al muro; il cappuccio è ancora ben calcato sulla fronte e ne adombra il volto confondendone i lineamenti. Osserva da quella posizione i movimenti che avvengono nella piazza, zitta e ferma, per veder ma non esser vista</p></article>
+<article><h2><span class="time">13:27</span> Vahn</h2><p>[piazzale][continua poi a sparlare con Mirael, agitando una mano]...quando ti guarda con quegli occhi...[simula un brivido]...non sai se voglia servirti altro thè, oppure se voglia sgozzarti. [fa spallucce, mordendo il panino]...e per la società che c'è qui a Ghileas ti assicuro che le statue nell'anticamera degli Altatorre bastano e avanzano. [come una comare, poi annuisce ad Alerik, dandogli una leggera pacca sulla spalla]...sono contento, Al...in realtà ti confesso che avevo una paura tremenda che tu reagissi alle mie provocazioni. [ride]</p></article>
 <article><h2><span class="time">13:28</span> Vahn</h2><p>oggi ha la parlantina rampante.</p></article>
 <article><h2><span class="time">13:30</span> Alerik</h2><p>[piazzale] Non riuscirei mai a colpirti Vahn...&lt;ammette ridacchiando e scuotendo appena il capo, non par volersi esprimere sulla sorella del fabbro&gt; Avevi ragione in ogni caso...&lt;sospira appena, lancia uno sguardo a Mirael&gt; Quando hai detto che non ho fatto altro che farmi del male da solo...</p></article>
 <article><h2><span class="time">13:31</span> Mirael</h2><p>[ Piazzale ] Povera Signornia..[ guarda Vahn, con uno sguardo di lieve rimprovero ] Non biasimarla. Lei è così perchè la società glielo impone...Che ti ha fatto, di male? [Inclinando il capino. Alta, secca, spalle fragili, coperte dal mantello rosso. Due passi lontana da Vahn e Alerik. ] Bhe...[ non dice niente, allo sguardo dello Svestito, abbassa gli occhi ]</p></article>
-<article><h2><span class="time">13:35</span> Shaenlyr</h2><p>[stradina a sud] Continua a rimaner incollata al muro, a cui appoggia spalla e mano destra, quasi sull&#x27;angolo di questo. Sporge la testa quel tanto che basta per continuare ad osservare, e forse aguzzar abbastanza l&#x27;udito per raccogliere i suoni provenienti dal piazzale. Non compie il minimo movimento, quasi fosse una statua o un doccione ancorato alle pietre dell&#x27;edificio.</p></article>
-<article><h2><span class="time">13:36</span> Vahn</h2><p>[piazzale][abbassa la voce verso Alerik]...scusa un secondo. Adesso rispondo a Mirael per le rime, poi sono tutto tuo. [dice scherzoso, ammiccandogli e poi rivolgendosi a lei. Alza l&#x27;indice, caricando la frase che sta per dire]...cosa mi ha fatto? [sgrana gli occhi]...le ho portato l&#x27;arpa per un semplice restauro...e lei me l&#x27;ha trasformata in...in...[schifato, gesticola ampiamente]...in un&#x27;offesa allo sguardo! Te lo giuro, Miri...non riuscivo più a riconoscere il mio strumento! [si lamenta animatamente]...e...e il bello è che s&#x27;è offesa! E mi ha detto in faccia che io sono troppo sensibile, che penso al passato e altre simili assurdità! [parla rapidissimamente, eccentrico. Si scosta una ciocca dal volto. Sorride d&#x27;incredulità]...io l&#x27;avrò vista tre volte in tutto, miri! [protesta, poi sbuffa, scuotendo il capo]</p></article>
+<article><h2><span class="time">13:35</span> Shaenlyr</h2><p>[stradina a sud] Continua a rimaner incollata al muro, a cui appoggia spalla e mano destra, quasi sull'angolo di questo. Sporge la testa quel tanto che basta per continuare ad osservare, e forse aguzzar abbastanza l'udito per raccogliere i suoni provenienti dal piazzale. Non compie il minimo movimento, quasi fosse una statua o un doccione ancorato alle pietre dell'edificio.</p></article>
+<article><h2><span class="time">13:36</span> Vahn</h2><p>[piazzale][abbassa la voce verso Alerik]...scusa un secondo. Adesso rispondo a Mirael per le rime, poi sono tutto tuo. [dice scherzoso, ammiccandogli e poi rivolgendosi a lei. Alza l'indice, caricando la frase che sta per dire]...cosa mi ha fatto? [sgrana gli occhi]...le ho portato l'arpa per un semplice restauro...e lei me l'ha trasformata in...in...[schifato, gesticola ampiamente]...in un'offesa allo sguardo! Te lo giuro, Miri...non riuscivo più a riconoscere il mio strumento! [si lamenta animatamente]...e...e il bello è che s'è offesa! E mi ha detto in faccia che io sono troppo sensibile, che penso al passato e altre simili assurdità! [parla rapidissimamente, eccentrico. Si scosta una ciocca dal volto. Sorride d'incredulità]...io l'avrò vista tre volte in tutto, miri! [protesta, poi sbuffa, scuotendo il capo]</p></article>
 <article><h2>Vahn<span class="kind">private_whisper_retained</span></h2><p>sussurra a Mirael: woooow!</p></article>
 <article><h2><span class="time">13:38</span> Vahn</h2><p>[piazzale]...le ho scritto, le ho scritto più volte! [gesticola]...volevo riappacificarmi, ma lei niente. [poi sorride maligno]..ma dopo il piccolo messaggio che ho lasciato in bacheca, non potrà non rispondermi. [annuisce una volta, soddisfatto.]</p></article>
 <article><h2><span class="time">13:38</span> Alerik</h2><p>[piazzale] Mi spiace per la tua arpa Vahn...&lt;poi gli molla una pacca sulla spalla&gt; Era bello sentirti suonare...ma mi accontenterò del canto...&lt;lo guarda sorridendo&gt; Ora mi sa che vado a cercare qualcosa da mettere sotto i denti ragazzi...&lt;guarda ancora tranquillo Miri e Vahn...accennando ad allontanarsi da loro&gt;</p></article>
-<article><h2><span class="time">13:38</span> Mirael</h2><p>[ Piazzale ] [ Passa le mani una sull&#x27;altra, sfregandole. Alza gli occhi su Vahn. Inclina il capo ] Capisco. beh...lei...lei è un genio. Probabilmente, ha visto nella tua Arpa quello che lei ti ha reso. Beh...Forse avrebbe dovuto chiedertelo. ma...Non la giudicare...[non dice altro. Aggrotta le sopracciglia, per poi aggiungere ] Pensa un po&#x27; quanto mi mordo la lingua io, quando certe Signore si permettono di esprimere giudizi su di me. E sono quì da pochi giorni...[candidamente. Guarda poi Al ]..Vai? A presto..</p></article>
-<article><h2><span class="time">13:41</span> Vahn</h2><p>[piazzale]...a-a-aspettami! [dice al fratello, alzando una mano verso di lui]...ti seguo! [sorride, poi torna a guardare Mirael]...beh, non la giudico, non la giudico. [concede, alzando appena le mani]...ma ti assicuro che ora come ora sono ancor più convinto del fatto che la linea che divide la genialità dalla follia sia sottilissima! [sottolinea l&#x27;ultimo termine con sarcasmo, poi ride, seguendo Al]...a presto, Mirael...[la saluta gioviale]...e guarda che l&#x27;apparenza, nelle donne, dura solo qualche anno. Meglio aver qualcosa dentro, altrimenti...[scuote il capo, salutandola con la mano.]</p></article>
+<article><h2><span class="time">13:38</span> Mirael</h2><p>[ Piazzale ] [ Passa le mani una sull'altra, sfregandole. Alza gli occhi su Vahn. Inclina il capo ] Capisco. beh...lei...lei è un genio. Probabilmente, ha visto nella tua Arpa quello che lei ti ha reso. Beh...Forse avrebbe dovuto chiedertelo. ma...Non la giudicare...[non dice altro. Aggrotta le sopracciglia, per poi aggiungere ] Pensa un po' quanto mi mordo la lingua io, quando certe Signore si permettono di esprimere giudizi su di me. E sono quì da pochi giorni...[candidamente. Guarda poi Al ]..Vai? A presto..</p></article>
+<article><h2><span class="time">13:41</span> Vahn</h2><p>[piazzale]...a-a-aspettami! [dice al fratello, alzando una mano verso di lui]...ti seguo! [sorride, poi torna a guardare Mirael]...beh, non la giudico, non la giudico. [concede, alzando appena le mani]...ma ti assicuro che ora come ora sono ancor più convinto del fatto che la linea che divide la genialità dalla follia sia sottilissima! [sottolinea l'ultimo termine con sarcasmo, poi ride, seguendo Al]...a presto, Mirael...[la saluta gioviale]...e guarda che l'apparenza, nelle donne, dura solo qualche anno. Meglio aver qualcosa dentro, altrimenti...[scuote il capo, salutandola con la mano.]</p></article>
 <article><h2><span class="time">13:42</span> Mirael</h2><p>[ Piazzale ] Mi stai dicendo che sono vecchia, vahn? [ gli urla dietro, di rimando. Sorride, le guance lievemente arrossate. Scuote il capino, e riprende la strada verso la Locanda ]</p></article>
 <article><h2><span class="time">13:43</span> Vahn</h2><p>dice il tutto in maniera molto leggera, senza peso. Oggi il bardo non cammina; volteggia.</p></article>
-<article><h2><span class="time">13:43</span> Alerik</h2><p>[piazzale] A presto Miri...&lt;annuisce brevemente a Vahn dopo aver rivolto un cenno alla ragazza, agitando una mano verso di lei, facendole ciao ciao. Poi si dirige verso nord est..aumentando il passo. Con un cenno invita l&#x27;elfo a fare lo stesso&gt; Dai, che ho fame! &lt;ridacchia&gt;</p></article>
-<article><h2><span class="time">13:44</span> Vahn</h2><p>ride alle ultime parole di Mirael, salutandola ancora con la mano e lanciandole uno sguardo allegro. Poi segue d&#x27;appresso Alerik.</p></article>
-<article><h2><span class="time">13:44</span> Shaenlyr</h2><p>[stradina a sud] con movimento lento ritira il capo, riportandosi completamente dietro il muro. Fa un passo all&#x27;indietro, la mano destra ancora appoggiata alle pietre, per poi staccarsi e voltarsi verso dove era venuta, prendendo a camminare a passo moderato</p></article>
-<article><h2><span class="time">13:45</span> Vahn</h2><p>[piazzale] scompare ben presto assieme al fratello in una delle viuzze che dal piazzale si addentrano nelle viscere cittadine. Tira un vento frizzante, quest&#x27;oggi.</p></article></body></html>
+<article><h2><span class="time">13:43</span> Alerik</h2><p>[piazzale] A presto Miri...&lt;annuisce brevemente a Vahn dopo aver rivolto un cenno alla ragazza, agitando una mano verso di lei, facendole ciao ciao. Poi si dirige verso nord est..aumentando il passo. Con un cenno invita l'elfo a fare lo stesso&gt; Dai, che ho fame! &lt;ridacchia&gt;</p></article>
+<article><h2><span class="time">13:44</span> Vahn</h2><p>ride alle ultime parole di Mirael, salutandola ancora con la mano e lanciandole uno sguardo allegro. Poi segue d'appresso Alerik.</p></article>
+<article><h2><span class="time">13:44</span> Shaenlyr</h2><p>[stradina a sud] con movimento lento ritira il capo, riportandosi completamente dietro il muro. Fa un passo all'indietro, la mano destra ancora appoggiata alle pietre, per poi staccarsi e voltarsi verso dove era venuta, prendendo a camminare a passo moderato</p></article>
+<article><h2><span class="time">13:45</span> Vahn</h2><p>[piazzale] scompare ben presto assieme al fratello in una delle viuzze che dal piazzale si addentrano nelle viscere cittadine. Tira un vento frizzante, quest'oggi.</p></article></div><div class="render-note">Resa editoriale ricostruita dalla trascrizione disponibile; la formattazione originale non era recuperabile integralmente.</div></div>
+</article>
+</main>
+</body></html>

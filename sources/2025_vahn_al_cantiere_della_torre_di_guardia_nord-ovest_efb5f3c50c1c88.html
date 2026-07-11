@@ -1,4 +1,129 @@
-<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<style>body{max-width:920px;margin:40px auto;padding:0 22px;font:16px/1.58 Georgia,serif;color:#20242a}header{border-bottom:1px solid #bbb;margin-bottom:24px}article{padding:12px 0;border-bottom:1px solid #ddd}h1{font:600 28px/1.2 system-ui,sans-serif}h2{font:600 15px/1.3 system-ui,sans-serif;margin:0 0 5px}p{margin:0}.time{font-weight:400;color:#666}.meta,.kind{font:12px/1.5 system-ui,sans-serif;color:#666}.kind{margin-left:8px;padding:2px 5px;border:1px solid #bbb;border-radius:3px}</style></head><body><header><h1>Vahn al cantiere della Torre di Guardia Nord-Ovest</h1><p class='meta'>Fonte: 2025/Vahn al cantiere della Torre di Guardia Nord-Ovest.docx · data: 2025-07-28</p></header><article><h2><span class="time">11:27</span> Vahn</h2><p>[torre di guardia secondaria] percorre la via che dal cimitero ritorna pigramente alla cittá interna. Lungo la via, si era fermato dal forno di Gertrude, uno dei pochi rimessi in attivitá dopo i recenti avvenimenti. L&#x27;elfo si era fatto mettere da parte qualche pagnotta per i pochi carpentieri disponibili che stanno ora lavorando ad una torre di guardia secondaria, affacciata verso il bosco sacro, che presenta instabilità nella parte superiore. Il bardo protegge il pane dalla pioggia battente, mettendolo al riparo sotto al suo mantello, mentre si avvicina al cantiere. Saluta i due uomini e la donna attualmente sul posto, sorridendo ai loro visi stanchi e ai loro occhi tenaci.</p></article>
-<article><h2><span class="time">11:36</span> Vahn</h2><p>[torre di guardia secondaria] ....ho portato delle vivande. [fermandosi sotto l&#x27;arco che rimane di uno degli ingressi della torre, messo in sicurezza temporanea. I tre si avvicinano e il bardo tira fuori un cestino con le pagnotte e una vecchia bottiglia di Rhum riempita d&#x27;acqua. Un povero pasto, ma i tre fanno volentieri una pausa. L&#x27;elfo si guarda attorno: Il cantiere alla torre di guardia secondaria, posta sul bastione nord-est delle mura, è stato avviato in questi giorni con la benedizione di Floranus e sotto il vigile occhio di due capimastri del Collegio dei Muratori. Le maestranze stanno sgombrando la sommità del torrione dai detriti e dalle pietre smosse, crollate durante i giorni oscuri della maledizione. Alcune merlature, incrinate e pericolanti, sono state rimosse e deposte su telai lignei per eventuale reimpiego. Una struttura provvisoria in travi di quercia, che funge da ponteggio e passaggio sicuro per gli operai, sta prendendo forma molto lentamente attorno alla torre danneggiata.]</p></article>
-<article><h2><span class="time">11:43</span> Vahn</h2><p>[torre di guardia secondaria] [Vahn sta parlando con Everett, un uomo sulla cinquantina che sta dirigendo il cantiere, uno di quelle anime che ha deciso di restare per dare man forte. Era mastro scalpellino in una bottega che ai tempi ‘era la piú richiesta dall’Accademia dei CsR’ e sta cercando fondi per rimetterla in piedi e trovare altri assistenti. l&#x27;elfo chiede aggiornamenti. Everett mostra all’elfo le mura esterne della torre: ha tracciato coi gessetti le linee di frattura, mentre gli apprendisti registravano le misure su tavolette cerate. Dice che per consolidarla serve calce viva miscelata con sabbia fine di fiume per rifare le giunzioni delle pietre e grappe in ferro battuto, forgiate in loco, per rinforzare gli angoli. Ma mancano i danari e le mani, al momento, e i lavori procedono al rilento.]…riporteró ad Adema Moore. [dice l’elfo, segnandosi mentalmente quel resoconto. I tre divorano il pane. La fame batte piú della pioggia.]</p></article></body></html>
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vahn al cantiere della Torre di Guardia Nord-Ovest · Archivio Fengard</title>
+<style>
+:root {
+  --parchment: #d1b64f;
+  --parchment-light: #eadb97;
+  --parchment-pale: #f3e8b9;
+  --ink: #191207;
+  --wine: #7f0e0e;
+  --wine-dark: #560707;
+  --blue: #063bcc;
+  --rule: rgba(74, 48, 13, .34);
+}
+* { box-sizing: border-box; }
+html { min-height: 100%; background: #d8c16b; }
+body {
+  margin: 0;
+  min-height: 100%;
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  background:
+    radial-gradient(circle at 16% 8%, rgba(255,255,255,.38), transparent 31rem),
+    linear-gradient(90deg, rgba(90,55,12,.10), transparent 10%, transparent 90%, rgba(90,55,12,.10)),
+    #d8c16b;
+}
+a { color: #5b130c; }
+.archive-bar {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: .55rem clamp(.8rem, 3vw, 1.6rem);
+  color: #f8edc2;
+  background: linear-gradient(#6e1710, #4c0907);
+  border-bottom: 3px ridge #c3a758;
+  box-shadow: 0 2px 10px rgba(0,0,0,.3);
+  font: 700 .82rem/1.2 Arial, sans-serif;
+}
+.archive-bar a { color: #fff5cb; text-decoration: none; }
+.archive-bar a:hover { text-decoration: underline; }
+.page-wrap { width: min(1180px, calc(100% - 24px)); margin: 18px auto 50px; }
+.source-card {
+  border: 3px ridge #8e6924;
+  background: linear-gradient(rgba(255,255,255,.05), rgba(255,255,255,.01)), var(--parchment);
+  box-shadow: 0 12px 35px rgba(57,31,0,.25), inset 0 0 42px rgba(255,247,191,.25);
+}
+.source-header {
+  padding: 1rem 1.25rem .85rem;
+  border-bottom: 3px double rgba(82,48,4,.56);
+  background: linear-gradient(180deg, rgba(250,231,154,.85), rgba(208,182,79,.82));
+}
+.source-header h1 { margin: 0; font-size: clamp(1.45rem, 4vw, 2.25rem); line-height: 1.05; }
+.source-meta { margin-top: .5rem; color: #553c16; font: .78rem/1.45 Arial, sans-serif; }
+.source-body { padding: clamp(.65rem, 2.5vw, 1.45rem); overflow-wrap: anywhere; }
+.doc-line, .legacy-content p, .fallback-content article {
+  margin: 0 0 .42rem;
+  line-height: 1.28;
+}
+.doc-line.turn-line { margin-bottom: .48rem; }
+.doc-line.spacer { min-height: .55rem; margin: 0; }
+.doc-line.fate-line {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 1.2rem auto;
+  padding: .25rem .52rem .32rem;
+  color: #fff !important;
+  background: var(--wine);
+  border: 1px solid #f0d386;
+  box-shadow: 0 0 0 2px var(--wine), 0 3px 9px rgba(55,0,0,.18);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.08;
+}
+.doc-line.dice-line { color: var(--blue); font-weight: 600; }
+.dice-run { color: var(--blue) !important; }
+.action-run { color: #980e08 !important; }
+.inline-icon {
+  display: inline-block;
+  width: auto;
+  max-width: 42px;
+  max-height: 30px;
+  margin: 0 .18rem;
+  vertical-align: -.35em;
+  image-rendering: auto;
+}
+.doc-line img.inline-icon[src$='.gif'] { image-rendering: auto; }
+.legacy-content { max-width: 100%; }
+.legacy-content img { max-width: 100%; height: auto; }
+.legacy-content, .legacy-content > * { max-width: 100% !important; }
+.legacy-content table { width: auto !important; max-width: 100% !important; }
+.missing-icon { display:inline-block; min-width:1.1em; color:#5b130c; font-weight:700; text-align:center; vertical-align:baseline; }
+.legacy-content table { max-width: 100%; border-collapse: collapse; }
+.legacy-content td, .legacy-content th { padding: .2rem; }
+.fallback-content article { padding: .4rem 0 .65rem; border-bottom: 1px solid var(--rule); }
+.fallback-content h2 { margin: 0 0 .2rem; font: 700 1rem/1.3 Arial, sans-serif; }
+.fallback-content .time { font-weight: 400; color: #5a421c; }
+.render-note {
+  margin: 1.1rem 0 0;
+  padding: .6rem .75rem;
+  color: #5a421c;
+  border-top: 1px solid var(--rule);
+  font: .72rem/1.4 Arial, sans-serif;
+}
+@media (max-width: 680px) {
+  .archive-bar { position: static; align-items: flex-start; flex-direction: column; gap: .3rem; }
+  .page-wrap { width: min(100% - 10px, 1180px); margin-top: 5px; }
+  .source-card { border-width: 2px; }
+  .source-header { padding: .75rem .8rem; }
+  .source-body { padding: .62rem; font-size: .98rem; }
+  .doc-line.fate-line { width: 100%; font-size: .96rem; }
+  .inline-icon { max-height: 25px; max-width: 34px; }
+}
+</style>
+</head>
+<body>
+<nav class="archive-bar"><a href="../index.html">← Torna alla rete</a><span>Archivio locale · 2025-07-28</span></nav>
+<main class="page-wrap">
+<article class="source-card" data-render-mode="docx-rich">
+<header class="source-header"><h1>Vahn al cantiere della Torre di Guardia Nord-Ovest</h1><div class="source-meta">2025-07-28 · fonte storica: 2025/Vahn al cantiere della Torre di Guardia Nord-Ovest.docx</div></header>
+<div class="source-body"><div class="doc-line turn-line"><span style="color:#000000;background-color:#CFB650;font-size:10.00pt;font-family:Verdana, serif">11:27</span><span style="font-weight:700;color:#000000;background-color:#CFB650;font-size:10.00pt;font-family:Verdana, serif"> Vahn</span><span class="action-run" style="color:#CC0000;background-color:#CFB650;font-size:10.00pt;font-family:Verdana, serif"> [torre di guardia secondaria] percorre la via che dal cimitero ritorna pigramente alla cittá interna. Lungo la via, si era fermato dal forno di Gertrude, uno dei pochi rimessi in attivitá dopo i recenti avvenimenti. L&#x27;elfo si era fatto mettere da parte qualche pagnotta per i pochi carpentieri disponibili che stanno ora lavorando ad una torre di guardia secondaria, affacciata verso il bosco sacro, che presenta instabilità nella parte superiore. Il bardo protegge il pane dalla pioggia battente, mettendolo al riparo sotto al suo mantello, mentre si avvicina al cantiere. Saluta i due uomini e la donna attualmente sul posto, sorridendo ai loro visi stanchi e ai loro occhi tenaci.</span></div>
+<div class="doc-line turn-line"><span style="color:#000000;background-color:#CFB650;font-size:10.00pt;font-family:Verdana, serif">11:36</span><span class="dice-run" style="color:#0000FF;background-color:#CFB650;font-size:10.00pt;font-family:Verdana, serif"><img class="inline-icon" src="../assets/2025_vahn_al_cantiere_della_torre_di_guardia_nord-ovest_efb5f3c50c1c88/image1.gif" alt=""></span><span style="font-weight:700;color:#000000;background-color:#CFB650;font-size:10.00pt;font-family:Verdana, serif">Vahn</span><span style="color:#000000;background-color:#CFB650;font-size:10.00pt;font-family:Verdana, serif"> </span><span style="color:#000000;background-color:#CFB650;font-size:10.00pt;font-family:Verdana, serif"><img class="inline-icon" src="../assets/2025_vahn_al_cantiere_della_torre_di_guardia_nord-ovest_efb5f3c50c1c88/image2.gif" alt=""></span><span style="color:#000000;background-color:#CFB650;font-size:10.00pt;font-family:Verdana, serif"> [torre di guardia secondaria] ....ho portato delle vivande. [fermandosi sotto l&#x27;arco che rimane di uno degli ingressi della torre, messo in sicurezza temporanea. I tre si avvicinano e il bardo tira fuori un cestino con le pagnotte e una vecchia bottiglia di Rhum riempita d&#x27;acqua. Un povero pasto, ma i tre fanno volentieri una pausa. L&#x27;elfo si guarda attorno: Il cantiere alla torre di guardia secondaria, posta sul bastione nord-est delle mura, è stato avviato in questi giorni con la benedizione di Floranus e sotto il vigile occhio di due capimastri del Collegio dei Muratori. Le maestranze stanno sgombrando la sommità del torrione dai detriti e dalle pietre smosse, crollate durante i giorni oscuri della maledizione. Alcune merlature, incrinate e pericolanti, sono state rimosse e deposte su telai lignei per eventuale reimpiego. Una struttura provvisoria in travi di quercia, che funge da ponteggio e passaggio sicuro per gli operai, sta prendendo forma molto lentamente attorno alla torre danneggiata.]</span></div>
+<div class="doc-line turn-line"><span style="color:#000000;background-color:#CFB650;font-size:7.50pt;font-family:Verdana, serif">11:43</span><span class="dice-run" style="color:#0000FF;background-color:#CFB650;font-size:7.50pt;font-family:Verdana, serif"><img class="inline-icon" src="../assets/2025_vahn_al_cantiere_della_torre_di_guardia_nord-ovest_efb5f3c50c1c88/image1.gif" alt=""></span><span style="font-weight:700;color:#000000;background-color:#CFB650;font-size:10.00pt;font-family:Verdana, serif">Vahn</span><span style="color:#000000;background-color:#CFB650;font-size:10.00pt;font-family:Verdana, serif"> </span><span style="color:#000000;background-color:#CFB650;font-size:10.00pt;font-family:Verdana, serif"><img class="inline-icon" src="../assets/2025_vahn_al_cantiere_della_torre_di_guardia_nord-ovest_efb5f3c50c1c88/image2.gif" alt=""></span><span style="color:#000000;background-color:#CFB650;font-size:10.00pt;font-family:Verdana, serif"> [torre di guardia secondaria] [Vahn sta parlando con Everett, un uomo sulla cinquantina che sta dirigendo il cantiere, uno di quelle anime che ha deciso di restare per dare man forte. Era mastro scalpellino in una bottega che ai tempi ‘era la piú richiesta dall’Accademia dei CsR’ e sta cercando fondi per rimetterla in piedi e trovare altri assistenti. l&#x27;elfo chiede aggiornamenti. Everett mostra all’elfo le mura esterne della torre: ha tracciato coi gessetti le linee di frattura, mentre gli apprendisti registravano le misure su tavolette cerate. Dice che per consolidarla serve calce viva miscelata con sabbia fine di fiume per rifare le giunzioni delle pietre e grappe in ferro battuto, forgiate in loco, per rinforzare gli angoli. Ma mancano i danari e le mani, al momento, e i lavori procedono al rilento.]…riporteró ad Adema Moore. [dice l’elfo, segnandosi mentalmente quel resoconto. I tre divorano il pane. La fame batte piú della pioggia.]</span></div><div class="render-note">Formattazione, colori e immagini recuperati dal DOCX originale.</div></div>
+</article>
+</main>
+</body></html>

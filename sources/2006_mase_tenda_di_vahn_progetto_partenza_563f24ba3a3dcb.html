@@ -1,50 +1,175 @@
-<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<style>body{max-width:920px;margin:40px auto;padding:0 22px;font:16px/1.58 Georgia,serif;color:#20242a}header{border-bottom:1px solid #bbb;margin-bottom:24px}article{padding:12px 0;border-bottom:1px solid #ddd}h1{font:600 28px/1.2 system-ui,sans-serif}h2{font:600 15px/1.3 system-ui,sans-serif;margin:0 0 5px}p{margin:0}.time{font-weight:400;color:#666}.meta,.kind{font:12px/1.5 system-ui,sans-serif;color:#666}.kind{margin-left:8px;padding:2px 5px;border:1px solid #bbb;border-radius:3px}</style></head><body><header><h1>Mase, tenda di Vahn. Progetto partenza</h1><p class='meta'>Fonte: 2006/Mase, tenda di Vahn. Progetto partenza.doc · data: 2006-01-23</p></header><article><h2><span class="time">15:56</span> Maseeri</h2><p>[tenda di vahn] [appoggiata ad un paio di cuscini color porpora socchiude gli occhi lascianod che il vapore del the le investa il viso poi sospirando torna a guardare il bardo] troppo freddo [annuisce continuando] a me si è chiuso lo stomaco, ieri Keylan pensava fossi in cinta [ridacchia divertita come mai, lancia un&#x27;occhiata al compagno] dovevi vedere com&#x27;è sbiancato..</p></article>
-<article><h2><span class="time">16:02</span> Vahn</h2><p>[tenda di Vahn][ride sommessamente.]...l&#x27;hai fatto apposta, ammettilo. Ti diverti a tormentarlo...[scherza, bevendo un altro sorso. Capelli sciolti, che ricadono in ciocche disordinate. Un maglione scuro a trame strette, che delinea l&#x27;esile figura. Circondato da quegli oggetti e quelle stoffe, sembra quasi un giovane principe in rovina.]...Sai, Mase....[non la guarda]...oltre che per il piacere di bere con te....[sorride, poi sospira]...volevo anche parlarti in privato. E&#x27; da un po&#x27; che non ci concediamo un po&#x27; di tempo...[parla sommessamente, con voce musicale e un po&#x27; bassa. Ora la guarda]</p></article>
-<article><h2><span class="time">16:06</span> Maseeri</h2><p>[tenda di vahn] [ridacchia arrossendo all&#x27;illazione dell&#x27;elfo] oh lo ammetto potevo evitare il gioco degli equivoci e non l&#x27;ho fatto [torna a bere abbassando gli occhi, si passa una mano sulla gonna scura e ne appiana una piega ascoltando il bardo ora attenta, alza lo sguardo, incrociando quello dell&#x27;amico e lo fissa a lungo] ..un po&#x27; di tempo.. [dice vaga] ..per ispirarci?</p></article>
-<article><h2><span class="time">16:08</span> Vahn</h2><p>[tenda di Vahn][basta un sorriso al bardo per rispondere alla domanda di lei. La guarda di sottecchi, mentre beve lentamente. Socchiude gli occhi assaporando l&#x27;infuso, per poi poggiare la tazza su un minuscolo comò.]...già...[mormora, stravaccandosi sui cuscini]...inizio...a sentirmi un po&#x27; stretto. [la guarda ora seriamente]</p></article>
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mase, tenda di Vahn. Progetto partenza · Archivio Fengard</title>
+<style>
+:root {
+  --parchment: #d1b64f;
+  --parchment-light: #eadb97;
+  --parchment-pale: #f3e8b9;
+  --ink: #191207;
+  --wine: #7f0e0e;
+  --wine-dark: #560707;
+  --blue: #063bcc;
+  --rule: rgba(74, 48, 13, .34);
+}
+* { box-sizing: border-box; }
+html { min-height: 100%; background: #d8c16b; }
+body {
+  margin: 0;
+  min-height: 100%;
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  background:
+    radial-gradient(circle at 16% 8%, rgba(255,255,255,.38), transparent 31rem),
+    linear-gradient(90deg, rgba(90,55,12,.10), transparent 10%, transparent 90%, rgba(90,55,12,.10)),
+    #d8c16b;
+}
+a { color: #5b130c; }
+.archive-bar {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: .55rem clamp(.8rem, 3vw, 1.6rem);
+  color: #f8edc2;
+  background: linear-gradient(#6e1710, #4c0907);
+  border-bottom: 3px ridge #c3a758;
+  box-shadow: 0 2px 10px rgba(0,0,0,.3);
+  font: 700 .82rem/1.2 Arial, sans-serif;
+}
+.archive-bar a { color: #fff5cb; text-decoration: none; }
+.archive-bar a:hover { text-decoration: underline; }
+.page-wrap { width: min(1180px, calc(100% - 24px)); margin: 18px auto 50px; }
+.source-card {
+  border: 3px ridge #8e6924;
+  background: linear-gradient(rgba(255,255,255,.05), rgba(255,255,255,.01)), var(--parchment);
+  box-shadow: 0 12px 35px rgba(57,31,0,.25), inset 0 0 42px rgba(255,247,191,.25);
+}
+.source-header {
+  padding: 1rem 1.25rem .85rem;
+  border-bottom: 3px double rgba(82,48,4,.56);
+  background: linear-gradient(180deg, rgba(250,231,154,.85), rgba(208,182,79,.82));
+}
+.source-header h1 { margin: 0; font-size: clamp(1.45rem, 4vw, 2.25rem); line-height: 1.05; }
+.source-meta { margin-top: .5rem; color: #553c16; font: .78rem/1.45 Arial, sans-serif; }
+.source-body { padding: clamp(.65rem, 2.5vw, 1.45rem); overflow-wrap: anywhere; }
+.doc-line, .legacy-content p, .fallback-content article {
+  margin: 0 0 .42rem;
+  line-height: 1.28;
+}
+.doc-line.turn-line { margin-bottom: .48rem; }
+.doc-line.spacer { min-height: .55rem; margin: 0; }
+.doc-line.fate-line {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 1.2rem auto;
+  padding: .25rem .52rem .32rem;
+  color: #fff !important;
+  background: var(--wine);
+  border: 1px solid #f0d386;
+  box-shadow: 0 0 0 2px var(--wine), 0 3px 9px rgba(55,0,0,.18);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.08;
+}
+.doc-line.dice-line { color: var(--blue); font-weight: 600; }
+.dice-run { color: var(--blue) !important; }
+.action-run { color: #980e08 !important; }
+.inline-icon {
+  display: inline-block;
+  width: auto;
+  max-width: 42px;
+  max-height: 30px;
+  margin: 0 .18rem;
+  vertical-align: -.35em;
+  image-rendering: auto;
+}
+.doc-line img.inline-icon[src$='.gif'] { image-rendering: auto; }
+.legacy-content { max-width: 100%; }
+.legacy-content img { max-width: 100%; height: auto; }
+.legacy-content, .legacy-content > * { max-width: 100% !important; }
+.legacy-content table { width: auto !important; max-width: 100% !important; }
+.missing-icon { display:inline-block; min-width:1.1em; color:#5b130c; font-weight:700; text-align:center; vertical-align:baseline; }
+.legacy-content table { max-width: 100%; border-collapse: collapse; }
+.legacy-content td, .legacy-content th { padding: .2rem; }
+.fallback-content article { padding: .4rem 0 .65rem; border-bottom: 1px solid var(--rule); }
+.fallback-content h2 { margin: 0 0 .2rem; font: 700 1rem/1.3 Arial, sans-serif; }
+.fallback-content .time { font-weight: 400; color: #5a421c; }
+.render-note {
+  margin: 1.1rem 0 0;
+  padding: .6rem .75rem;
+  color: #5a421c;
+  border-top: 1px solid var(--rule);
+  font: .72rem/1.4 Arial, sans-serif;
+}
+@media (max-width: 680px) {
+  .archive-bar { position: static; align-items: flex-start; flex-direction: column; gap: .3rem; }
+  .page-wrap { width: min(100% - 10px, 1180px); margin-top: 5px; }
+  .source-card { border-width: 2px; }
+  .source-header { padding: .75rem .8rem; }
+  .source-body { padding: .62rem; font-size: .98rem; }
+  .doc-line.fate-line { width: 100%; font-size: .96rem; }
+  .inline-icon { max-height: 25px; max-width: 34px; }
+}
+</style>
+</head>
+<body>
+<nav class="archive-bar"><a href="../index.html">← Torna alla rete</a><span>Archivio locale · 2006-01-23</span></nav>
+<main class="page-wrap">
+<article class="source-card" data-render-mode="legacy-doc-transcription">
+<header class="source-header"><h1>Mase, tenda di Vahn. Progetto partenza</h1><div class="source-meta">2006-01-23 · fonte storica: 2006/Mase, tenda di Vahn. Progetto partenza.doc</div></header>
+<div class="source-body"><div class="fallback-content"><article><h2><span class="time">15:56</span> Maseeri</h2><p>[tenda di vahn] [appoggiata ad un paio di cuscini color porpora socchiude gli occhi lascianod che il vapore del the le investa il viso poi sospirando torna a guardare il bardo] troppo freddo [annuisce continuando] a me si è chiuso lo stomaco, ieri Keylan pensava fossi in cinta [ridacchia divertita come mai, lancia un'occhiata al compagno] dovevi vedere com'è sbiancato..</p></article>
+<article><h2><span class="time">16:02</span> Vahn</h2><p>[tenda di Vahn][ride sommessamente.]...l'hai fatto apposta, ammettilo. Ti diverti a tormentarlo...[scherza, bevendo un altro sorso. Capelli sciolti, che ricadono in ciocche disordinate. Un maglione scuro a trame strette, che delinea l'esile figura. Circondato da quegli oggetti e quelle stoffe, sembra quasi un giovane principe in rovina.]...Sai, Mase....[non la guarda]...oltre che per il piacere di bere con te....[sorride, poi sospira]...volevo anche parlarti in privato. E' da un po' che non ci concediamo un po' di tempo...[parla sommessamente, con voce musicale e un po' bassa. Ora la guarda]</p></article>
+<article><h2><span class="time">16:06</span> Maseeri</h2><p>[tenda di vahn] [ridacchia arrossendo all'illazione dell'elfo] oh lo ammetto potevo evitare il gioco degli equivoci e non l'ho fatto [torna a bere abbassando gli occhi, si passa una mano sulla gonna scura e ne appiana una piega ascoltando il bardo ora attenta, alza lo sguardo, incrociando quello dell'amico e lo fissa a lungo] ..un po' di tempo.. [dice vaga] ..per ispirarci?</p></article>
+<article><h2><span class="time">16:08</span> Vahn</h2><p>[tenda di Vahn][basta un sorriso al bardo per rispondere alla domanda di lei. La guarda di sottecchi, mentre beve lentamente. Socchiude gli occhi assaporando l'infuso, per poi poggiare la tazza su un minuscolo comò.]...già...[mormora, stravaccandosi sui cuscini]...inizio...a sentirmi un po' stretto. [la guarda ora seriamente]</p></article>
 <article><h2><span class="time">16:11</span> Maseeri</h2><p>[tenda di vahn] ..siamo in due [dice ora franca, guardandolo in viso] ..ho bisogno di camminare di nuovo in strade che non portino dalla Cueva a qui e viceversa [dice quasi insofferente.. un sorriso aperto, occhi verdi vivaci sul bardo] quando si parte?</p></article>
-<article><h2><span class="time">16:13</span> Vahn</h2><p>[tenda di Vahn][scuote il capo, sospirando appena]...non lo so...[la guarda un po&#x27; triste]...non so più nulla ormai. [si lamenta, sbuffando. Pausa, un paio di sguardi. Tormenta un angolo di cuscino]...è tornato Tebryn. [dice solo, con tono bassissimo e senza guardarla.]</p></article>
-<article><h2><span class="time">16:15</span> Maseeri</h2><p>[tenda di vahn] uh.. [cela mettendo il naso nella tazza il sorrisetto malizioso e fa appello a tutte le sue qualità di attrice per restare seria e compita] ..e dov&#x27;è?</p></article>
+<article><h2><span class="time">16:13</span> Vahn</h2><p>[tenda di Vahn][scuote il capo, sospirando appena]...non lo so...[la guarda un po' triste]...non so più nulla ormai. [si lamenta, sbuffando. Pausa, un paio di sguardi. Tormenta un angolo di cuscino]...è tornato Tebryn. [dice solo, con tono bassissimo e senza guardarla.]</p></article>
+<article><h2><span class="time">16:15</span> Maseeri</h2><p>[tenda di vahn] uh.. [cela mettendo il naso nella tazza il sorrisetto malizioso e fa appello a tutte le sue qualità di attrice per restare seria e compita] ..e dov'è?</p></article>
 <article><h2><span class="time">16:18</span> Vahn</h2><p>[tenda di Vahn][la guarda, rassegnato]...e chi lo sa? [disappunto]...due notti fa è comparso, mi ha chiesto di perdonarlo, e io gli sono svenuto tra le braccia. [sbuffa]...poi...[fa un gesto di stizza con le mani]...sparito. Non un segno, nè una parola. [sospira, scuotendo il capo. La guarda cercando un appiglio]</p></article>
-<article><h2><span class="time">16:19</span> Maseeri</h2><p>[tenda di Vahn] [si accoccola sul cuscino guardandolo] quindi seguiamo le sue tracce? [chiede come se fosse la cosa più naturale del mondo] due o tre giorni di vantaggio non sono poi molti [rilfette a voce alta e sorride all&#x27;elfo] ..non vorrai far passare vent&#x27;anni prima di rivederlo, vero?</p></article>
+<article><h2><span class="time">16:19</span> Maseeri</h2><p>[tenda di Vahn] [si accoccola sul cuscino guardandolo] quindi seguiamo le sue tracce? [chiede come se fosse la cosa più naturale del mondo] due o tre giorni di vantaggio non sono poi molti [rilfette a voce alta e sorride all'elfo] ..non vorrai far passare vent'anni prima di rivederlo, vero?</p></article>
 <article><h2><span class="time">16:21</span> Vahn</h2><p>[tenda di Vahn][la guarda perplesso]...lui ha detto che voleva parlarmi...e..[sospira, chiudendo gli occhi e posando un braccio sul volto. Molto decadente]...ahh...mi sento pesare il cielo addosso, Mase...[parla piano con un filo di voce]...scappiamo, ti prego...</p></article>
 <article><h2><span class="time">16:23</span> Maseeri</h2><p>[tenda di Vahn] [par rivitalizzata,si tormenta una ciocca scura pensando ad alta voce] ..scappare? quando vuoi, sto ammalandomi di noia qui, anche le muse son scappate [sospira, sbuffa, si riassesta sul cuscino, torna a guardar Vahn] scappiamo sul serio mellonamin.. e il prima possibile [mormora seria]</p></article>
 <article><h2><span class="time">16:25</span> Vahn</h2><p>[tenda di Vahn][la sbircia da sotto il braccio, per veder se è seria. Si rialza lentamente, fissandola e mettendosi a gattoni.]...stanotte. [dice piano, la luce negli occhi. Serissimo]...andiamo via stanotte. Ci portiamo dietro il minimo indispensabile, e andiamo via...[lentamente un sorriso si fa largo sulle labbra]...al diavolo tutti e tutto...!</p></article>
-<article><h2><span class="time">16:28</span> Maseeri</h2><p>[tenda di vahn] [si illumina e lo guarda beata] tempo di raccoglier le mie cose e.. [si blocca appena, arrossisce] ehm.. devo dirlo a Keylan [aggiunge con aria un tantino spaventata] non è che glielo diresti tu? [lo guarda supplichevole] gli dici qualcosa di sensato, che dobbiamo andare a prendere qualcuno, o a recuperare uno strumento raro o.. qualunque cosa [struscia più vicino all&#x27;elfo, lo fissa con gli occhi lucidi, assolutamente compassionevoli] per favore.. si arrabbierà moltissimo [dice in un sussurro] ma se resto qui finisce che faccio la muffa e mi ammalo [lo guarda ancora] puoi? ti prego puoi puoi?</p></article>
+<article><h2><span class="time">16:28</span> Maseeri</h2><p>[tenda di vahn] [si illumina e lo guarda beata] tempo di raccoglier le mie cose e.. [si blocca appena, arrossisce] ehm.. devo dirlo a Keylan [aggiunge con aria un tantino spaventata] non è che glielo diresti tu? [lo guarda supplichevole] gli dici qualcosa di sensato, che dobbiamo andare a prendere qualcuno, o a recuperare uno strumento raro o.. qualunque cosa [struscia più vicino all'elfo, lo fissa con gli occhi lucidi, assolutamente compassionevoli] per favore.. si arrabbierà moltissimo [dice in un sussurro] ma se resto qui finisce che faccio la muffa e mi ammalo [lo guarda ancora] puoi? ti prego puoi puoi?</p></article>
 <article><h2><span class="time">16:30</span> Vahn</h2><p>[tenda di Vahn][sorride, annuisce]...certo..! Glielo dirò io, non temere. E inventerò una scusa anche per gli altri fratelli...[fa un gesto vago della mano, poi sorride, ed abbraccia di getto la sorella. Chiude gli occhi.]</p></article>
 <article><h2><span class="time">16:32</span> Maseeri</h2><p>[tenda di vahn] [lo abbraccia a sua volta, lo stringe stretto] oh ci voleva.. [mormora poi quasi foluminata ridacchia] Vahn.. ti rendi conto che partiamo sempre di notte ?</p></article>
 <article><h2><span class="time">16:34</span> Vahn</h2><p>[tenda di Vahn][sorride]...la notte porta buoni consigli, e confonde le colpe con i buoni propositi. [mormora rassicurante]...non avremo responsabilità sotto la luce delle stelle. [si stacca da lei, la guarda, tenendola per le spalle]...ce ne andremo Mase, come quella volta. [parla concitato, pianissimo]...ti ricordi?</p></article>
-<article><h2><span class="time">16:36</span> Maseeri</h2><p>[tenda di Vahn] [sorride annuendo] come potrei non ricordare? partimmo anche lì una notte.. oh.. [appoggia una mano al braccio dell&#x27;elfo] quanto tempo è che non viaggiamo più? [par rinata l&#x27;elfa, più colorita in viso, al solo pensiero del viaggio]</p></article>
-<article><h2><span class="time">16:38</span> Vahn</h2><p>[tenda di vahn][si scosta un poco, facendo un gesto vago]...mesi,...anni...millenni? [scuote il capo, mentre riprende la tazza abbandonata e finisce il The.]...Xebox si è defilato dietro le quinte oramai....chi ci portiamo dietro? [dice con ritrovata leggerezza, spostando un po&#x27; di oggetti nella tenda, così, per gioco.]</p></article>
+<article><h2><span class="time">16:36</span> Maseeri</h2><p>[tenda di Vahn] [sorride annuendo] come potrei non ricordare? partimmo anche lì una notte.. oh.. [appoggia una mano al braccio dell'elfo] quanto tempo è che non viaggiamo più? [par rinata l'elfa, più colorita in viso, al solo pensiero del viaggio]</p></article>
+<article><h2><span class="time">16:38</span> Vahn</h2><p>[tenda di vahn][si scosta un poco, facendo un gesto vago]...mesi,...anni...millenni? [scuote il capo, mentre riprende la tazza abbandonata e finisce il The.]...Xebox si è defilato dietro le quinte oramai....chi ci portiamo dietro? [dice con ritrovata leggerezza, spostando un po' di oggetti nella tenda, così, per gioco.]</p></article>
 <article><h2><span class="time">16:40</span> Maseeri</h2><p>[tenda di vahn] [sospira lasciandosi gadere sui cuscini, semisdraiata, appoggiata sui gomiti lascia che lo sguardo si perda nella tenda] ..mah.. siam pur sempre bardi no? un bardo! [ridacchia e lo guarda] Niviel? [sospira e divertita aggiunge] in tal caso Keylan mi ucciderà</p></article>
 <article><h2><span class="time">16:42</span> Vahn</h2><p>[tenda di Vahn][ride sommessamente]...si...Niviel è una persona leggera e di buona compagnia. Si adatta a tutto e...[si interrompe, guardandola strano. Sorride]...ma...è successo qualcosa con Niviel...? [con tono sommesso e malizioso. In mano gli è rimasto un portacandele in ferro battuto, lavorato finemente]</p></article>
-<article><h2><span class="time">16:46</span> Maseeri</h2><p>[tenda di vahn] [alza gli occhi al cielo, fa la vaga] uhm Keylan mi aveva piantata [ridacchia] su quella nave ci son finita per Niviel.. e sai.. un viaggio insieme.. uhm [si guarda in giro e poi torna a fissar l&#x27;elfo] direi di sì [dice con un&#x27;aria assolutamente innocente] il fascino del bardo [ammicca vaga]</p></article>
+<article><h2><span class="time">16:46</span> Maseeri</h2><p>[tenda di vahn] [alza gli occhi al cielo, fa la vaga] uhm Keylan mi aveva piantata [ridacchia] su quella nave ci son finita per Niviel.. e sai.. un viaggio insieme.. uhm [si guarda in giro e poi torna a fissar l'elfo] direi di sì [dice con un'aria assolutamente innocente] il fascino del bardo [ammicca vaga]</p></article>
 <article><h2><span class="time">16:47</span> Vahn</h2><p>[tenda di Vahn][lo sguardo si illanguidisce]...quanto ti capisco...[in un sospiro, rimettendo a posto il candeliere.]...beh, un motivo in più allora...[aggiunge, allegrotto. Le sorride, tornando a sdraiarsi.]...lo avvisi tu, vero? [il sorriso si accentua.]</p></article>
 <article><h2><span class="time">16:50</span> Maseeri</h2><p>[tenda di Vahn] naturalmente, ma tu pensa a trovare un qualcosa di convincente per Keylan e.. [si appoggia ai cucini] magari evita di dirgli di Niviel o mi decolla [si tocca la gola e ridacchia]</p></article>
-<article><h2><span class="time">16:54</span> Vahn</h2><p>[tenda di Vahn][annuisce appena]...tranquilla. [prende un bel respiro, alzando gli occhi al tetto della tenda]...non vedo l&#x27;ora di andarmene. C&#x27;è chi crederà che io sia un egoista scostante e recidivo...ma ho davvero l&#x27;angoscia di rimanere qui. Mi sembra di invecchiare a vista d&#x27;occhio...[sospira]..e poi...ormai, ogni sguardo e ogni parola che dico e che ricevo, nascondono qualcosa. Questa situazione mi richiede una concentrazione che al momento...non possiedo. [finisce il suo discorso con calma, e un filo di stanchezza nello sguardo, che torna sulla barda.]</p></article>
+<article><h2><span class="time">16:54</span> Vahn</h2><p>[tenda di Vahn][annuisce appena]...tranquilla. [prende un bel respiro, alzando gli occhi al tetto della tenda]...non vedo l'ora di andarmene. C'è chi crederà che io sia un egoista scostante e recidivo...ma ho davvero l'angoscia di rimanere qui. Mi sembra di invecchiare a vista d'occhio...[sospira]..e poi...ormai, ogni sguardo e ogni parola che dico e che ricevo, nascondono qualcosa. Questa situazione mi richiede una concentrazione che al momento...non possiedo. [finisce il suo discorso con calma, e un filo di stanchezza nello sguardo, che torna sulla barda.]</p></article>
 <article><h2><span class="time">16:56</span> Maseeri</h2><p>[tenda di vahn] [assume la sua aria da serpe e prende a parlare] oh per forza ogni occhiata naconde qualcosa, non succede nulla qui, sembra uno di quei paesucoli sulle montagne [arriccia il naso, snob, e continua] pensaci bene, cosa è accaduto di eccitante ultimamente? Finiamo per farci il solletico come massima gratificazione e massimo divertimento, e quasi penoso</p></article>
-<article><h2><span class="time">16:59</span> Vahn</h2><p>[tenda di Vahn][annuisce lentamente, incrociando le mani dietro la nuca.]...vero. E dopo aver spezzato il cuore a Mel, chi ha più il coraggio di rivolgerle la parola? [lamentoso, sospira]...dobbiamo proprio levar le tende. [conclude, con una certa sicurezza.]...non dico per sempre...però almeno per un po&#x27;. Poi si fa sempre in tempo a tornare...</p></article>
-<article><h2><span class="time">17:02</span> Maseeri</h2><p>[tenda di vahn] uh la gente scorda in fretta [ridacchia poi lo fissa con aria maliziosa] hai spezzato il cuore di Mel? racconta un po&#x27;.. [si muove piano piano fino a trovarsi a pancia in giù sdraiata sui cuscini, incredibilmente o per arte sopraffina la sottana e la blusa sembra non abbiano una sola piega fuori posto. Si appoggia con il viso alle mani, puntellate sui gomiti ed attende]</p></article>
-<article><h2><span class="time">17:06</span> Vahn</h2><p>[tenda di Vahn][serra appena le labbra, al ricordo]...è stato proprio un bel guaio...[mormora]...parlavamo e stavamo spesso assieme, negli ultimi tempi...da quando Thamior è partito...[inizia, con tono sommesso, guardando in alto]...forse io l&#x27;ho illusa, in qualche modo...ci scherzavo un po&#x27;...giocavo. [scuote il capo, rammaricato]...e lei ha iniziato a scrivermi canzoni d&#x27;amore...e a coprirmi di attenzioni. [lancia un&#x27;occhiata alla barda.]...una sera guarda cosa m&#x27;ha fatto...[aggiunge, con lieve imbarazzo, allungando appena il collo e liberandolo dalla chioma. Una macchiolina purpurea, un po&#x27; sbiadita.]</p></article>
-<article><h2><span class="time">17:07</span> Maseeri</h2><p>[tenda di vahn] [lancia un&#x27;occhiata al collo dell&#x27;elfo e sorride] oh bhè direi che c&#x27;è poco da equivocare dopo quello.. [sorride ancora, tranquilla] ..e tu? voglio dire non... [solleva il capo.. fa roteare una mano davanti al viso] ..non hai mai pensato di..</p></article>
-<article><h2><span class="time">17:09</span> Vahn</h2><p>[tenda di vahn][la guarda poco convinto, trattenendo a stento un sorriso. Si riaggiusta il colletto della camicia e torna bello sdraiato.]...le voglio un gran bene, davvero...ma non sapevo più cosa fare. Mi sentivo in colpa...[sospira]...sono arrivato al punto da offrirle il mio corpo, se voleva...[sorride, dispiaciuto]...sono stato un idiota. Ed ora è meglio, forse, che non mi veda per un po&#x27;...[storce le labbra]</p></article>
+<article><h2><span class="time">16:59</span> Vahn</h2><p>[tenda di Vahn][annuisce lentamente, incrociando le mani dietro la nuca.]...vero. E dopo aver spezzato il cuore a Mel, chi ha più il coraggio di rivolgerle la parola? [lamentoso, sospira]...dobbiamo proprio levar le tende. [conclude, con una certa sicurezza.]...non dico per sempre...però almeno per un po'. Poi si fa sempre in tempo a tornare...</p></article>
+<article><h2><span class="time">17:02</span> Maseeri</h2><p>[tenda di vahn] uh la gente scorda in fretta [ridacchia poi lo fissa con aria maliziosa] hai spezzato il cuore di Mel? racconta un po'.. [si muove piano piano fino a trovarsi a pancia in giù sdraiata sui cuscini, incredibilmente o per arte sopraffina la sottana e la blusa sembra non abbiano una sola piega fuori posto. Si appoggia con il viso alle mani, puntellate sui gomiti ed attende]</p></article>
+<article><h2><span class="time">17:06</span> Vahn</h2><p>[tenda di Vahn][serra appena le labbra, al ricordo]...è stato proprio un bel guaio...[mormora]...parlavamo e stavamo spesso assieme, negli ultimi tempi...da quando Thamior è partito...[inizia, con tono sommesso, guardando in alto]...forse io l'ho illusa, in qualche modo...ci scherzavo un po'...giocavo. [scuote il capo, rammaricato]...e lei ha iniziato a scrivermi canzoni d'amore...e a coprirmi di attenzioni. [lancia un'occhiata alla barda.]...una sera guarda cosa m'ha fatto...[aggiunge, con lieve imbarazzo, allungando appena il collo e liberandolo dalla chioma. Una macchiolina purpurea, un po' sbiadita.]</p></article>
+<article><h2><span class="time">17:07</span> Maseeri</h2><p>[tenda di vahn] [lancia un'occhiata al collo dell'elfo e sorride] oh bhè direi che c'è poco da equivocare dopo quello.. [sorride ancora, tranquilla] ..e tu? voglio dire non... [solleva il capo.. fa roteare una mano davanti al viso] ..non hai mai pensato di..</p></article>
+<article><h2><span class="time">17:09</span> Vahn</h2><p>[tenda di vahn][la guarda poco convinto, trattenendo a stento un sorriso. Si riaggiusta il colletto della camicia e torna bello sdraiato.]...le voglio un gran bene, davvero...ma non sapevo più cosa fare. Mi sentivo in colpa...[sospira]...sono arrivato al punto da offrirle il mio corpo, se voleva...[sorride, dispiaciuto]...sono stato un idiota. Ed ora è meglio, forse, che non mi veda per un po'...[storce le labbra]</p></article>
 <article><h2><span class="time">17:11</span> Maseeri</h2><p>[tenda di vahn] le hai offerto.. [incredula lo guarda] mellonamin alle volte sei così... uomo! [dice fissandolo poi sorride ancora] probabile che quando tornerai ti dirà che la tua mancanza è stata molto dura da sopportare... [sospira] e tornerà tutto come prima.. se avrai la compiacenza di lasciare che sia lei la primadonna, per una volta [ammicca divertita]</p></article>
-<article><h2><span class="time">17:14</span> Vahn</h2><p>[tenda di vahn][incassa con un sorriso piuttosto divertito, e prosegue]...lo so, e un po&#x27; ne ho paura. Più mi stringono, più io fuggo. E&#x27; brutto forse, ma è più forte di me...[scuote il capo, sistemandosi una ciocca di capelli.]...e poi...credo davvero di essere stato stregato. [sospira]...Qualcuno mi ha rubato il cuore tempo fa...e ancora non me l&#x27;ha restituito. [dice dolente, più sommessamente di prima.]...non so più amare. [con leggerezza, e un filo di rassegnazione]...e quindi non ho che il corpo da offrire..[aggiunge, lanciando a lei uno sguardo strano, quasi divertito]...se si esclude la musica, e tutto il resto...[ride, sdrammatizzando]</p></article>
-<article><h2><span class="time">17:17</span> Maseeri</h2><p>[tenda di Vahn] [ridacchia a sua volta lanciando un&#x27;occhiata all&#x27;elfo] oh bhè non che tu offra poco.. [lo sguardo percorre il corpo di vahn con lentezza assolutamente voluta] è capibile perchè tu mieta tante vittime mio caro [dice serafica, tornando a fissarlo negli occhi]</p></article>
+<article><h2><span class="time">17:14</span> Vahn</h2><p>[tenda di vahn][incassa con un sorriso piuttosto divertito, e prosegue]...lo so, e un po' ne ho paura. Più mi stringono, più io fuggo. E' brutto forse, ma è più forte di me...[scuote il capo, sistemandosi una ciocca di capelli.]...e poi...credo davvero di essere stato stregato. [sospira]...Qualcuno mi ha rubato il cuore tempo fa...e ancora non me l'ha restituito. [dice dolente, più sommessamente di prima.]...non so più amare. [con leggerezza, e un filo di rassegnazione]...e quindi non ho che il corpo da offrire..[aggiunge, lanciando a lei uno sguardo strano, quasi divertito]...se si esclude la musica, e tutto il resto...[ride, sdrammatizzando]</p></article>
+<article><h2><span class="time">17:17</span> Maseeri</h2><p>[tenda di Vahn] [ridacchia a sua volta lanciando un'occhiata all'elfo] oh bhè non che tu offra poco.. [lo sguardo percorre il corpo di vahn con lentezza assolutamente voluta] è capibile perchè tu mieta tante vittime mio caro [dice serafica, tornando a fissarlo negli occhi]</p></article>
 <article><h2><span class="time">17:19</span> Vahn</h2><p>[tenda di Vahn][sbuffa, sorridendo e arrossendo un poco.]...e smettila...[borbotta, girandosi su un fianco ed accoccolandosi ad un cuscino]...a me ne basta una sola...di vittima. [aggiunge, modesto]...ma mi sa che è sempre lui a tener il coltello dalla parte del manico...[conclude, col solito ottimismo.]</p></article>
 <article><h2><span class="time">17:22</span> Maseeri</h2><p>[tenda di Vahn] ...immagino che sia per questo che è tornato [lo guarda in tralice celando un sorrisetto] e abbia chiesto perdono.. perchè tu, povera vittima non hai potere su di lui vero? [ridacchia ora apertamente] ...o forse lo giostri tu come vuoi, in fondo? [azzarda]</p></article>
-<article><h2><span class="time">17:23</span> Vahn</h2><p>[tenda di Vahn] affonda la faccia in un cuscino, mugugnando qualcosa d&#x27;incomprensibile.</p></article>
-<article><h2><span class="time">17:25</span> Maseeri</h2><p>[tenda di Vahn] [guarda l&#x27;elfo e allunga una mano fino a sfiorarne la spalla] oh avanti ammettilo, siete vittime l&#x27;un dell&#x27;altro [ridacchia facendogli una carezza]</p></article>
-<article><h2><span class="time">17:28</span> Vahn</h2><p>[tenda di Vahn][lascia andare il cuscino, riprendendo fiato. E&#x27; un po&#x27; rosso in volto.]...lo sai che mi aveva fatto credere di esser morto di peste? [dice piano, senza guardarla.]...Perchè l&#x27;ha fatto? E perchè adesso è rispuntato dal nulla, come un fantasma? [arrabbiato, un po&#x27; triste.]...e...e infine...[sospira]...mi spieghi come faccio a non perdonargli tutto? [la rassegnazione dell&#x27;amante.]</p></article>
-<article><h2><span class="time">17:29</span> Vahn</h2><p>[tenda di Vahn]...a volte vorrei davvero essere capace di amare le donne...[mugugna, un po&#x27; sofocato dal cuscino che stringe.]</p></article>
-<article><h2><span class="time">17:30</span> Maseeri</h2><p>[tenda di vahn] ..e lo chiedi a me? mi stupirei del contrario [dice dondolando su un fianco e tornando a guardarlo] sai perfettamente che troverai prima o poi logica ogni sua spiegazione, anche la più insensata e ammettilo [dice fissandolo] ti piace l&#x27;idea che sia tornato, nonostante ogni comportamento... [socchiude gli occhi, stira le labbra in un sorriso dolcissimo]</p></article>
+<article><h2><span class="time">17:23</span> Vahn</h2><p>[tenda di Vahn] affonda la faccia in un cuscino, mugugnando qualcosa d'incomprensibile.</p></article>
+<article><h2><span class="time">17:25</span> Maseeri</h2><p>[tenda di Vahn] [guarda l'elfo e allunga una mano fino a sfiorarne la spalla] oh avanti ammettilo, siete vittime l'un dell'altro [ridacchia facendogli una carezza]</p></article>
+<article><h2><span class="time">17:28</span> Vahn</h2><p>[tenda di Vahn][lascia andare il cuscino, riprendendo fiato. E' un po' rosso in volto.]...lo sai che mi aveva fatto credere di esser morto di peste? [dice piano, senza guardarla.]...Perchè l'ha fatto? E perchè adesso è rispuntato dal nulla, come un fantasma? [arrabbiato, un po' triste.]...e...e infine...[sospira]...mi spieghi come faccio a non perdonargli tutto? [la rassegnazione dell'amante.]</p></article>
+<article><h2><span class="time">17:29</span> Vahn</h2><p>[tenda di Vahn]...a volte vorrei davvero essere capace di amare le donne...[mugugna, un po' sofocato dal cuscino che stringe.]</p></article>
+<article><h2><span class="time">17:30</span> Maseeri</h2><p>[tenda di vahn] ..e lo chiedi a me? mi stupirei del contrario [dice dondolando su un fianco e tornando a guardarlo] sai perfettamente che troverai prima o poi logica ogni sua spiegazione, anche la più insensata e ammettilo [dice fissandolo] ti piace l'idea che sia tornato, nonostante ogni comportamento... [socchiude gli occhi, stira le labbra in un sorriso dolcissimo]</p></article>
 <article><h2><span class="time">17:30</span> Vahn</h2><p>[tenda di Vahn] chiude gli occhi ed annuisce lentamente, sospirando.</p></article>
-<article><h2><span class="time">17:32</span> Vahn</h2><p>[tenda di Vahn]...conunque sia, una spiegazione me la deve pur dare. [afferma deciso, risollevandosi e rimettendosi a sedere. Si aggiusta le vesti e i capelli, sbuffando]...sono stufo di fare il saltimbanco della sorte. [la guarda]....e comunque questa notte partiamo. [aggiunge, come a metter la ciliegina sulla torta. sorride un po&#x27; tenero, cercando in lei certezza.]</p></article>
-<article><h2><span class="time">17:34</span> Maseeri</h2><p>[tenda di vahn] oh non si transige [dice sicura, lo guarda tornando seduta e annuisce] ..e poi... sai alle volte i fatti valgon più di mille parole [sospira] In ogni modo credo che Niv sarà dei nostri, l&#x27;ho visto quasi alienato, una sera che parlava coi pesci al molo [turbata scuote il capo]</p></article>
+<article><h2><span class="time">17:32</span> Vahn</h2><p>[tenda di Vahn]...conunque sia, una spiegazione me la deve pur dare. [afferma deciso, risollevandosi e rimettendosi a sedere. Si aggiusta le vesti e i capelli, sbuffando]...sono stufo di fare il saltimbanco della sorte. [la guarda]....e comunque questa notte partiamo. [aggiunge, come a metter la ciliegina sulla torta. sorride un po' tenero, cercando in lei certezza.]</p></article>
+<article><h2><span class="time">17:34</span> Maseeri</h2><p>[tenda di vahn] oh non si transige [dice sicura, lo guarda tornando seduta e annuisce] ..e poi... sai alle volte i fatti valgon più di mille parole [sospira] In ogni modo credo che Niv sarà dei nostri, l'ho visto quasi alienato, una sera che parlava coi pesci al molo [turbata scuote il capo]</p></article>
 <article><h2><span class="time">17:36</span> Vahn</h2><p>[tenda di Vahn][ride divertito, tentando di mettersi in piedi]...su, forza, non resta molto tempo. Il sole è già tramontato...[si spolvera le braghe e la guarda sorridendo]...tu cerca Niviel, io Keylan. Non dire niente a nessuno. Lascerò io un messaggio qui al bivacco, e quel che sarà sarà. [sospira, sollevato quasi. Quella luce nello sguardo]...facciamo i bagagli, Mase. [conclude, con entusiasmo.]</p></article>
-<article><h2><span class="time">17:43</span> Maseeri</h2><p>[tenda di Vahn] [si alza a sua volta, rassettando le vesti] sta bene, bagagli e via [annuisce convinta] troverò Niviel e stasera si torna.. in scena [ridacchia allegra, scambiando con l&#x27;elfo uno sguardo carico del medesimo entusiasmo]</p></article>
+<article><h2><span class="time">17:43</span> Maseeri</h2><p>[tenda di Vahn] [si alza a sua volta, rassettando le vesti] sta bene, bagagli e via [annuisce convinta] troverò Niviel e stasera si torna.. in scena [ridacchia allegra, scambiando con l'elfo uno sguardo carico del medesimo entusiasmo]</p></article>
 <article><h2><span class="time">17:44</span> Vahn</h2><p>[tenda di Vahn][annuisce una volta, stiracchiandosi.]...vado a cercare il tuo amato. Nel caso non si facesse trovare...[la guarda]...lascio anche a lui una magnifica pergamena, oppure è meglio aspettare? [domanda, sorridendo.]</p></article>
-<article><h2><span class="time">17:46</span> Maseeri</h2><p>[tende di vahn] visto come si comportò.. [parte acida poi si calma] cerca di trovarlo, una spiegazione se lo merita dopo avermi detto che mi ama [si fa rossa, rosso fuoco, violetta in viso e guarda ostinatamente l&#x27;ingresso della tenda]</p></article>
-<article><h2><span class="time">17:47</span> Vahn</h2><p>[tenda di Vahn][annuisce una volta, distogliendo lo sguardo da lei, discretamente.]...bene. Allora vado...a dopo. [un ultimo sorriso, prima che l&#x27;elfo abbandoni la barda nella propria tenda.]</p></article>
-<article><h2><span class="time">17:48</span> Maseeri</h2><p>[tenda di vahn] a più rtardi [rimbecca allegra si guarda in giro, raccoglie lo scialle e si appresta a seguir l&#x27;elfo.. molte cose da fare, poco tempo per farle...]</p></article></body></html>
+<article><h2><span class="time">17:46</span> Maseeri</h2><p>[tende di vahn] visto come si comportò.. [parte acida poi si calma] cerca di trovarlo, una spiegazione se lo merita dopo avermi detto che mi ama [si fa rossa, rosso fuoco, violetta in viso e guarda ostinatamente l'ingresso della tenda]</p></article>
+<article><h2><span class="time">17:47</span> Vahn</h2><p>[tenda di Vahn][annuisce una volta, distogliendo lo sguardo da lei, discretamente.]...bene. Allora vado...a dopo. [un ultimo sorriso, prima che l'elfo abbandoni la barda nella propria tenda.]</p></article>
+<article><h2><span class="time">17:48</span> Maseeri</h2><p>[tenda di vahn] a più rtardi [rimbecca allegra si guarda in giro, raccoglie lo scialle e si appresta a seguir l'elfo.. molte cose da fare, poco tempo per farle...]</p></article></div><div class="render-note">Resa editoriale ricostruita dalla trascrizione disponibile; la formattazione originale non era recuperabile integralmente.</div></div>
+</article>
+</main>
+</body></html>

@@ -1,0 +1,17 @@
+FENGARD — FORMATTED LOCAL SOURCES
+
+Pages regenerated: 196
+Fate blocks recovered: 567
+Dice-result lines recovered: 551
+Dark-red action runs recovered: 4207
+Embedded inline icons retained: 10833
+Missing historical HTML icons replaced by neutral placeholders: 806
+
+Format coverage
+- 163 DOCX: direct WordprocessingML rendering with colors, sizes, paragraph/run shading and embedded images.
+- 9 HTML: original markup and available assets preserved, unsafe/obsolete scripting removed.
+- 20 legacy DOC: themed transcription fallback (original formatting not reliably portable in this environment).
+- 3 PDF: themed transcription fallback.
+- 1 TXT: themed transcription fallback.
+
+All 196 published source URLs are unchanged. No broken local image references were found.

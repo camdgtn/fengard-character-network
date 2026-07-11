@@ -1,62 +1,187 @@
-<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<style>body{max-width:920px;margin:40px auto;padding:0 22px;font:16px/1.58 Georgia,serif;color:#20242a}header{border-bottom:1px solid #bbb;margin-bottom:24px}article{padding:12px 0;border-bottom:1px solid #ddd}h1{font:600 28px/1.2 system-ui,sans-serif}h2{font:600 15px/1.3 system-ui,sans-serif;margin:0 0 5px}p{margin:0}.time{font-weight:400;color:#666}.meta,.kind{font:12px/1.5 system-ui,sans-serif;color:#666}.kind{margin-left:8px;padding:2px 5px;border:1px solid #bbb;border-radius:3px}</style></head><body><header><h1>cagliostro</h1><p class='meta'>Fonte: 2004/cagliostro.doc · data: 2004</p></header><article><h2><span class="time">6:38</span> Cagliostro</h2><p>Controllare la magia? Devo forse controllare il movimento della mia mano.....od il passo della mia gamba?.....Io sono stato infuso....della vostra magia. Io sono stato creato.....tramite la vostra magia.....non ho bisogno di considerarmi mago.....</p></article>
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>cagliostro · Archivio Fengard</title>
+<style>
+:root {
+  --parchment: #d1b64f;
+  --parchment-light: #eadb97;
+  --parchment-pale: #f3e8b9;
+  --ink: #191207;
+  --wine: #7f0e0e;
+  --wine-dark: #560707;
+  --blue: #063bcc;
+  --rule: rgba(74, 48, 13, .34);
+}
+* { box-sizing: border-box; }
+html { min-height: 100%; background: #d8c16b; }
+body {
+  margin: 0;
+  min-height: 100%;
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  background:
+    radial-gradient(circle at 16% 8%, rgba(255,255,255,.38), transparent 31rem),
+    linear-gradient(90deg, rgba(90,55,12,.10), transparent 10%, transparent 90%, rgba(90,55,12,.10)),
+    #d8c16b;
+}
+a { color: #5b130c; }
+.archive-bar {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: .55rem clamp(.8rem, 3vw, 1.6rem);
+  color: #f8edc2;
+  background: linear-gradient(#6e1710, #4c0907);
+  border-bottom: 3px ridge #c3a758;
+  box-shadow: 0 2px 10px rgba(0,0,0,.3);
+  font: 700 .82rem/1.2 Arial, sans-serif;
+}
+.archive-bar a { color: #fff5cb; text-decoration: none; }
+.archive-bar a:hover { text-decoration: underline; }
+.page-wrap { width: min(1180px, calc(100% - 24px)); margin: 18px auto 50px; }
+.source-card {
+  border: 3px ridge #8e6924;
+  background: linear-gradient(rgba(255,255,255,.05), rgba(255,255,255,.01)), var(--parchment);
+  box-shadow: 0 12px 35px rgba(57,31,0,.25), inset 0 0 42px rgba(255,247,191,.25);
+}
+.source-header {
+  padding: 1rem 1.25rem .85rem;
+  border-bottom: 3px double rgba(82,48,4,.56);
+  background: linear-gradient(180deg, rgba(250,231,154,.85), rgba(208,182,79,.82));
+}
+.source-header h1 { margin: 0; font-size: clamp(1.45rem, 4vw, 2.25rem); line-height: 1.05; }
+.source-meta { margin-top: .5rem; color: #553c16; font: .78rem/1.45 Arial, sans-serif; }
+.source-body { padding: clamp(.65rem, 2.5vw, 1.45rem); overflow-wrap: anywhere; }
+.doc-line, .legacy-content p, .fallback-content article {
+  margin: 0 0 .42rem;
+  line-height: 1.28;
+}
+.doc-line.turn-line { margin-bottom: .48rem; }
+.doc-line.spacer { min-height: .55rem; margin: 0; }
+.doc-line.fate-line {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 1.2rem auto;
+  padding: .25rem .52rem .32rem;
+  color: #fff !important;
+  background: var(--wine);
+  border: 1px solid #f0d386;
+  box-shadow: 0 0 0 2px var(--wine), 0 3px 9px rgba(55,0,0,.18);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.08;
+}
+.doc-line.dice-line { color: var(--blue); font-weight: 600; }
+.dice-run { color: var(--blue) !important; }
+.action-run { color: #980e08 !important; }
+.inline-icon {
+  display: inline-block;
+  width: auto;
+  max-width: 42px;
+  max-height: 30px;
+  margin: 0 .18rem;
+  vertical-align: -.35em;
+  image-rendering: auto;
+}
+.doc-line img.inline-icon[src$='.gif'] { image-rendering: auto; }
+.legacy-content { max-width: 100%; }
+.legacy-content img { max-width: 100%; height: auto; }
+.legacy-content, .legacy-content > * { max-width: 100% !important; }
+.legacy-content table { width: auto !important; max-width: 100% !important; }
+.missing-icon { display:inline-block; min-width:1.1em; color:#5b130c; font-weight:700; text-align:center; vertical-align:baseline; }
+.legacy-content table { max-width: 100%; border-collapse: collapse; }
+.legacy-content td, .legacy-content th { padding: .2rem; }
+.fallback-content article { padding: .4rem 0 .65rem; border-bottom: 1px solid var(--rule); }
+.fallback-content h2 { margin: 0 0 .2rem; font: 700 1rem/1.3 Arial, sans-serif; }
+.fallback-content .time { font-weight: 400; color: #5a421c; }
+.render-note {
+  margin: 1.1rem 0 0;
+  padding: .6rem .75rem;
+  color: #5a421c;
+  border-top: 1px solid var(--rule);
+  font: .72rem/1.4 Arial, sans-serif;
+}
+@media (max-width: 680px) {
+  .archive-bar { position: static; align-items: flex-start; flex-direction: column; gap: .3rem; }
+  .page-wrap { width: min(100% - 10px, 1180px); margin-top: 5px; }
+  .source-card { border-width: 2px; }
+  .source-header { padding: .75rem .8rem; }
+  .source-body { padding: .62rem; font-size: .98rem; }
+  .doc-line.fate-line { width: 100%; font-size: .96rem; }
+  .inline-icon { max-height: 25px; max-width: 34px; }
+}
+</style>
+</head>
+<body>
+<nav class="archive-bar"><a href="../index.html">← Torna alla rete</a><span>Archivio locale · 2004</span></nav>
+<main class="page-wrap">
+<article class="source-card" data-render-mode="legacy-doc-transcription">
+<header class="source-header"><h1>cagliostro</h1><div class="source-meta">2004 · fonte storica: 2004/cagliostro.doc</div></header>
+<div class="source-body"><div class="fallback-content"><article><h2><span class="time">6:38</span> Cagliostro</h2><p>Controllare la magia? Devo forse controllare il movimento della mia mano.....od il passo della mia gamba?.....Io sono stato infuso....della vostra magia. Io sono stato creato.....tramite la vostra magia.....non ho bisogno di considerarmi mago.....</p></article>
 <article><h2>Cagliostro</h2><p>simula un sospiro....la mano si chiude di scatto a pugno....un grido spezzato proviene da essa.....come se fosse stata cosa viva....gelo e ombre mischiate assieme....spiriti e acqua.....e di nuovo i frammenti cadono....accanto al cantore...ed accanto ad Han, a terra a controllare il tavolo....</p></article>
-<article><h2><span class="time">6:40</span> Owyn</h2><p>Oh... Capisco a cosa volete giungere. &lt;dice rasseriandosi&gt; Il potere spontaneo... Un&#x27;innata magia, quasi. Un modo di modificar ciò che ci circonda e plasmarlo alla nostra volontà. Anche quello un ramo di ciò che studio. &lt;dice portando una mano all&#x27;aere. Una luce inizia a brillare nella sua mano, mentre sopra la sua testa prendon forma le fattezze di un&#x27;orripilante creatura&gt; Solo illusione. &lt;dice, mentre la figura scompare nell&#x27;ombra&gt; Cassandra percepisce un sussurro.. non con le orecchio ma con la mente.. una voce .. un&#x27;0amica che ben conosce e benchè attratta dala sfera nella mano del cantore si strappa, quasi con violenza dalla sua figura in cerca della fonte del sussurro.. guardando vahn.. al quale rivolge un sorriso.. dolce e luminoso.. che cobntrasta con la gelida atmorsfera del luogo l&#x27;oste dietro il banco oramai tace....limitandosi ad osservare....scuote a tratti il capo....</p></article>
-<article><h2><span class="time">6:41</span> Owyn</h2><p>Sfacciato. &lt;dice alzando la voce verso l&#x27;uomo, che si ritiene infuso di magia, figlio della stessa&gt; Owyn non ode nemmeno i saluti, concentrandosi sulla discussione, più tranquillo che mai...</p></article>
+<article><h2><span class="time">6:40</span> Owyn</h2><p>Oh... Capisco a cosa volete giungere. &lt;dice rasseriandosi&gt; Il potere spontaneo... Un'innata magia, quasi. Un modo di modificar ciò che ci circonda e plasmarlo alla nostra volontà. Anche quello un ramo di ciò che studio. &lt;dice portando una mano all'aere. Una luce inizia a brillare nella sua mano, mentre sopra la sua testa prendon forma le fattezze di un'orripilante creatura&gt; Solo illusione. &lt;dice, mentre la figura scompare nell'ombra&gt; Cassandra percepisce un sussurro.. non con le orecchio ma con la mente.. una voce .. un'0amica che ben conosce e benchè attratta dala sfera nella mano del cantore si strappa, quasi con violenza dalla sua figura in cerca della fonte del sussurro.. guardando vahn.. al quale rivolge un sorriso.. dolce e luminoso.. che cobntrasta con la gelida atmorsfera del luogo l'oste dietro il banco oramai tace....limitandosi ad osservare....scuote a tratti il capo....</p></article>
+<article><h2><span class="time">6:41</span> Owyn</h2><p>Sfacciato. &lt;dice alzando la voce verso l'uomo, che si ritiene infuso di magia, figlio della stessa&gt; Owyn non ode nemmeno i saluti, concentrandosi sulla discussione, più tranquillo che mai...</p></article>
 <article><h2>Cagliostro</h2><p>con una movenza lenta, un perno sul tallone, si volge verso Owyn....lo osserva....pare contemplarlo....</p></article>
-<article><h2><span class="time">6:43</span> Owyn</h2><p>Cos&#x27;avete da osservare, messere? &lt;volge la domanda a Cagliostro, un po&#x27; indispettito dal suo scrutare&gt; Vahn si avvicina a Cassandra, camminando quasi come parte della stessa parete...gli occhi non si staccano dall&#x27;oscurità del Cantore, come attratti da quel lato imperscrutabile....si affianca a Cass, mentre il groviglio di ricordi si smaglia, lasciando spazio solo a timorose aspettative...</p></article>
-<article><h2><span class="time">6:43</span> Cagliostro</h2><p>Giovane...Impetuoso giovane....pronto a soffiare ovunque....a spazzar via con parole aspre ciò che non è in grado di comprendere....Così vacua è l&#x27;umanità oramai....però....in fondo è comprensibile....</p></article>
-<article><h2><span class="time">6:43</span> Cassandra</h2><p>Vahn.. [muove solo le labbra nell&#x27;appello, non un suono udibile le esce dalle labbra, mentre volta il capo verso cagliostro nell&#x27;udire il rumore di cocci che cadono]</p></article>
+<article><h2><span class="time">6:43</span> Owyn</h2><p>Cos'avete da osservare, messere? &lt;volge la domanda a Cagliostro, un po' indispettito dal suo scrutare&gt; Vahn si avvicina a Cassandra, camminando quasi come parte della stessa parete...gli occhi non si staccano dall'oscurità del Cantore, come attratti da quel lato imperscrutabile....si affianca a Cass, mentre il groviglio di ricordi si smaglia, lasciando spazio solo a timorose aspettative...</p></article>
+<article><h2><span class="time">6:43</span> Cagliostro</h2><p>Giovane...Impetuoso giovane....pronto a soffiare ovunque....a spazzar via con parole aspre ciò che non è in grado di comprendere....Così vacua è l'umanità oramai....però....in fondo è comprensibile....</p></article>
+<article><h2><span class="time">6:43</span> Cassandra</h2><p>Vahn.. [muove solo le labbra nell'appello, non un suono udibile le esce dalle labbra, mentre volta il capo verso cagliostro nell'udire il rumore di cocci che cadono]</p></article>
 <article><h2><span class="time">6:43</span> Cagliostro</h2><p>Basta poco per acclamarsi superiorità sognate....</p></article>
 <article><h2>Cagliostro</h2><p>posa il piede a terra....calpestando i frammenti della sfera creata....rumore scricchiolante, quasi un gemito di anima torturata....poi di nuovo muta in nebbia....che si fonde con ulteriore nebbia....</p></article>
-<article><h2><span class="time">6:45</span> Owyn</h2><p>Non credo di dovervi nemmeno rispondervi. &lt;dice sfrontato, preparandosi a lasciare il posto&gt; Ma guardatevi... Voi che usate il vostro potere per vantarvi di fronte agli altri. Ma d&#x27;altronde la magia che vi è stata donata dall&#x27;alto deve pur avere un significato. &lt;scrolla le spalle passandogli accanto, diretto all&#x27;uscita&gt; Cassandra avverte il turbamento di vahn.. e scosta l&#x27;argenteo sguardo sul bardo suo amico.. cerca con la propria una mano dll&#x27;elfo.. un conatto.. la verità..</p></article>
-<article><h2><span class="time">6:46</span> Owyn</h2><p>Tsk... Nebbia.... &lt;dice posando una mano sul chiavistello&gt; Odio la nebbia. &lt;detto questo si volta un&#x27;ultima volta. Un vacuo scintillar argentato nei suoi occhi... Un vento moderatamente forte scuote alcuni secondi i presenti, mentre la nebbia si dirada&gt;</p></article>
-<article><h2><span class="time">6:46</span> Cagliostro</h2><p>Vanto. Chi è che....divertito, mutò colore alle fiamme di un camino.....[mentre l&#x27;umano gli passa accanto]....solo per mostrare a sè stesso che poteva? Ricordate questo.....io ho risposto ad una domanda con un atto. Voi avete confermato i vostri dubbi.</p></article>
+<article><h2><span class="time">6:45</span> Owyn</h2><p>Non credo di dovervi nemmeno rispondervi. &lt;dice sfrontato, preparandosi a lasciare il posto&gt; Ma guardatevi... Voi che usate il vostro potere per vantarvi di fronte agli altri. Ma d'altronde la magia che vi è stata donata dall'alto deve pur avere un significato. &lt;scrolla le spalle passandogli accanto, diretto all'uscita&gt; Cassandra avverte il turbamento di vahn.. e scosta l'argenteo sguardo sul bardo suo amico.. cerca con la propria una mano dll'elfo.. un conatto.. la verità..</p></article>
+<article><h2><span class="time">6:46</span> Owyn</h2><p>Tsk... Nebbia.... &lt;dice posando una mano sul chiavistello&gt; Odio la nebbia. &lt;detto questo si volta un'ultima volta. Un vacuo scintillar argentato nei suoi occhi... Un vento moderatamente forte scuote alcuni secondi i presenti, mentre la nebbia si dirada&gt;</p></article>
+<article><h2><span class="time">6:46</span> Cagliostro</h2><p>Vanto. Chi è che....divertito, mutò colore alle fiamme di un camino.....[mentre l'umano gli passa accanto]....solo per mostrare a sè stesso che poteva? Ricordate questo.....io ho risposto ad una domanda con un atto. Voi avete confermato i vostri dubbi.</p></article>
 <article><h2><span class="time">6:47</span> Vahn</h2><p>(gli occhi del bardo vagano ora, persi nella nebbia creata da versi mai detti, blasfemo parto di una mente inaferrabile)...quella nebbia....gelida....ritorna?...(un sussurro, unico baluardo a resistenza del fiume di ricordi creduti ormai esorcizzati)</p></article>
 <article><h2>Cagliostro</h2><p>divertito....forse.....muove la mano....vede il disperdersi della nebbia per il vento.....quasi fosse un gioco da sotto il manto altra se ne genera....come se fosse il suo corpo a produrla....o le tenebre che attorno ad esso si celano.....</p></article>
 <article><h2><span class="time">6:48</span> Cagliostro</h2><p>tristemente......ovvio.</p></article>
-<article><h2>Cagliostro</h2><p>s&#x27;incammina verso il bancone.....la mano torna verso il manto....sotto esso. Vede Han, e lo supera.....non accorgendosi all&#x27;apparenza della direzione da lui presa....</p></article>
-<article><h2><span class="time">6:49</span> Owyn</h2><p>Voi ed i vostri trucchetti. L&#x27;ho detto. &lt;dice aprendo la porta e facendo un passo fuori dalla taverna. Il bastone batte l&#x27;ultima volta sul legno.&gt; Vanverate per scusare la vostra mancanza. Non credo di dover sprecare altro fiato per voi, messere. Ho ansia di tornar alla Torre della Magia. Mi son stancato di veder la magia sprecata. &lt;esce quindi totalmente dalla taverna, senza ancora richiudere la porta&gt;</p></article>
+<article><h2>Cagliostro</h2><p>s'incammina verso il bancone.....la mano torna verso il manto....sotto esso. Vede Han, e lo supera.....non accorgendosi all'apparenza della direzione da lui presa....</p></article>
+<article><h2><span class="time">6:49</span> Owyn</h2><p>Voi ed i vostri trucchetti. L'ho detto. &lt;dice aprendo la porta e facendo un passo fuori dalla taverna. Il bastone batte l'ultima volta sul legno.&gt; Vanverate per scusare la vostra mancanza. Non credo di dover sprecare altro fiato per voi, messere. Ho ansia di tornar alla Torre della Magia. Mi son stancato di veder la magia sprecata. &lt;esce quindi totalmente dalla taverna, senza ancora richiudere la porta&gt;</p></article>
 <article><h2><span class="time">6:50</span> Cassandra</h2><p>[guarda Vahn e poi Cagliostro]Non lo so.. vorrei drivi che non tornerà più ma..[siinterrompe seguendo di Caglisotro ogni moviemto]</p></article>
-<article><h2>Han</h2><p>si pianta sul posto vedendo Cagliostro venirgli incontro ed oltrepassarlo, quindi rimane immobile dandogli le spalle l&#x27;oste sembra mormorare come una preghiera &quot;non qui non qui non qui non qui.....Ditemi???&quot; si riscuote di colpo, vedendo Cagliostro di fronte a lui....</p></article>
+<article><h2>Han</h2><p>si pianta sul posto vedendo Cagliostro venirgli incontro ed oltrepassarlo, quindi rimane immobile dandogli le spalle l'oste sembra mormorare come una preghiera "non qui non qui non qui non qui.....Ditemi???" si riscuote di colpo, vedendo Cagliostro di fronte a lui....</p></article>
 <article><h2>Cassandra</h2><p>seduta al bancone osserva Cagliostro avviinarsi.. fermandosi poco lontana da lei..</p></article>
-<article><h2><span class="time">6:52</span> Owyn</h2><p>Ah, messere? &lt;alza il tono della voce&gt; Non date troppo sfogo alla lingua. Vanverar non ci serve certo a divenir mago. Vobiscum Elementes Sint. &lt;dice infine chiudendo la porta dietro a sé. Un po&#x27; impettito si allontana lentamente, scuotendo la testa al penier dello sbruffone, che lo fece iroso al pronunziar di venti e cicloni, di certo non sotto il suo controllo...&gt;</p></article>
-<article><h2><span class="time">6:53</span> Vahn</h2><p>...(sospira, scuotendo la testa)....così tanta, troppa sicurezza...in un&#x27;esistenza così incerta?...(sussurra, parole oscure di un&#x27;altra anima lo raggiungono, mentre il giovane le ripropone)...le certezze non esistono....</p></article>
-<article><h2><span class="time">6:53</span> Cagliostro</h2><p>....Vino rosso....Calice oste....non bicchiere. [mormora, di nuovo melodico e freddo, poi osserva appena la porta].....Cani che ringhiano di fronte a pantere....adorabili. &quot;ca...ca...calice?&quot; domanda, come se gli avesse chiesto di sacrificare il figlio primigenio....&quot;sì sì...ovviamente...un calice...e del vino rosso....&quot;</p></article>
-<article><h2><span class="time">6:56</span> Cassandra</h2><p>[colpita dalle parole di Vahn loosserva, scrutandolo.. non in supoerficie..ma in profondità.. nell&#x27;anima]Vahn.. vi sentie bene?</p></article>
-<article><h2><span class="time">6:59</span> Vahn</h2><p>come posso rispondervi, amica...se anch&#x27;io lo ignoro? (sorride appena, gli occhi vacui si posano lenti su quelli di Cassandra)....tutto quello che credevo illusione sembra persistere, ostinato, come certezza....(scuote la testa)...ma se le certezze non esistono, allora....(la voce poco più di un tremito nell&#x27;aria)</p></article>
+<article><h2><span class="time">6:52</span> Owyn</h2><p>Ah, messere? &lt;alza il tono della voce&gt; Non date troppo sfogo alla lingua. Vanverar non ci serve certo a divenir mago. Vobiscum Elementes Sint. &lt;dice infine chiudendo la porta dietro a sé. Un po' impettito si allontana lentamente, scuotendo la testa al penier dello sbruffone, che lo fece iroso al pronunziar di venti e cicloni, di certo non sotto il suo controllo...&gt;</p></article>
+<article><h2><span class="time">6:53</span> Vahn</h2><p>...(sospira, scuotendo la testa)....così tanta, troppa sicurezza...in un'esistenza così incerta?...(sussurra, parole oscure di un'altra anima lo raggiungono, mentre il giovane le ripropone)...le certezze non esistono....</p></article>
+<article><h2><span class="time">6:53</span> Cagliostro</h2><p>....Vino rosso....Calice oste....non bicchiere. [mormora, di nuovo melodico e freddo, poi osserva appena la porta].....Cani che ringhiano di fronte a pantere....adorabili. "ca...ca...calice?" domanda, come se gli avesse chiesto di sacrificare il figlio primigenio...."sì sì...ovviamente...un calice...e del vino rosso...."</p></article>
+<article><h2><span class="time">6:56</span> Cassandra</h2><p>[colpita dalle parole di Vahn loosserva, scrutandolo.. non in supoerficie..ma in profondità.. nell'anima]Vahn.. vi sentie bene?</p></article>
+<article><h2><span class="time">6:59</span> Vahn</h2><p>come posso rispondervi, amica...se anch'io lo ignoro? (sorride appena, gli occhi vacui si posano lenti su quelli di Cassandra)....tutto quello che credevo illusione sembra persistere, ostinato, come certezza....(scuote la testa)...ma se le certezze non esistono, allora....(la voce poco più di un tremito nell'aria)</p></article>
 <article><h2>Cassandra</h2><p>senza distogliere lo sguardo preoccupato dal bardo, cerca a tentoni il suo bicchiere di sidro ancora intonso sul bancone</p></article>
-<article><h2><span class="time">7:00</span> Cagliostro</h2><p>Tutto è illusione. Tutto è avvolto nell&#x27;incomprensibile velo che avvolge le cose, nel sonno della ragione, ove vengono generati i mostri, figli delle nostre più cupe paure.....[conclude quietamente le parole del Bardo, osservando di fronte a sè, l&#x27;oste]</p></article>
-<article><h2><span class="time">7:00</span> Cassandra</h2><p>[interompe la ricercae la mano che prima vagava cieca sul bancone si avvicina al volto di Vahn.. sfiornadolo appena]le certezze ci sono vahn.. dovete solo capire quali sono.. [gli sorride] l&#x27;oste ricompare....sorreggendo un vassoio con una bottiglia, vecchia, polverosa, ed un calice pieno di quel vino.....lo posa delicatamente sul bancone, il tremolìo nelle mani e la paura nello sguardo visibile.....&quot;e..e...ecco il calice.....&quot;...si ferma...deglutisce, poi mormora....&quot;vi....prego.....ho famiglia....&quot; la voce si strozza in gola, continuando ad osserva....povero cittadino di fronte al Cantore...nè guerriero, nè mago....solo e semplicemente oste abituato a cose terrene....</p></article>
-<article><h2>Vahn</h2><p>preso, tirato da due lati opposti tra loro, il giovane vaga con lo sguardo da Cassandra a Cagliostro...l&#x27;indecisione, il bivio cosciente di una scelta che si ripropone per il bardo, il quale abbassa infine gli occhi al terreno....una mano passa tra i capelli lisci....</p></article>
-<article><h2>Cagliostro</h2><p>non sembra prestar ascolto alle parole dell&#x27;oste....la mano si posa sul calice. Il tocco sembra terribilmente controllato, cauto nello sfiorare il vetro con la pelle nuda....eppure, sebbene vi sia il controllo, lievemente si patina....freddo....lo porta alle labbra, da sotto il cappuccio....prendendone un sorso silente...</p></article>
-<article><h2><span class="time">7:07</span> Cassandra</h2><p>Vahn..[mormora ancora vedendolo abbassare lo sguardo.. il dubbio.. l&#x27;indecisone.. il turbamento..le rimbombano nella mente.. quindi osserva Caglisotro.. non lontando da lei.. che in silenzio sembra assorto nei suoi pensirei.. o forse.. in quelli dei presenti]</p></article>
-<article><h2><span class="time">7:09</span> Cagliostro</h2><p>[posa infine il calice sul vassoio. Sospira, un lungo, profondo sospiro] Vahn.....Avete parlato con Nicholas presumo. [volge piano il capo verso di lui] dopo non aver ottenuto risposta....l&#x27;oste sembra quasi cadere a terra....un risolino strozzato s&#x27;ode....segno della tensione accumulata ed ora esplosa....</p></article>
-<article><h2><span class="time">7:10</span> Vahn</h2><p>non può essere....(deglutisce crescente ansia, spingendola giù, dove giace per ora inascoltata)....dov&#x27;è la via d&#x27;uscita...?....io...credevo di averla scorta....(gli occhi verso l&#x27;amica, silenzioso richiamo di un anima inquieta...gli occhi schizzano sulla figura dell&#x27;oscuro, appena il nome dell&#x27;amato bardo risuona gelido nell&#x27;aria)...Nicholas...si...(il respiro si fa breve, il cuore batte)...desiderio folle di farlo di nuovo....</p></article>
-<article><h2>Cassandra</h2><p>l&#x27;angoscia e il turbamento di Vahn la zittiscono.. riesce solo ad osservare i due.. Caglostro prima e Vahn poi.. intercettandone lo sguardo.. gli sorride..</p></article>
+<article><h2><span class="time">7:00</span> Cagliostro</h2><p>Tutto è illusione. Tutto è avvolto nell'incomprensibile velo che avvolge le cose, nel sonno della ragione, ove vengono generati i mostri, figli delle nostre più cupe paure.....[conclude quietamente le parole del Bardo, osservando di fronte a sè, l'oste]</p></article>
+<article><h2><span class="time">7:00</span> Cassandra</h2><p>[interompe la ricercae la mano che prima vagava cieca sul bancone si avvicina al volto di Vahn.. sfiornadolo appena]le certezze ci sono vahn.. dovete solo capire quali sono.. [gli sorride] l'oste ricompare....sorreggendo un vassoio con una bottiglia, vecchia, polverosa, ed un calice pieno di quel vino.....lo posa delicatamente sul bancone, il tremolìo nelle mani e la paura nello sguardo visibile....."e..e...ecco il calice....."...si ferma...deglutisce, poi mormora...."vi....prego.....ho famiglia...." la voce si strozza in gola, continuando ad osserva....povero cittadino di fronte al Cantore...nè guerriero, nè mago....solo e semplicemente oste abituato a cose terrene....</p></article>
+<article><h2>Vahn</h2><p>preso, tirato da due lati opposti tra loro, il giovane vaga con lo sguardo da Cassandra a Cagliostro...l'indecisione, il bivio cosciente di una scelta che si ripropone per il bardo, il quale abbassa infine gli occhi al terreno....una mano passa tra i capelli lisci....</p></article>
+<article><h2>Cagliostro</h2><p>non sembra prestar ascolto alle parole dell'oste....la mano si posa sul calice. Il tocco sembra terribilmente controllato, cauto nello sfiorare il vetro con la pelle nuda....eppure, sebbene vi sia il controllo, lievemente si patina....freddo....lo porta alle labbra, da sotto il cappuccio....prendendone un sorso silente...</p></article>
+<article><h2><span class="time">7:07</span> Cassandra</h2><p>Vahn..[mormora ancora vedendolo abbassare lo sguardo.. il dubbio.. l'indecisone.. il turbamento..le rimbombano nella mente.. quindi osserva Caglisotro.. non lontando da lei.. che in silenzio sembra assorto nei suoi pensirei.. o forse.. in quelli dei presenti]</p></article>
+<article><h2><span class="time">7:09</span> Cagliostro</h2><p>[posa infine il calice sul vassoio. Sospira, un lungo, profondo sospiro] Vahn.....Avete parlato con Nicholas presumo. [volge piano il capo verso di lui] dopo non aver ottenuto risposta....l'oste sembra quasi cadere a terra....un risolino strozzato s'ode....segno della tensione accumulata ed ora esplosa....</p></article>
+<article><h2><span class="time">7:10</span> Vahn</h2><p>non può essere....(deglutisce crescente ansia, spingendola giù, dove giace per ora inascoltata)....dov'è la via d'uscita...?....io...credevo di averla scorta....(gli occhi verso l'amica, silenzioso richiamo di un anima inquieta...gli occhi schizzano sulla figura dell'oscuro, appena il nome dell'amato bardo risuona gelido nell'aria)...Nicholas...si...(il respiro si fa breve, il cuore batte)...desiderio folle di farlo di nuovo....</p></article>
+<article><h2>Cassandra</h2><p>l'angoscia e il turbamento di Vahn la zittiscono.. riesce solo ad osservare i due.. Caglostro prima e Vahn poi.. intercettandone lo sguardo.. gli sorride..</p></article>
 <article><h2><span class="time">7:13</span> Cagliostro</h2><p>Nicholas....il giovane Nicholas....[mormora].....pedina che ambisce a diventare alfiere....ma si perde nelle fenditure dei propri pensieri....Dove sono finiti tutti dunque?</p></article>
 <article><h2><span class="time">7:15</span> Vahn</h2><p>io non lo so...(sussurra, scuotendo appena la testa)...nel sinistro desiderio di voler essere qualcosa che non potranno mai diventare...forse?....</p></article>
 <article><h2><span class="time">7:17</span> Cagliostro</h2><p>Divenire altro.....Cosa Vahn....cosa? [mormora, scostandosi dal bancone]</p></article>
 <article><h2>Cassandra</h2><p>la domanda del cantore la fa sussultare.. non è urlata ma per è è come se lo fosse.. loosserva.. per poi guardare Vahn.. attendetndo la sua risposta.. e temendola Cagliostro lento, inizia ad incamminarsi verso lo stesso angolo da dove ha aperto gli occhi in precedenza....</p></article>
-<article><h2><span class="time">7:21</span> Vahn</h2><p>....illusione, nata da illusione, partorita a sua volta da illusione....tremenda, incostante illusione....(l&#x27;ansia è troppa, deglutendo il giovane non riesce più a spingerla in basso...il vaso trabocca)....il desiderio...è l&#x27;unica cosa che tiene ancora caldo il mio respiro....(pausa)...il mio desiderio....di dolore...(corruga la fronte...come se le ultime parole fossero state strappate dalla sua anima)</p></article>
+<article><h2><span class="time">7:21</span> Vahn</h2><p>....illusione, nata da illusione, partorita a sua volta da illusione....tremenda, incostante illusione....(l'ansia è troppa, deglutendo il giovane non riesce più a spingerla in basso...il vaso trabocca)....il desiderio...è l'unica cosa che tiene ancora caldo il mio respiro....(pausa)...il mio desiderio....di dolore...(corruga la fronte...come se le ultime parole fossero state strappate dalla sua anima)</p></article>
 <article><h2><span class="time">7:21</span> Aglae</h2><p>Galu a Voi, Feir poco cosciente di avere delle potenzialità... [alza di nuovo le spalle, restando ora in silenzio]</p></article>
 <article><h2><span class="time">7:22</span> Cassandra</h2><p>[sentendoil commiato di Han lo osserva e accenndo un sorriso]che la fortuna guidi sempre i vostri passi, Han..</p></article>
-<article><h2><span class="time">7:22</span> Cagliostro</h2><p>uccidetevi senza morire allora...uccidete anche quell&#x27;ultimo rimasuglio di anima che ambite a possedere.......in fondo non avete più nulla da offrire a voi stesso....</p></article>
-<article><h2>Vahn</h2><p>indietreggia, pensieri sconvolti ed estirpati affogano la sua mente....le parole dell&#x27;oscuro cantore travolgono ogni cosa, ogni fragile artefatto creato dall&#x27;infantile bardo, che nulla aveva capito...</p></article>
+<article><h2><span class="time">7:22</span> Cagliostro</h2><p>uccidetevi senza morire allora...uccidete anche quell'ultimo rimasuglio di anima che ambite a possedere.......in fondo non avete più nulla da offrire a voi stesso....</p></article>
+<article><h2>Vahn</h2><p>indietreggia, pensieri sconvolti ed estirpati affogano la sua mente....le parole dell'oscuro cantore travolgono ogni cosa, ogni fragile artefatto creato dall'infantile bardo, che nulla aveva capito...</p></article>
 <article><h2><span class="time">7:24</span> Cagliostro</h2><p>Requies Vobiscum Sit.....che la quiete eterna sia con voi tutti.....</p></article>
 <article><h2><span class="time">7:24</span> Cassandra</h2><p>[accenna un inchino con il capo verso Han per poi vilgere discatto la testa verso cagliortro udendone le parole]No..[dice senza urlare ma ben udibile quindi qguarda con espressione supplice il bardo ]vahn..Non fatelo.. non dategli ascolto..</p></article>
 <article><h2><span class="time">7:25</span> Vahn</h2><p>...no...è allora questa la soluzione...la via di fuga...? (si accascia in un angolo della taverna, sfinito e spento...smunto dalle stesse illusioni da lui create)</p></article>
-<article><h2>Cagliostro</h2><p>s&#x27;immerge nelle ombre che sembravano averlo generato....e che ora, in quell&#x27;angolo, paiono aumentare di colpo...ad avvolgerlo....si volge ad osservare i presenti. Solo gli occhi, scarlatti e sospesi a mezz&#x27;aria, si vedono, fissarsi impetosi su ognuno dei restanti. Lentamente.....tremendamente lenti....si chiudono. Nel buoio un sospiro, un alito di vento freddo e di brima.....Il Cantore è scomparso. Cagliostro non è più qui.</p></article>
-<article><h2><span class="time">7:27</span> Aglae</h2><p>[si volta anch&#x27;ella alle parole di cagliostro. Silente, osserva l&#x27;elfo vahn, perplessa e preoccupata] Eledh... [sposta lo sguardo su Cagliostro, il viso in fiamme, la voce trattenuta] Può bastare, Vi pare, Signore?</p></article>
+<article><h2>Cagliostro</h2><p>s'immerge nelle ombre che sembravano averlo generato....e che ora, in quell'angolo, paiono aumentare di colpo...ad avvolgerlo....si volge ad osservare i presenti. Solo gli occhi, scarlatti e sospesi a mezz'aria, si vedono, fissarsi impetosi su ognuno dei restanti. Lentamente.....tremendamente lenti....si chiudono. Nel buoio un sospiro, un alito di vento freddo e di brima.....Il Cantore è scomparso. Cagliostro non è più qui.</p></article>
+<article><h2><span class="time">7:27</span> Aglae</h2><p>[si volta anch'ella alle parole di cagliostro. Silente, osserva l'elfo vahn, perplessa e preoccupata] Eledh... [sposta lo sguardo su Cagliostro, il viso in fiamme, la voce trattenuta] Può bastare, Vi pare, Signore?</p></article>
 <article><h2><span class="time">7:28</span> Vahn</h2><p>no..o..noo.......no! (raggomitolarsi in un angolo, piangere e singhiozzare...tutto è distrutto, tutto è svanito. Solo lacrime e lacrime)</p></article>
-<article><h2>Cagliostro<span class="kind">private_whisper_retained</span></h2><p>ti sussurra: [solo un sussurro la voce] non basta mai.......la conoscenza.....mi è stato chiesto d&#x27;insegnare....mi avete chiesto il dolore....l&#x27;inutilità dell&#x27;esistere non è forse il dolore più grande, l&#x27;insegnamento più ampio?</p></article>
+<article><h2>Cagliostro<span class="kind">private_whisper_retained</span></h2><p>ti sussurra: [solo un sussurro la voce] non basta mai.......la conoscenza.....mi è stato chiesto d'insegnare....mi avete chiesto il dolore....l'inutilità dell'esistere non è forse il dolore più grande, l'insegnamento più ampio?</p></article>
 <article><h2>Aglae</h2><p>, osserva la figura del cantore Svanire, restando qualche attimo a contemplarla. Si alza, ora, dirigendosi verso Vahn.</p></article>
-<article><h2><span class="time">7:28</span> Cassandra</h2><p>E&#x27; solo quello che vuole farvi credere Vahn..[si alza con misurati gesti dallo sgabello per avvicinrsi a Vahn]Non dategli ascolto..[scocca uno sguardo in direzione di Cagliostro.. solo per vedere il vuoto..tarttenendo basita il respiro, per poi rilasciarlo poco dopo]Addio..[mormora poi ocme se il cantoe potesse sentirla]</p></article>
-<article><h2><span class="time">7:30</span> Aglae</h2><p>Eledh Vahn... Alzate il capo, non piangete... [choccata dal vedere un simile atteggiamento in un membro dell&#x27;orgoglioso popolo elfico, si avvicina a lui, non sapendo però come comportarsi, colta alla sprovvista]</p></article>
+<article><h2><span class="time">7:28</span> Cassandra</h2><p>E' solo quello che vuole farvi credere Vahn..[si alza con misurati gesti dallo sgabello per avvicinrsi a Vahn]Non dategli ascolto..[scocca uno sguardo in direzione di Cagliostro.. solo per vedere il vuoto..tarttenendo basita il respiro, per poi rilasciarlo poco dopo]Addio..[mormora poi ocme se il cantoe potesse sentirla]</p></article>
+<article><h2><span class="time">7:30</span> Aglae</h2><p>Eledh Vahn... Alzate il capo, non piangete... [choccata dal vedere un simile atteggiamento in un membro dell'orgoglioso popolo elfico, si avvicina a lui, non sapendo però come comportarsi, colta alla sprovvista]</p></article>
 <article><h2><span class="time">7:31</span> Cassandra</h2><p>[abbraccia Vahn e lo culla smorzando i suoi singhiozzi contro dilei]Calmatevi ora..</p></article>
 <article><h2><span class="time">7:31</span> Vahn</h2><p>(alza gli occhi gravidi di lacrime al nulla...verso una voce impalpabile che lo accoglie)...grazie, Cantore, per questo dolore....ma io non posso morire....non posso più ormai....(la testa sparisce tra le ginocchia, forti singhiozzi tolgono il respiro al giovane, forse unica cosa che in lui è rimasta)</p></article>
-<article><h2><span class="time">7:33</span> Aglae</h2><p>[osserva Cassandra, incerta sul da farsi] Madama, forse sarebbe meglio schiaffeggiarlo. Sembra sia in presi ad una crisi di nervi. A volte il dolore fisico riesce a strapparci da quello dell&#x27;anima... l&#x27;oste scuote appena il capo....mormora fra sè e sè poche parole....rimettendosi a pulire un boccale, come ad anestetizzare la mente da ciò che è avvenuto....</p></article>
+<article><h2><span class="time">7:33</span> Aglae</h2><p>[osserva Cassandra, incerta sul da farsi] Madama, forse sarebbe meglio schiaffeggiarlo. Sembra sia in presi ad una crisi di nervi. A volte il dolore fisico riesce a strapparci da quello dell'anima... l'oste scuote appena il capo....mormora fra sè e sè poche parole....rimettendosi a pulire un boccale, come ad anestetizzare la mente da ciò che è avvenuto....</p></article>
 <article><h2><span class="time">7:34</span> Cassandra</h2><p>Non potete più morire perchè sapete quello che vuole dire.. e perchè mi auguroche in voi ci sia ancora voglia di vivere.. per quello che amate.. e per qeuli che amano voi..[detto ciò si drappeggia il amnto sulle spalle e si allontana]che la fortuna guidi sempe i vostri passi..[osserva Vahn e Aglae]Mialdy.. è frote.. più di quanto sembra.. ce la farà..[soride a Vahn prima di uscire..dal luogo e sparire alla vista dei presenti]</p></article>
 <article><h2><span class="time">7:35</span> Vahn</h2><p>(si rialza, scostandosi dalle figure a lui intorno...la voce si fa alta, troppo alta per il giovane, mentre corre verso la porta della locanda)...lasciatemi!! ignoratemi!!.....io non esisto!! (parole miste a lacrime divampano dalla gola, sparendo poi nella notte e nella solitudine, al di là di ogni concetto)</p></article>
 <article><h2><span class="time">7:36</span> Aglae</h2><p>Vahn... Fratello Elfo... [incapace di avere a che fare con emozioni forti quali quelle manifestate dal bardo, altro non riesce a fare che mormorare poche parole] Oh Gaia, o Fratelli Spiriti, restituitegli la sanità...</p></article>
-<article><h2>Vahn</h2><p>corre al di fuori di quel nido di folle verità...o folle incertezza, squassato nel freddo intenso, nell&#x27;amaro di lacrime versate per nulla...corre, non sa fare altro.</p></article></body></html>
+<article><h2>Vahn</h2><p>corre al di fuori di quel nido di folle verità...o folle incertezza, squassato nel freddo intenso, nell'amaro di lacrime versate per nulla...corre, non sa fare altro.</p></article></div><div class="render-note">Resa editoriale ricostruita dalla trascrizione disponibile; la formattazione originale non era recuperabile integralmente.</div></div>
+</article>
+</main>
+</body></html>

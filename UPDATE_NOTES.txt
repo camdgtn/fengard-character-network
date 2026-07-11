@@ -1,0 +1,5 @@
+FENGARD — UPDATE DELLE FONTI LOCALI
+
+Questa cartella mantiene l'index.html presente nel repository caricato e sostituisce le 196 pagine locali in sources/ con versioni rigenerate dagli originali.
+
+Per pubblicare: sostituire nel repository le cartelle sources/ e assets/, aggiungere data/source_render_report.csv e data/formatted_sources_summary.txt. In alternativa, sostituire l'intero contenuto della root con quello di questa cartella.

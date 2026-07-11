@@ -1,13 +1,135 @@
-<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<style>body{max-width:920px;margin:40px auto;padding:0 22px;font:16px/1.58 Georgia,serif;color:#20242a}header{border-bottom:1px solid #bbb;margin-bottom:24px}article{padding:12px 0;border-bottom:1px solid #ddd}h1{font:600 28px/1.2 system-ui,sans-serif}h2{font:600 15px/1.3 system-ui,sans-serif;margin:0 0 5px}p{margin:0}.time{font-weight:400;color:#666}.meta,.kind{font:12px/1.5 system-ui,sans-serif;color:#666}.kind{margin-left:8px;padding:2px 5px;border:1px solid #bbb;border-radius:3px}</style></head><body><header><h1>accademia2</h1><p class='meta'>Fonte: 2004/accademia2.doc · data: 2004-01-22</p></header><article><h2><span class="time">2:28</span> Vahn</h2><p>[accademia]è seduto dietro il piccolo tavolo in legno, intento a scrivere con la piuma d&#x27;oca sul suo libricino rosso...la finestra fa penetrare piccoli raggi di sole mattutino, che scovano le particelle di pulviscolo flutuanti nell&#x27;aria...il giovane si perde per un attimo nell&#x27;osservare la loro quieta danza, immaginandosi in quei piccoli mondi infinitamente popolati....sospira, i mondi si stravolgono, vorticando lontano dall&#x27;elfo, che torna a scrivere in silenzio.</p></article>
-<article><h2><span class="time">2:29</span> Eshtar</h2><p>[Accademia dei Templari]bussa appena alla porta, per attirare l&#x27;attenzione del bardo..</p></article>
-<article><h2><span class="time">2:32</span> Vahn</h2><p>[accademia]...uh?...[si volta verso la porta con un sobbalzo, strappato dal sovrappensiero]..oh, Mellon...benarrivata....[con un filo di voce la guarda, osservando l&#x27;instabile donna, debilitata]...Vi prego...[dice alzandosi ed avvicinandosi a lei]...voi dovete riposare, sedetevi sul giaciglio...[le porge una mano, e con l&#x27;altra indica il comodo letto della celletta, un po&#x27; scomposto] 2:32: deargh [accademia templari ] giunge lentamente nei pressi delle cellette i passi riecheggiano all&#x27;interno del corridoio ... 2:34: deargh arriva nei pressi della celletta di vahn e non entra per non disturbare ... appoggiandosi sulla parete innanzi al porticciola ...</p></article>
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>accademia2 · Archivio Fengard</title>
+<style>
+:root {
+  --parchment: #d1b64f;
+  --parchment-light: #eadb97;
+  --parchment-pale: #f3e8b9;
+  --ink: #191207;
+  --wine: #7f0e0e;
+  --wine-dark: #560707;
+  --blue: #063bcc;
+  --rule: rgba(74, 48, 13, .34);
+}
+* { box-sizing: border-box; }
+html { min-height: 100%; background: #d8c16b; }
+body {
+  margin: 0;
+  min-height: 100%;
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  background:
+    radial-gradient(circle at 16% 8%, rgba(255,255,255,.38), transparent 31rem),
+    linear-gradient(90deg, rgba(90,55,12,.10), transparent 10%, transparent 90%, rgba(90,55,12,.10)),
+    #d8c16b;
+}
+a { color: #5b130c; }
+.archive-bar {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: .55rem clamp(.8rem, 3vw, 1.6rem);
+  color: #f8edc2;
+  background: linear-gradient(#6e1710, #4c0907);
+  border-bottom: 3px ridge #c3a758;
+  box-shadow: 0 2px 10px rgba(0,0,0,.3);
+  font: 700 .82rem/1.2 Arial, sans-serif;
+}
+.archive-bar a { color: #fff5cb; text-decoration: none; }
+.archive-bar a:hover { text-decoration: underline; }
+.page-wrap { width: min(1180px, calc(100% - 24px)); margin: 18px auto 50px; }
+.source-card {
+  border: 3px ridge #8e6924;
+  background: linear-gradient(rgba(255,255,255,.05), rgba(255,255,255,.01)), var(--parchment);
+  box-shadow: 0 12px 35px rgba(57,31,0,.25), inset 0 0 42px rgba(255,247,191,.25);
+}
+.source-header {
+  padding: 1rem 1.25rem .85rem;
+  border-bottom: 3px double rgba(82,48,4,.56);
+  background: linear-gradient(180deg, rgba(250,231,154,.85), rgba(208,182,79,.82));
+}
+.source-header h1 { margin: 0; font-size: clamp(1.45rem, 4vw, 2.25rem); line-height: 1.05; }
+.source-meta { margin-top: .5rem; color: #553c16; font: .78rem/1.45 Arial, sans-serif; }
+.source-body { padding: clamp(.65rem, 2.5vw, 1.45rem); overflow-wrap: anywhere; }
+.doc-line, .legacy-content p, .fallback-content article {
+  margin: 0 0 .42rem;
+  line-height: 1.28;
+}
+.doc-line.turn-line { margin-bottom: .48rem; }
+.doc-line.spacer { min-height: .55rem; margin: 0; }
+.doc-line.fate-line {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 1.2rem auto;
+  padding: .25rem .52rem .32rem;
+  color: #fff !important;
+  background: var(--wine);
+  border: 1px solid #f0d386;
+  box-shadow: 0 0 0 2px var(--wine), 0 3px 9px rgba(55,0,0,.18);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.08;
+}
+.doc-line.dice-line { color: var(--blue); font-weight: 600; }
+.dice-run { color: var(--blue) !important; }
+.action-run { color: #980e08 !important; }
+.inline-icon {
+  display: inline-block;
+  width: auto;
+  max-width: 42px;
+  max-height: 30px;
+  margin: 0 .18rem;
+  vertical-align: -.35em;
+  image-rendering: auto;
+}
+.doc-line img.inline-icon[src$='.gif'] { image-rendering: auto; }
+.legacy-content { max-width: 100%; }
+.legacy-content img { max-width: 100%; height: auto; }
+.legacy-content, .legacy-content > * { max-width: 100% !important; }
+.legacy-content table { width: auto !important; max-width: 100% !important; }
+.missing-icon { display:inline-block; min-width:1.1em; color:#5b130c; font-weight:700; text-align:center; vertical-align:baseline; }
+.legacy-content table { max-width: 100%; border-collapse: collapse; }
+.legacy-content td, .legacy-content th { padding: .2rem; }
+.fallback-content article { padding: .4rem 0 .65rem; border-bottom: 1px solid var(--rule); }
+.fallback-content h2 { margin: 0 0 .2rem; font: 700 1rem/1.3 Arial, sans-serif; }
+.fallback-content .time { font-weight: 400; color: #5a421c; }
+.render-note {
+  margin: 1.1rem 0 0;
+  padding: .6rem .75rem;
+  color: #5a421c;
+  border-top: 1px solid var(--rule);
+  font: .72rem/1.4 Arial, sans-serif;
+}
+@media (max-width: 680px) {
+  .archive-bar { position: static; align-items: flex-start; flex-direction: column; gap: .3rem; }
+  .page-wrap { width: min(100% - 10px, 1180px); margin-top: 5px; }
+  .source-card { border-width: 2px; }
+  .source-header { padding: .75rem .8rem; }
+  .source-body { padding: .62rem; font-size: .98rem; }
+  .doc-line.fate-line { width: 100%; font-size: .96rem; }
+  .inline-icon { max-height: 25px; max-width: 34px; }
+}
+</style>
+</head>
+<body>
+<nav class="archive-bar"><a href="../index.html">← Torna alla rete</a><span>Archivio locale · 2004-01-22</span></nav>
+<main class="page-wrap">
+<article class="source-card" data-render-mode="legacy-doc-transcription">
+<header class="source-header"><h1>accademia2</h1><div class="source-meta">2004-01-22 · fonte storica: 2004/accademia2.doc</div></header>
+<div class="source-body"><div class="fallback-content"><article><h2><span class="time">2:28</span> Vahn</h2><p>[accademia]è seduto dietro il piccolo tavolo in legno, intento a scrivere con la piuma d'oca sul suo libricino rosso...la finestra fa penetrare piccoli raggi di sole mattutino, che scovano le particelle di pulviscolo flutuanti nell'aria...il giovane si perde per un attimo nell'osservare la loro quieta danza, immaginandosi in quei piccoli mondi infinitamente popolati....sospira, i mondi si stravolgono, vorticando lontano dall'elfo, che torna a scrivere in silenzio.</p></article>
+<article><h2><span class="time">2:29</span> Eshtar</h2><p>[Accademia dei Templari]bussa appena alla porta, per attirare l'attenzione del bardo..</p></article>
+<article><h2><span class="time">2:32</span> Vahn</h2><p>[accademia]...uh?...[si volta verso la porta con un sobbalzo, strappato dal sovrappensiero]..oh, Mellon...benarrivata....[con un filo di voce la guarda, osservando l'instabile donna, debilitata]...Vi prego...[dice alzandosi ed avvicinandosi a lei]...voi dovete riposare, sedetevi sul giaciglio...[le porge una mano, e con l'altra indica il comodo letto della celletta, un po' scomposto] 2:32: deargh [accademia templari ] giunge lentamente nei pressi delle cellette i passi riecheggiano all'interno del corridoio ... 2:34: deargh arriva nei pressi della celletta di vahn e non entra per non disturbare ... appoggiandosi sulla parete innanzi al porticciola ...</p></article>
 <article><h2><span class="time">2:35</span> Eshtar</h2><p>[accademia] Mellon.. [sorride facendosi condurre fino al bordo del giaciglio, su cui si siede lentamente] come vi sentite? avete dormito bene?</p></article>
 <article><h2><span class="time">2:36</span> Vahn</h2><p>[lascia la mano della templare, per poi abbassare gli occhi alla sua domanda]..s-si...benissomo, grazie...[mente cordialmente, lasciando solo un sospiro come prova per smascherare la sua menzogna]...e voi come vi sentite? [domanda subito, guardandola]</p></article>
 <article><h2><span class="time">2:39</span> Eshtar</h2><p>io.. [abbassa anche lei il capo per non mostrare il viso..] bene bene.. [pronunzia un pò troppo velocemente..]</p></article>
-<article><h2><span class="time">2:41</span> Vahn</h2><p>[sorride amaramente, pensando all&#x27;aria di recitazione che sembra aver permeato la stanzetta, quindi osserva negli occhi Esthar]...amica...è giunto il momento di parlare senza schermi...di aprire il libro dei dubbi e dei pensieri...[non sorride più, solamente aggiunge, per forma di cortesia]...almeno per quanto mi riguarda....</p></article>
-<article><h2><span class="time">2:43</span> Vahn</h2><p>,come a contraddire le parole appena dette, chiude con una mano il piccolo diario rosso sulla scrivania, sospirando e guardando l&#x27;esterno soleggiato...poi ritorna da Esthar, sedendosi anch&#x27;egli su di una sedia, di fronte a lei.</p></article>
-<article><h2><span class="time">2:43</span> Eshtar</h2><p>[risolleva il viso puntando l&#x27;unico occhio aperto su Vahn... annuisce impercettibilmente..] si... Vi dirò ogni cosa... Non vi nasconderò nulla e sapete che sarà così...</p></article>
+<article><h2><span class="time">2:41</span> Vahn</h2><p>[sorride amaramente, pensando all'aria di recitazione che sembra aver permeato la stanzetta, quindi osserva negli occhi Esthar]...amica...è giunto il momento di parlare senza schermi...di aprire il libro dei dubbi e dei pensieri...[non sorride più, solamente aggiunge, per forma di cortesia]...almeno per quanto mi riguarda....</p></article>
+<article><h2><span class="time">2:43</span> Vahn</h2><p>,come a contraddire le parole appena dette, chiude con una mano il piccolo diario rosso sulla scrivania, sospirando e guardando l'esterno soleggiato...poi ritorna da Esthar, sedendosi anch'egli su di una sedia, di fronte a lei.</p></article>
+<article><h2><span class="time">2:43</span> Eshtar</h2><p>[risolleva il viso puntando l'unico occhio aperto su Vahn... annuisce impercettibilmente..] si... Vi dirò ogni cosa... Non vi nasconderò nulla e sapete che sarà così...</p></article>
 <article><h2><span class="time">2:44</span> Aldenar</h2><p>[Giunge, con passo lento e cadenzato, arrivato davanti alla cattedrale fa un profondo inchino fino a toccare la fronte a terra, rimane in quella posizione per un attimo poi fuori dalla porta lascia la sua spada e il suo scudo appogiati alla porta, si rialza dalla sua posizione genoflessa e si alza poi camminando lentamente a capo chino entra, anche i stivali che portava adosso sono stati tolti e appoggiati acanto alle sue armi]</p></article>
 <article><h2><span class="time">2:45</span> Aldenar</h2><p>Alza la testa</p></article>
 <article><h2><span class="time">2:45</span> Aldenar</h2><p>osserva i presenti e metendo una mano sul capo saluta e fa dei profondi e silenziosi inchini</p></article>
@@ -17,51 +139,54 @@
 <article><h2><span class="time">2:50</span> Vahn</h2><p>[accademia]...sono successe troppe cose, Eshtar...e troppo rapidamente...[sospira, conginungendo le mani sulle ginocchia ed abbassando il capo]...ed io mi sto perdendo...[aggiunge in un sussurro]</p></article>
 <article><h2><span class="time">2:51</span> Eshtar</h2><p>[Accademia dei templari] cercherò di dipanare il bandolo della verità... [sospira] lo devo ad entrambi...</p></article>
 <article><h2>Aldenar<span class="kind">private_whisper_retained</span></h2><p>ti sussurra: scusatemi voi</p></article>
-<article><h2><span class="time">2:53</span> Eshtar</h2><p>Vahn, Voi avete conosciuto Valdasilva? [porta la mano sull&#x27;occhio destro e si massaggia la cicatrice]</p></article>
+<article><h2><span class="time">2:53</span> Eshtar</h2><p>Vahn, Voi avete conosciuto Valdasilva? [porta la mano sull'occhio destro e si massaggia la cicatrice]</p></article>
 <article><h2><span class="time">2:56</span> Vahn</h2><p>...Ho sentito quel nome...più volte pronunciato da bardi lontani....[aggrotta le sopracciglia, pensieroso]...non lo conobbi mai, nemmeno lo vidi...[sospira]...a dir la verità, non ho mai capito con precisione chi fosse e che cosa facesse qui....[sorride, alzando le spalle]</p></article>
 <article><h2><span class="time">2:58</span> Eshtar</h2><p>[sorride mentre lo sguardo si perde nuovamente in pensieri lontani..] Era il mio amico più caro... Non so se fosse lo stesso per lui, ma per me era un punto di riferimento irrinunziabile.. un grande uomo, un grande mago... una grande mente volta alla conoscenza...</p></article>
 <article><h2><span class="time">3:00</span> Eshtar</h2><p>[Accademia] proprio la sete di conoscenza lo ha portato alla rovina... lui e la scuola di Kardash di cui fu fondatore...</p></article>
-<article><h2><span class="time">3:00</span> Vahn</h2><p>...era...[si sofferma sul passato pronunciato dalla templare, per poi chiederle]...è da molto che non ne sento più parlare....è forse partito da queste lande?...[un&#x27;idea balza in mente al giovane, facendogli abbassare il tono di voce]...forse..è ....[non osa terminare, imbarazzato]</p></article>
+<article><h2><span class="time">3:00</span> Vahn</h2><p>...era...[si sofferma sul passato pronunciato dalla templare, per poi chiederle]...è da molto che non ne sento più parlare....è forse partito da queste lande?...[un'idea balza in mente al giovane, facendogli abbassare il tono di voce]...forse..è ....[non osa terminare, imbarazzato]</p></article>
 <article><h2><span class="time">3:01</span> Eshtar</h2><p>[annuisce, mentre lo sguardo si rabbuia mostrando per un attimo tutto il suo dolore..] è morto...</p></article>
 <article><h2><span class="time">3:02</span> Eshtar</h2><p>è morto.. due volte [mormora con un filo di voce...]</p></article>
 <article><h2><span class="time">3:03</span> Vahn</h2><p>[deglutisce a vuoto, non sapendo che dire...cerca qualche sguardo, qualche parola per rispondere...]...mi...mi dispiace....[gli occhi sono a terra, come la voce del giovane]</p></article>
-<article><h2><span class="time">3:05</span> Eshtar</h2><p>[appoggia la mancina sul suo braccio, incredibilmente a consolarlo per il dolore che lei prova..] egli cercava di impadronirsi di un artefatto malefico.. una spada che non è possibile possedere, poichè è essa che possiede... Era diventata una malattia.. un&#x27;ossessione..</p></article>
+<article><h2><span class="time">3:05</span> Eshtar</h2><p>[appoggia la mancina sul suo braccio, incredibilmente a consolarlo per il dolore che lei prova..] egli cercava di impadronirsi di un artefatto malefico.. una spada che non è possibile possedere, poichè è essa che possiede... Era diventata una malattia.. un'ossessione..</p></article>
 <article><h2><span class="time">3:07</span> Vahn</h2><p>[la guarda, con occhi trepidi]...non solo gli artefatti maledetti hanno il potere di possedere gli animi...[sospira]...ognuno è posseduto da qualcosa...[scuote la testa, divagando nei suoi pensieri...poi la guarda imbarazzato]...continuate, vi prego...[la ascolta, guardandola]</p></article>
-<article><h2><span class="time">3:14</span> Eshtar</h2><p>[sospira perdendosi per un attimo] se uno vuol lasciarsi possedere... [si riscuote..] ma continuiamo.. Valdasilva ha tentato di impadronirsi di quel maledetto oggetto e ne ha ricavato una morte ingloriosa, seguita da una strana.. [aggrotta la fronte..] come dire... trasposizione d&#x27;anima...</p></article>
+<article><h2><span class="time">3:14</span> Eshtar</h2><p>[sospira perdendosi per un attimo] se uno vuol lasciarsi possedere... [si riscuote..] ma continuiamo.. Valdasilva ha tentato di impadronirsi di quel maledetto oggetto e ne ha ricavato una morte ingloriosa, seguita da una strana.. [aggrotta la fronte..] come dire... trasposizione d'anima...</p></article>
 <article><h2><span class="time">3:15</span> Vahn</h2><p>si acciglia, rimanendo in muta osservazione, attento ad ogni parola e significato che traspare dalla voce della templare...</p></article>
 <article><h2><span class="time">3:16</span> Eshtar</h2><p>uno strano rito ha portato tutta la sua essenza vitale dentro un altro corpo, quello del cocchiere, Bertrand...</p></article>
 <article><h2><span class="time">3:18</span> Vahn</h2><p>...ma era cosciente questo viaggio etereo?....oppure fu soltanto uno scherzo del fato?...[chiede, cercando di capire e di immaginarsi le scene nella mente]</p></article>
-<article><h2><span class="time">3:19</span> Eshtar</h2><p>[passa la mano sull&#x27;occhio ferito e poi sui capelli, riportando dietro l&#x27;orecchio una ciocca corvina che le solleticava il viso..] Era cosciente... Si fece riconoscere da me.. Oh Vahn, non aveva più l&#x27;aspetto del mio amico, ma era lui... tutto il resto non importava.. Ero felice di averlo ritrovato.. [chiude l&#x27;occhio, deglutendo]</p></article>
+<article><h2><span class="time">3:19</span> Eshtar</h2><p>[passa la mano sull'occhio ferito e poi sui capelli, riportando dietro l'orecchio una ciocca corvina che le solleticava il viso..] Era cosciente... Si fece riconoscere da me.. Oh Vahn, non aveva più l'aspetto del mio amico, ma era lui... tutto il resto non importava.. Ero felice di averlo ritrovato.. [chiude l'occhio, deglutendo]</p></article>
 <article><h2><span class="time">3:20</span> Vahn</h2><p>[sorride appena]...ne sono sicuro...ritrovare un amico è ancora più appagante che scoprirne uno...[sussurra, appoggiandosi allo schienale della sedia]</p></article>
 <article><h2><span class="time">3:22</span> Eshtar</h2><p>[lo sguardo scivola fino alle sue mani, che comincia a tormentarsi..] poi una maledetta sera abbiamo deciso di andare a visitare il ducato e lì abbiamo incontrato Akan ed altri due... Ci hanno raccontato una storia più che fantasiosa imponendoci di consegnargli le armi e le borse..</p></article>
 <article><h2><span class="time">3:23</span> Vahn</h2><p>deglutisce, quasi vergognoso delle parole di Eshtar...abbassa lo sguardo e stringe i braccioli della sedia, come tensione dei pensieri....il cuore batte impercettibilmente più veloce, mentre un lieve rossore si impossessa delle gote bardiche...</p></article>
 <article><h2><span class="time">3:25</span> Eshtar</h2><p>noi non abbiamo voluto e loro hanno cominciato a colpirci.. anche dopo che le avevamo consegnate... hanno continuato... poi... [viene scossa da un piccolo tremito..] Oh Vahn, io ho tentato di mettermi in mezzo, di non farlo colpire... ho cercato di prendere io ogni colpo... [abbassa il capo, sconfitta..] Poi Val ha fatto un incanto.. mi... mi sono ritrovata in un altro luogo... lontana... troppo lontana per mettermi ancora in mezzo...</p></article>
 <article><h2><span class="time">3:27</span> Eshtar</h2><p>e lui è morto.. per...per salvare me... [una lacrima scivola incontrollabile lungo la sua gota..]</p></article>
 <article><h2><span class="time">3:27</span> Vahn</h2><p>[un groppo alla gola, un fremito nel giovane, causato forse dallo stesso tremore nella voce amica...le nocche si sbiancano dalla pressione]...io...non sapevo...[balbetta appena, non osando guardare la templare negli occhi...il respiro si fa più veloce, le orecchie sempre tese ad ogni parola di verità]</p></article>
-<article><h2><span class="time">3:30</span> Vahn</h2><p>...altra verità udirono le mie orecchie...[deglutisce]...il capitano colpito alla testa, perse il senno...[scuote la testa, non capendo]....cosa successe poi?...[domanda, ansioso di verità] 3:32: Eshtar Ho sperato fino all&#x27;ultimo che lui non fosse morto, ma l&#x27;ultimo barlume di luce è stato definitivamente spento dallo stesso Akan che mi ha confessato, in un incontro privato, di aver ucciso lui Val ed anche il punto esatto in cui si trova il suo cadavere... Quella volta si è rifiutato di darmi soddisfazione.. si è rifiutato di battersi per non farmi intrappolare dalle catene della vendetta...</p></article>
-<article><h2><span class="time">3:34</span> Vahn</h2><p>[stringe le labbra, ascoltando l&#x27;amara verità nelle parole di Eshtar]...quelle catene sono troppo ampie...e troppo resistenti per spezzarsi...[deglutisce]...è tremendo da dire...e da ascoltare...[sussurra, guardando l&#x27;amica con occhi lucidi di ricordi e lacrime già versate]</p></article>
+<article><h2><span class="time">3:30</span> Vahn</h2><p>...altra verità udirono le mie orecchie...[deglutisce]...il capitano colpito alla testa, perse il senno...[scuote la testa, non capendo]....cosa successe poi?...[domanda, ansioso di verità] 3:32: Eshtar Ho sperato fino all'ultimo che lui non fosse morto, ma l'ultimo barlume di luce è stato definitivamente spento dallo stesso Akan che mi ha confessato, in un incontro privato, di aver ucciso lui Val ed anche il punto esatto in cui si trova il suo cadavere... Quella volta si è rifiutato di darmi soddisfazione.. si è rifiutato di battersi per non farmi intrappolare dalle catene della vendetta...</p></article>
+<article><h2><span class="time">3:34</span> Vahn</h2><p>[stringe le labbra, ascoltando l'amara verità nelle parole di Eshtar]...quelle catene sono troppo ampie...e troppo resistenti per spezzarsi...[deglutisce]...è tremendo da dire...e da ascoltare...[sussurra, guardando l'amica con occhi lucidi di ricordi e lacrime già versate]</p></article>
 <article><h2><span class="time">3:37</span> Eshtar</h2><p>è così... [annuisce] ma ora vi spiegherò anche i fatti a cui vi riferivate prima... Quella sera mi trovavo in taverna a Fengard, quando si sono presentati ai miei occhi Akan ed un altro dei tre... Non cercavo vendetta, ma giustizia... così ho cercato di fermarli.. ne è nata una lotta.. Akan ha snudato la sua lama proprio mentre uno dei miei uomini stava per buttarsi su di lui per bloccarlo... Il templare si è ferito ed Akan è finito a terra a causa del colpo ed ha abattuto il capo.. non so se per il peso del templare o per la porta scagliata nei pressi da DarkEyes, misteriosamente intervenuto...</p></article>
-<article><h2><span class="time">3:40</span> Vahn</h2><p>...si...le voci intorno al fuoco raccontavano lo stesso...[sospira]...e questo era inevitabile. Ognuno fa quello che crede giusto...per lui...o per la società in cui vive....[scuote la testa]...peccato che molte volte non collimino i concetti di &quot;giusto&quot;....[sospira, deluso e amareggiato]...vi prego, continuate....[con un filo di voce]</p></article>
+<article><h2><span class="time">3:40</span> Vahn</h2><p>...si...le voci intorno al fuoco raccontavano lo stesso...[sospira]...e questo era inevitabile. Ognuno fa quello che crede giusto...per lui...o per la società in cui vive....[scuote la testa]...peccato che molte volte non collimino i concetti di "giusto"....[sospira, deluso e amareggiato]...vi prego, continuate....[con un filo di voce]</p></article>
 <article><h2><span class="time">3:43</span> Eshtar</h2><p>Cosa accadde poi ad Akan lo ignoro, ciò che so è che Mad... Proprio lo stesso Mad a cui giorni fa avevo rivelato aspetti molto profondi della mia anima e del mio credo... proprio lui mi ha minacciata e poi è venuto a cercarmi... [la voce di fa più tremante..] mi ha intimato di arrestarlo, altrimenti mi avrebbe ucciso...</p></article>
-<article><h2><span class="time">3:45</span> Vahn</h2><p>....sapeva che non l&#x27;avreste fatto...[come un ragionamento intrinseco, venuto a galla nel dolore e nell&#x27;incredulità]....io...io...[scuote la testa, troppa verità ora nella testa del giovane]</p></article>
-<article><h2><span class="time">3:46</span> Eshtar</h2><p>ma io non potevo arrestarlo... non aveva commesso alcun crimine.. Che razza di persona sarei stata ad arrestare un&#x27;innocente?.. [sospira] mi sono rifiutata e lui mi ha attaccato...</p></article>
-<article><h2><span class="time">3:48</span> Eshtar</h2><p>io ero lì.. immobile.. [lo sguardo si spegne nel ricordo, allontanandosi dall&#x27;accademia e dalla realtà... rivivendo molte volte ciò che accadde..] e lui cercava di strangolarmi... di accecarmi... ma perchè.. perchè</p></article>
-<article><h2><span class="time">3:48</span> Vahn</h2><p>fa palesare un amaro sorriso sul suo volto alle parole della templare, scuotendo la testa all&#x27;appellativo di innocenza che diede al mozzo...rimane silente e pensieroso, comunque attento alla voce di Eshtar...</p></article>
+<article><h2><span class="time">3:45</span> Vahn</h2><p>....sapeva che non l'avreste fatto...[come un ragionamento intrinseco, venuto a galla nel dolore e nell'incredulità]....io...io...[scuote la testa, troppa verità ora nella testa del giovane]</p></article>
+<article><h2><span class="time">3:46</span> Eshtar</h2><p>ma io non potevo arrestarlo... non aveva commesso alcun crimine.. Che razza di persona sarei stata ad arrestare un'innocente?.. [sospira] mi sono rifiutata e lui mi ha attaccato...</p></article>
+<article><h2><span class="time">3:48</span> Eshtar</h2><p>io ero lì.. immobile.. [lo sguardo si spegne nel ricordo, allontanandosi dall'accademia e dalla realtà... rivivendo molte volte ciò che accadde..] e lui cercava di strangolarmi... di accecarmi... ma perchè.. perchè</p></article>
+<article><h2><span class="time">3:48</span> Vahn</h2><p>fa palesare un amaro sorriso sul suo volto alle parole della templare, scuotendo la testa all'appellativo di innocenza che diede al mozzo...rimane silente e pensieroso, comunque attento alla voce di Eshtar...</p></article>
 <article><h2><span class="time">3:49</span> Eshtar</h2><p>continuava ad urlarmi.. odiami odiami..</p></article>
-<article><h2><span class="time">3:50</span> Vahn</h2><p>...vendetta...immatura passione per la violenza...[sospira, addolorato]...è questo che ancora mi è oscuro...[deglutisce]....forse voleva vedere in voi, quello che per anni aveva roso il suo animo...l&#x27;odio...[trema all&#x27;ultima parola]</p></article>
+<article><h2><span class="time">3:50</span> Vahn</h2><p>...vendetta...immatura passione per la violenza...[sospira, addolorato]...è questo che ancora mi è oscuro...[deglutisce]....forse voleva vedere in voi, quello che per anni aveva roso il suo animo...l'odio...[trema all'ultima parola]</p></article>
 <article><h2><span class="time">3:50</span> Eshtar</h2><p>diceva... tutto questo amore non lo sopporto... odiami odiami.. [la voce si spegne insieme alle sue parole..]</p></article>
 <article><h2><span class="time">3:51</span> Eshtar</h2><p>non lo capisco Vahn.. non capisco perchè... [mormora..] ma ora egli è morto...</p></article>
 <article><h2><span class="time">3:52</span> Vahn</h2><p>...e molti giurano la sua vendetta...[gli occhi gravidi di lacrime si infrangono contro la parete bianca, di fronte al giovane]</p></article>
-<article><h2><span class="time">3:54</span> Eshtar</h2><p>è stato tutto inutile.. non sono riuscita a spezzare le catene dell&#x27;odio.. [il suo sguardo si perde nuovamente..] Venne un uomo che, vista la scena è accorso in mio aiuto... ha iniziato a colpirlo.. poi io sono svenuta e mi sono ritrovata qui, fra le mie amate mura... 3:56: Eshtar l&#x27;unica cosa che ricordo sono le parole di quell&#x27;uomo che urlava di lasciarmi andare... poi.. il buio...</p></article>
-<article><h2><span class="time">3:57</span> Vahn</h2><p>Mellon...il dolore che provo ad ascoltar la verità non si può liberare nemmeno con le lacrime...che tanto sembrano amare i miei pensieri...[si avvicina di un poco alla templare, abbracciandola debolmente...gli occhi non trattengono più le lacrime, contraddicendo ancora le parole del bardo]....è tremendo...ma ancor più orribile appare il fatto che tutto ciò permanga inevitabile...[la stringe un po&#x27;]</p></article>
-<article><h2><span class="time">4:00</span> Eshtar</h2><p>si lascia abbracciare dall&#x27;amico, piangendo di impotenza e dolore... le sue lacrime scendono sulla spalla del bardo, bagnando i suoi abiti..</p></article>
-<article><h2><span class="time">4:04</span> Vahn</h2><p>[La stringe ancora un po&#x27;, in quell&#x27;abbraccio di lacrime doloranti...poi, con una mano, va a prendere nella tasca del mantello un piccolo flauto in legno...lo mostra tra le lacrime all&#x27;amica]...guardate...rammentate?...[sorride lieve, mentre una lacrima finisce tra le labbra del giovane, che assapora la sua amarezza]...solo questo piccolo regalo...è riuscito a tener insieme la mia anima divelta dal dubbio e dal dolore derivato dalla vostra verità....[respira tra i fiumi di lacrime]....una piccola luce che mi guidava nel buio di quest&#x27;incubo....[la voce rotta dai singhiozzi si spezza definitivamente, con la mano del giovane che va a coprire la bocca impastata...gli occhi si abbassano a terra...il flauto cade tra le lenzuola]</p></article>
+<article><h2><span class="time">3:54</span> Eshtar</h2><p>è stato tutto inutile.. non sono riuscita a spezzare le catene dell'odio.. [il suo sguardo si perde nuovamente..] Venne un uomo che, vista la scena è accorso in mio aiuto... ha iniziato a colpirlo.. poi io sono svenuta e mi sono ritrovata qui, fra le mie amate mura... 3:56: Eshtar l'unica cosa che ricordo sono le parole di quell'uomo che urlava di lasciarmi andare... poi.. il buio...</p></article>
+<article><h2><span class="time">3:57</span> Vahn</h2><p>Mellon...il dolore che provo ad ascoltar la verità non si può liberare nemmeno con le lacrime...che tanto sembrano amare i miei pensieri...[si avvicina di un poco alla templare, abbracciandola debolmente...gli occhi non trattengono più le lacrime, contraddicendo ancora le parole del bardo]....è tremendo...ma ancor più orribile appare il fatto che tutto ciò permanga inevitabile...[la stringe un po']</p></article>
+<article><h2><span class="time">4:00</span> Eshtar</h2><p>si lascia abbracciare dall'amico, piangendo di impotenza e dolore... le sue lacrime scendono sulla spalla del bardo, bagnando i suoi abiti..</p></article>
+<article><h2><span class="time">4:04</span> Vahn</h2><p>[La stringe ancora un po', in quell'abbraccio di lacrime doloranti...poi, con una mano, va a prendere nella tasca del mantello un piccolo flauto in legno...lo mostra tra le lacrime all'amica]...guardate...rammentate?...[sorride lieve, mentre una lacrima finisce tra le labbra del giovane, che assapora la sua amarezza]...solo questo piccolo regalo...è riuscito a tener insieme la mia anima divelta dal dubbio e dal dolore derivato dalla vostra verità....[respira tra i fiumi di lacrime]....una piccola luce che mi guidava nel buio di quest'incubo....[la voce rotta dai singhiozzi si spezza definitivamente, con la mano del giovane che va a coprire la bocca impastata...gli occhi si abbassano a terra...il flauto cade tra le lenzuola]</p></article>
 <article><h2><span class="time">4:08</span> Eshtar</h2><p>[si scioglie dal suo abbraccio e guarda il flauto..] suonate vi prego... lasciate che il nostro dolore sia esorcizzato dalla melodia...</p></article>
-<article><h2><span class="time">4:11</span> Vahn</h2><p>[sorride amaro, riprendendo il flauto]...è buffo come i suoni esorcizzino, o fingano di farlo, i dolori altrui...[sospira, prendendo lo strumento con ambo le mani]...eppure a volte mi aprono gli occhi su un mondo che non vorrei mai vedere....[sorride ancora, le lacrime non si fermano...il flauto si incocca sulle labbra del giovane bardo, mentre, chiudendo le palpebre, egli inizia a soffiar dentro il piccolo strumento tutto il suo dolore e tutta l&#x27;ingiustizia subita e vista...le note affondano nella piccola stanza, colorando le bianche pareti con echi amari, fluidi ed inarrestabili...suoni di verità]</p></article>
-<article><h2><span class="time">4:14</span> Eshtar</h2><p>[Accademia dei Templari] ...chiude l&#x27;occhio lasciandosi avvolgere dalla melodia, una profonda tristezza si somma a quella che il suo cuore già sopporta..</p></article>
-<article><h2><span class="time">4:16</span> Vahn</h2><p>[accademia]...seduto innanzi ad Eshtar, si lascia trasportare dall&#x27;adagio struggente, prova infallibile dell&#x27;inestinguibile fuoco del bardo...l&#x27;anima divelta prende sfogo nelle scale di suoni, nelle note che volano lontane, fuggendo dal dolore dello stesso giovane...che non può far altro che suonare, e richiamare altre note fuggenti...</p></article>
+<article><h2><span class="time">4:11</span> Vahn</h2><p>[sorride amaro, riprendendo il flauto]...è buffo come i suoni esorcizzino, o fingano di farlo, i dolori altrui...[sospira, prendendo lo strumento con ambo le mani]...eppure a volte mi aprono gli occhi su un mondo che non vorrei mai vedere....[sorride ancora, le lacrime non si fermano...il flauto si incocca sulle labbra del giovane bardo, mentre, chiudendo le palpebre, egli inizia a soffiar dentro il piccolo strumento tutto il suo dolore e tutta l'ingiustizia subita e vista...le note affondano nella piccola stanza, colorando le bianche pareti con echi amari, fluidi ed inarrestabili...suoni di verità]</p></article>
+<article><h2><span class="time">4:14</span> Eshtar</h2><p>[Accademia dei Templari] ...chiude l'occhio lasciandosi avvolgere dalla melodia, una profonda tristezza si somma a quella che il suo cuore già sopporta..</p></article>
+<article><h2><span class="time">4:16</span> Vahn</h2><p>[accademia]...seduto innanzi ad Eshtar, si lascia trasportare dall'adagio struggente, prova infallibile dell'inestinguibile fuoco del bardo...l'anima divelta prende sfogo nelle scale di suoni, nelle note che volano lontane, fuggendo dal dolore dello stesso giovane...che non può far altro che suonare, e richiamare altre note fuggenti...</p></article>
 <article><h2><span class="time">4:20</span> Eshtar</h2><p>un lacrima ancora solca il suo volto, lavacro del dolore e sofferenza per la caducità della sua vita...</p></article>
-<article><h2><span class="time">4:22</span> Vahn</h2><p>[accademia]prosegue nella melodia improvvisata, lasciando volare per un attimo la sua anima divelta in un mondo lontano, disinibito ed illimitato...la stanzetta è ormai diventata una mareggiata di suoni e rimbombi, costituendo un concerto struggente di dolore e sopportazione...un ciclo senza termine... 4:27: Eshtar riapre l&#x27;occhio sinistro, mentre il destro lentamente e con enorme sforzo si socchiude... la musica penetra nelle profondità della sua anima...</p></article>
-<article><h2><span class="time">4:29</span> Vahn</h2><p>[accademia]per la prima volta, costringe i suoi sentimenti trasportati dalle note...li vuole plasmare, lenendo il dolore di entrambi, non lasciandone libero sfogo, come è solito fare....così, l&#x27;adagio si ammorbidisce, come i lineamenti del giovane....il cuore si calma, le lacrime s&#x27;arrestano e la melodia ripulisce la stanza dal dolore, inghiottendolo, nascondendolo... 4:30: william giunge con passo lento sul sentiero che conduce all&#x27;accademia 4:31: william ad ogni passo rissente un dolore.. e si sofferma ognitanto ad osservare l&#x27;ambiente con espressione triste</p></article>
-<article><h2><span class="time">4:32</span> Eshtar</h2><p>muove il capo come a voler inseguire le note che rotolano senza fine fra le pareti candide della stanzetta... le pare che il peso che ha nel cuore sia meno forte... mentre sente cambiare la melodia anche la sua anima pare più leggera, il cuore si raddolcisce... 4:34: william giunto infine dinnanzi al portone che conduce all&#x27;accademia sente uan melodia e si sofferma per un istante ad ascoltare.. poi entra lentamente 4:37: william &lt;una volta entrato resta dinnanzi al portone; coperto dal mantello bianco osserva l&#x27;interno e socchiude appena gli occhi&gt; &lt;con voce soffocante&gt; ..casa..</p></article>
-<article><h2><span class="time">4:39</span> Vahn</h2><p>[accademia]...tra le note il giovane bardo aggrotta appena le sopracciglia, colto da qualcosa di apparentemente impalpabile...le note scorrono indifferenti a tutto, nella loro opera di risciacquo dei ricordi, e del sangue inutilmente versato...</p></article></body></html>
+<article><h2><span class="time">4:22</span> Vahn</h2><p>[accademia]prosegue nella melodia improvvisata, lasciando volare per un attimo la sua anima divelta in un mondo lontano, disinibito ed illimitato...la stanzetta è ormai diventata una mareggiata di suoni e rimbombi, costituendo un concerto struggente di dolore e sopportazione...un ciclo senza termine... 4:27: Eshtar riapre l'occhio sinistro, mentre il destro lentamente e con enorme sforzo si socchiude... la musica penetra nelle profondità della sua anima...</p></article>
+<article><h2><span class="time">4:29</span> Vahn</h2><p>[accademia]per la prima volta, costringe i suoi sentimenti trasportati dalle note...li vuole plasmare, lenendo il dolore di entrambi, non lasciandone libero sfogo, come è solito fare....così, l'adagio si ammorbidisce, come i lineamenti del giovane....il cuore si calma, le lacrime s'arrestano e la melodia ripulisce la stanza dal dolore, inghiottendolo, nascondendolo... 4:30: william giunge con passo lento sul sentiero che conduce all'accademia 4:31: william ad ogni passo rissente un dolore.. e si sofferma ognitanto ad osservare l'ambiente con espressione triste</p></article>
+<article><h2><span class="time">4:32</span> Eshtar</h2><p>muove il capo come a voler inseguire le note che rotolano senza fine fra le pareti candide della stanzetta... le pare che il peso che ha nel cuore sia meno forte... mentre sente cambiare la melodia anche la sua anima pare più leggera, il cuore si raddolcisce... 4:34: william giunto infine dinnanzi al portone che conduce all'accademia sente uan melodia e si sofferma per un istante ad ascoltare.. poi entra lentamente 4:37: william &lt;una volta entrato resta dinnanzi al portone; coperto dal mantello bianco osserva l'interno e socchiude appena gli occhi&gt; &lt;con voce soffocante&gt; ..casa..</p></article>
+<article><h2><span class="time">4:39</span> Vahn</h2><p>[accademia]...tra le note il giovane bardo aggrotta appena le sopracciglia, colto da qualcosa di apparentemente impalpabile...le note scorrono indifferenti a tutto, nella loro opera di risciacquo dei ricordi, e del sangue inutilmente versato...</p></article></div><div class="render-note">Resa editoriale ricostruita dalla trascrizione disponibile; la formattazione originale non era recuperabile integralmente.</div></div>
+</article>
+</main>
+</body></html>
